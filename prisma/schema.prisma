@@ -1,0 +1,272 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// NextAuth.js 必需的表
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// 课程评论模型 - 对应页面上的评论系统
+model CourseReview {
+  id        String   @id @default(cuid())
+  courseId  String
+  userId    String
+  rating    Int      @default(0) // 1-5星评分
+  title     String? // 评论标题（可选）
+  content   String  // 评论内容
+  isCompleted Boolean @default(false) // 是否已完成课程
+  completedPercentage Int? // 课程完成百分比
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  course Course @relation(fields: [courseId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@map("course_reviews")
+}
+
+// 课程讨论模型 - 对应页面上的讨论系统
+model CourseDiscussion {
+  id        String   @id @default(cuid())
+  courseId  String
+  userId    String
+  content   String  // 讨论内容
+  isPinned  Boolean  @default(false) // 是否置顶
+  isClosed  Boolean  @default(false) // 是否关闭
+  likes     Int      @default(0) // 点赞数
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  course Course @relation(fields: [courseId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+  replies CourseDiscussionReply[]
+  likeRecords DiscussionLike[]
+
+  @@map("course_discussions")
+}
+
+// 讨论回复模型 - 对应页面上的回复系统
+model CourseDiscussionReply {
+  id              String   @id @default(cuid())
+  discussionId    String
+  userId          String
+  content         String   // 回复内容
+  parentReplyId   String?  // 父回复ID（用于嵌套回复）
+  likes           Int      @default(0) // 点赞数
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // 关联
+  discussion CourseDiscussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  user       User             @relation(fields: [userId], references: [id])
+  parentReply CourseDiscussionReply? @relation("ReplyReplies", fields: [parentReplyId], references: [id])
+  replies    CourseDiscussionReply[] @relation("ReplyReplies")
+
+  @@map("course_discussion_replies")
+}
+
+// 课程进度模型 - 对应页面上的进度跟踪
+model CourseProgress {
+  id          String   @id @default(cuid())
+  userId      String
+  courseId    String
+  lessonId    Int?     // 课程ID（可选，用于单节课进度）
+  progress    Float    @default(0) // 0-100的进度百分比
+  currentTime Float    @default(0) // 当前播放时间（秒）
+  lastWatched DateTime @default(now()) // 最后观看时间
+  totalWatched Int      @default(0) // 总观看时长（秒）
+  isCompleted Boolean  @default(false) // 是否完成
+  completedAt DateTime? // 完成时间
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // 关联
+  course Course @relation(fields: [courseId], references: [id])
+  user   User   @relation(fields: [userId], references: [id])
+
+  @@unique([userId, courseId, lessonId])
+  @@map("course_progress")
+}
+
+// 用户模型
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  hashedPassword String?  // 加密后的密码
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // NextAuth.js 关联
+  accounts Account[]
+  sessions Session[]
+  
+  // 业务关联
+  courseReviews      CourseReview[]
+  courseDiscussions  CourseDiscussion[]
+  courseDiscussionReplies CourseDiscussionReply[]
+  courseProgress     CourseProgress[]
+  discussionLikes    DiscussionLike[]
+  
+  // 新增：平台订阅和课程访问关联
+  platformSubscriptions PlatformSubscription[]
+  courseAccesses        CourseAccess[]
+  coursePurchases       CoursePurchase[]
+
+  @@map("users")
+}
+
+// 课程模型（引用现有的课程数据）
+model Course {
+  id        String   @id @default(cuid())
+  title     String
+  category  String
+  instructor String
+  rating    Float    @default(0)
+  students  Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // 关联
+  reviews      CourseReview[]
+  discussions  CourseDiscussion[]
+  progress     CourseProgress[]
+  
+  // 新增：课程访问和购买关联
+  courseAccesses    CourseAccess[]
+  coursePurchases   CoursePurchase[]
+
+  @@map("courses")
+}
+
+// 课程购买记录表（单门课程购买）
+model CoursePurchase {
+  id                String   @id @default(cuid())
+  userId            String
+  courseId          String
+  stripeSessionId   String   @unique // Stripe会话ID
+  stripePaymentIntentId String? // Stripe支付意图ID
+  purchaseDate      DateTime @default(now())
+  expiresAt         DateTime // 过期时间（1年后）
+  status            String   @default("active") // active, expired, refunded
+  amount            Int      // 购买金额（以分为单位）
+  currency          String   @default("usd")
+  projectId         String   // 项目标识符
+  
+  // 关联
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([userId, courseId, status])
+  @@map("course_purchases")
+}
+
+// 平台订阅表（重构后的订阅系统）
+model PlatformSubscription {
+  id                    String   @id @default(cuid())
+  userId                String
+  stripeSubscriptionId  String   @unique // Stripe订阅ID
+  stripeCustomerId      String   // Stripe客户ID
+  status                String   // active, canceled, past_due, unpaid, incomplete
+  planType              String   // FREE_TRIAL, MONTHLY, YEARLY
+  currentPeriodStart    DateTime
+  currentPeriodEnd      DateTime
+  trialEnd              DateTime? // 试用期结束时间
+  cancelAtPeriodEnd     Boolean  @default(false) // 是否在当前期间结束后取消
+  projectId             String   // 项目标识符
+  
+  // 关联
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@map("platform_subscriptions")
+}
+
+// 课程访问控制表（控制用户对课程的访问权限）
+model CourseAccess {
+  id          String   @id @default(cuid())
+  userId      String
+  courseId    String
+  accessType  String   // SUBSCRIPTION, PURCHASE, FREE
+  grantedAt   DateTime @default(now())
+  expiresAt   DateTime? // 仅购买课程需要，订阅用户无过期时间
+  projectId   String   // 项目标识符
+  
+  // 关联
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  course Course @relation(fields: [courseId], references: [id], onDelete: Cascade)
+  
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  @@unique([userId, courseId])
+  @@map("course_accesses")
+}
+
+// 讨论点赞记录表（跟踪用户对讨论的点赞状态）
+model DiscussionLike {
+  id           String   @id @default(cuid())
+  userId       String
+  discussionId String
+  createdAt    DateTime @default(now())
+  
+  // 关联
+  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  discussion CourseDiscussion @relation(fields: [discussionId], references: [id], onDelete: Cascade)
+  
+  @@unique([userId, discussionId])
+  @@map("discussion_likes")
+}

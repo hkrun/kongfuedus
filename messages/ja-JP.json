@@ -1,0 +1,418 @@
+{
+  "common": {
+    "login": "ログイン",
+    "logout": "ログアウト",
+    "register": "登録",
+    "my": "マイ",
+    "courses": "コース",
+    "home": "ホーム",
+    "dashboard": "ダッシュボード",
+    "profile": "プロフィール",
+    "settings": "設定",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "confirm": "確認",
+    "delete": "削除",
+    "edit": "編集",
+    "view": "表示",
+    "search": "検索",
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "success": "成功",
+    "warning": "警告",
+    "info": "情報"
+  },
+  "header": {
+    "userAvatar": "ユーザーアバター",
+    "myPage": "マイページ",
+    "signOut": "サインアウト",
+    "language": "言語"
+  },
+  "auth": {
+    "login": "ログイン",
+    "register": "登録",
+    "forgotPassword": "パスワードを忘れた",
+    "resetPassword": "パスワードリセット",
+    "verifyEmail": "メール確認",
+    "email": "メール",
+    "password": "パスワード",
+    "confirmPassword": "パスワード確認",
+    "name": "名前",
+    "loginSuccess": "ログイン成功",
+    "registerSuccess": "登録成功",
+    "loginError": "ログイン失敗",
+    "registerError": "登録失敗"
+  },
+  "course": {
+    "title": "コースタイトル",
+    "description": "コース説明",
+    "instructor": "講師",
+    "duration": "期間",
+    "level": "レベル",
+    "price": "価格",
+    "free": "無料",
+    "purchase": "購入",
+    "purchased": "購入済み",
+    "startLearning": "学習開始",
+    "continueLearning": "学習続行",
+    "completed": "完了",
+    "progress": "進捗",
+    "reviews": "レビュー",
+    "discussions": "ディスカッション"
+  },
+  "courses": {
+    "pageTitle": "武道コース",
+    "pageDescription": "分野別に整理された包括的な武道コースコレクションを探索してください。初心者でも上級者でも、スキルを向上させる完璧なコースを見つけることができます。",
+    "allCourses": "すべてのコース",
+    "categories": {
+      "striking": "打撃技",
+      "taiji": "太極拳",
+      "weapons": "武器術",
+      "selfDefense": "護身術",
+      "health": "健康・ウェルネス"
+    },
+    "viewCourse": "コースを見る",
+    "enrollNow": "今すぐ登録",
+    "freeTrial": "無料トライアル",
+    "rating": "評価",
+    "students": "学生",
+    "hours": "時間",
+    "level": {
+      "beginner": "初級",
+      "intermediate": "中級",
+      "advanced": "上級"
+    }
+  },
+  "payment": {
+    "purchase": "購入",
+    "price": "価格",
+    "total": "合計",
+    "paymentMethod": "支払い方法",
+    "cardNumber": "カード番号",
+    "expiryDate": "有効期限",
+    "cvv": "CVV",
+    "payNow": "今すぐ支払う",
+    "paymentSuccess": "支払い成功",
+    "paymentFailed": "支払い失敗"
+  },
+  "subscription": {
+    "monthly": "月額サブスクリプション",
+    "yearly": "年額サブスクリプション",
+    "cancel": "サブスクリプションキャンセル",
+    "active": "アクティブ",
+    "expired": "期限切れ",
+    "renewal": "更新"
+  },
+  "language": {
+    "chinese": "中文",
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "japanese": "日本語",
+    "korean": "한국어",
+    "arabic": "العربية"
+  },
+  "home": {
+    "hero": {
+      "title": "武道マスター<br />あなたのスケジュールに合わせて",
+      "subtitle": "いつでもどこでも世界クラスのインストラクターから学べます。専門家によるビデオコースで技術を習得している何千人もの武道家の仲間入りをしませんか。",
+      "exploreCourses": "コースを探索"
+    },
+    "features": {
+      "title": "なぜ私たちを選ぶのか",
+      "subtitle": "最も包括的なオンライン武道学習体験をお届けします",
+      "expertInstructors": "専門インストラクター",
+      "expertInstructorsDesc": "経験豊富な武道マスターから学ぶ",
+      "flexibleLearning": "柔軟な学習",
+      "flexibleLearningDesc": "自分のペースで、いつでもどこでも学習",
+      "highQuality": "高品質コンテンツ",
+      "highQualityDesc": "プロが制作したHDビデオコース"
+    },
+    "courses": {
+      "title": "人気コース",
+      "subtitle": "最も人気のある武道コースを探索してください",
+      "viewAll": "すべて表示",
+      "mostPopular": "最も人気",
+      "viewCourse": "コースを見る",
+      "loadingCourses": "人気コースを読み込み中..."
+    },
+    "membership": {
+      "title": "無制限学習のロック解除",
+      "subtitle": "すべてのコースに無制限アクセスできる月額メンバーシップをお選びください",
+      "monthlyMembership": "月額メンバーシップ",
+      "price": "$39.99",
+      "perMonth": "/月",
+      "features": {
+        "unlimitedAccess": "100以上のコースへの無制限アクセス",
+        "downloadVideos": "オフライン視聴用にビデオをダウンロード",
+        "whatsappAccess": "インストラクターへの直接WhatsAppアクセス",
+        "liveQA": "ライブQ&Aセッションに参加",
+        "exclusiveContent": "メンバー限定コンテンツ"
+      },
+      "freeTrial": "3日間無料トライアルを開始"
+    },
+    "testimonials": {
+      "title": "学生の証言",
+      "subtitle": "私たちの学生が何を言っているか聞いてください",
+      "mainTitle": "私たちの学生が言うこと",
+      "mainSubtitle": "私たちのプラットフォームで技術を向上させた武道家の声をお聞きください",
+      "sarah": {
+        "name": "Sarah J.",
+        "comment": "月額メンバーシップは一銭の価値があります！期待していたよりもはるかに多くを学びました。"
+      },
+      "michael": {
+        "name": "Michael T.",
+        "title": "旅行ブロガー & 空手学生",
+        "comment": "旅行ブロガーとして、私は異なる文化の武道を学ぶのが好きです。このプラットフォームは、世界のどこにいても、自由時間があるときはいつでも練習できるようにしてくれます。"
+      },
+      "sophia": {
+        "name": "Sophia L.",
+        "title": "フィットネスコーチ & テコンドー学生",
+        "comment": "WhatsAppを通じてインストラクターに直接連絡できる能力は非常に貴重でした。私の技術について個人的なフィードバックを得ることで、私の進歩は劇的に加速しました。"
+      },
+      "david": {
+        "name": "David R.",
+        "title": "BJJ実践者",
+        "comment": "一年前にブラジリアン柔術コースを購入し、今でも定期的に参照しています。ビデオの品質は素晴らしく、リフレッシュが必要なときはいつでも技術を復習できます。"
+      }
+    },
+    "cta": {
+      "title": "今日から武道の旅を始めましょう",
+      "subtitle": "私たちの専門家主導のビデオコースを通じて技術を習得している世界中の何千人もの武道家に参加してください。",
+      "getStarted": "今すぐ始める",
+      "browseAll": "すべてのコースを閲覧"
+    },
+    "footer": {
+      "brandName": "武道マスター",
+      "brandDescription": "世界クラスのインストラクターからのプレミアムオンライン武道指導。",
+      "quickLinks": "クイックリンク",
+      "support": "サポート",
+      "newsletter": "ニュースレター",
+      "newsletterDescription": "新しいコースと武道のヒントに関する更新を受け取るために購読してください。",
+      "allCourses": "すべてのコース",
+      "instructors": "インストラクター",
+      "membership": "メンバーシップ",
+      "freeResources": "無料リソース",
+      "blog": "ブログ",
+      "faqs": "よくある質問",
+      "contactUs": "お問い合わせ",
+      "privacyPolicy": "プライバシーポリシー",
+      "termsOfService": "利用規約",
+      "refundPolicy": "返金ポリシー",
+      "emailPlaceholder": "あなたのメールアドレス",
+      "privacyNotice": "私たちはあなたのプライバシーを尊重します。いつでも購読を解除できます。",
+      "copyright": "© 2023~2025 武道マスター。全著作権所有。"
+    }
+  },
+  "myPage": {
+    "title": "マイアカウント",
+    "subtitle": "学習進捗、アカウント設定、購入履歴を管理",
+    "loading": "読み込み中...",
+    "tabs": {
+      "overview": "概要",
+      "courses": "マイコース",
+      "recent": "最近視聴",
+      "settings": "アカウント設定",
+      "history": "購入履歴"
+    },
+    "overview": {
+      "welcome": "おかえりなさい",
+      "learningProgress": "学習進捗",
+      "recentActivity": "最近の活動",
+      "recommendedCourses": "おすすめコース"
+    },
+    "courses": {
+      "purchasedCourses": "購入済みコース",
+      "recentVideos": "最近視聴",
+      "continueLearning": "学習を続ける",
+      "completed": "完了",
+      "inProgress": "進行中"
+    },
+    "history": {
+      "purchaseHistory": "購入履歴",
+      "orderNumber": "注文番号",
+      "purchaseDate": "購入日",
+      "amount": "金額",
+      "status": "ステータス",
+      "viewDetails": "詳細を見る"
+    },
+    "settings": {
+      "accountSettings": "アカウント設定",
+      "personalInfo": "個人情報",
+      "changePassword": "パスワード変更",
+      "notificationSettings": "通知設定",
+      "privacySettings": "プライバシー設定"
+    }
+  },
+  "userStatusCard": {
+    "loading": "読み込み中...",
+    "error": "ユーザー情報を読み込めません",
+    "userAvatar": "ユーザーアバター",
+    "noNameSet": "名前が設定されていません",
+    "expiryTime": "有効期限",
+    "willCancelAfterExpiry": "期限後にキャンセルされます",
+    "learningStats": "学習統計",
+    "learningCourses": "学習コース",
+    "purchasedCourses": "購入済みコース",
+    "learningTime": "学習時間",
+    "averageProgress": "平均進捗",
+    "subscriptionManagement": "サブスクリプション管理",
+    "currentPlan": "現在のプラン",
+    "monthlySubscription": "月額サブスクリプション",
+    "yearlySubscription": "年額サブスクリプション",
+    "freeTrial": "無料トライアル",
+    "processing": "処理中...",
+    "cancelSubscription": "サブスクリプションをキャンセル",
+    "confirmCancel": "サブスクリプションをキャンセルしてもよろしいですか？サブスクリプションは現在の請求期間の終了時に期限切れになります。",
+    "cancelSuccess": "サブスクリプションが正常にキャンセルされました",
+    "cancelError": "サブスクリプションのキャンセルに失敗しました",
+    "userStatus": {
+      "trial": "無料トライアルメンバー",
+      "subscribed": "サブスクリプションメンバー",
+      "free": "一般ユーザー"
+    }
+  },
+  "courseDetail": {
+    "loading": "読み込み中...",
+    "loadingCourse": "コース情報を読み込み中です。お待ちください",
+    "courseNotFound": "コースが見つかりません",
+    "courseNotFoundDesc": "申し訳ございませんが、ご請求のコースが見つかりません。コースリンクが正しいかご確認ください。",
+    "backToCourses": "コース一覧に戻る",
+    "breadcrumb": {
+      "home": "ホーム",
+      "courses": "コース"
+    },
+    "tabs": {
+      "overview": "概要",
+      "curriculum": "カリキュラム",
+      "instructor": "講師",
+      "reviews": "レビュー",
+      "discussions": "ディスカッション"
+    },
+    "stats": {
+      "reviews": "件のレビュー",
+      "students": "学生",
+      "lastUpdated": "最終更新",
+      "hours": "時間の総時間",
+      "lessons": "レッスン"
+    },
+    "purchase": {
+      "lifetimeAccess": "生涯アクセス",
+      "validity": "1年間有効",
+      "certificate": "修了証書",
+      "subscriptionMember": "サブスクリプションメンバー - 無制限アクセス",
+      "purchased": "購入済み - 1年間有効",
+      "trialPeriod": "トライアル期間 - 3日間無料",
+      "validUntil": "有効期限",
+      "courseIncludes": "このコースには以下が含まれます",
+      "videoLessons": "ビデオレッスン",
+      "mobileAccess": "モバイルとコンピューターアクセス",
+      "whatsappAccess": "購入後講師へのWhatsAppアクセス",
+      "checkingAccess": "コース権限を確認中...",
+      "continueLearning": "コース学習を続ける",
+      "shareCourse": "友達と共有",
+      "loginToExperience": "ログインして体験",
+      "subscriptionCancelable": "サブスクリプションはいつでもキャンセル可能"
+    },
+    "payment": {
+      "trialSuccess": "🎉 おめでとうございます！3日間の無料トライアルを正常にアクティベートし、今すぐコースの学習を開始できます！",
+      "purchaseSuccess": "🎉 おめでとうございます！このコースを正常に購入し、1年間の無制限再生権を取得しました！",
+      "subscriptionSuccess": "🎉 おめでとうございます！正常にサブスクライブし、今すぐコースの学習を開始できます！",
+      "paymentCanceled": "支払いがキャンセルされました。後でサブスクリプションを再試行できます。"
+    },
+    "overview": {
+      "whatYouWillLearn": "学べること",
+      "courseDescription": "コース説明",
+      "suitableFor": "対象者",
+      "requirements": "学習要件",
+      "noExperienceRequired": "武術経験不要",
+      "comfortableClothes": "快適な運動着",
+      "martialArtsUniform": "武術服推奨（必須ではありません）",
+      "practiceSpace": "練習スペース",
+      "courseSummary": "コース要約",
+      "level": "レベル",
+      "duration": "期間",
+      "totalVideoDuration": "総ビデオ時間",
+      "lessonCount": "レッスン数",
+      "lastUpdated": "最終更新",
+      "language": "言語",
+      "chinese": "中国語",
+      "suggestedWeeks": "推奨{weeks}週間",
+      "yourInstructor": "あなたの講師",
+      "viewFullProfile": "完全なプロフィールを見る"
+    },
+    "curriculum": {
+      "chapter": "第{number}章",
+      "lessons": "レッスン",
+      "minutes": "分",
+      "playing": "再生中"
+    },
+    "instructor": {
+      "aboutInstructor": "{name}について",
+      "contactInstructor": "講師に連絡",
+      "contactDesc": "このコースを購入した学生は、個別指導のために講師への直接WhatsAppアクセスを取得します。",
+      "youWillGet": "あなたが得るもの",
+      "personalizedFeedback": "個別化された技術フィードバック",
+      "answerQuestions": "具体的な質問に答える",
+      "progressGuidance": "トレーニング進捗指導",
+      "purchaseToContact": "コースを購入して講師に連絡",
+      "loginToExperience": "ログインして体験"
+    },
+    "reviews": {
+      "studentReviews": "学生レビュー",
+      "reviewsCount": "{count}件のレビュー",
+      "averageRating": "5点満点中",
+      "writeReview": "レビューを書く",
+      "shareExperience": "このコースでの体験を共有し、他の学生の決定を支援してください。",
+      "alreadyReviewed": "このコースは既にレビュー済みです",
+      "noReviews": "まだレビューがありません",
+      "loadMore": "さらにレビューを読み込む",
+      "loginToView": "ログインして詳細なレビューを表示",
+      "loginNow": "今すぐログイン",
+      "rating": "評価",
+      "reviewContent": "レビュー内容",
+      "reviewPlaceholder": "このコースでの体験を共有し、他の学生の決定を支援してください...",
+      "submitReview": "レビューを送信",
+      "submitting": "送信中...",
+      "star": "星"
+    },
+    "discussions": {
+      "courseDiscussions": "コースディスカッション",
+      "discussWithOthers": "他の学生や講師と交流",
+      "startNewDiscussion": "新しいディスカッションを開始",
+      "postQuestion": "質問やコメントを投稿",
+      "noDiscussions": "まだディスカッションがありません",
+      "loginToParticipate": "ログインしてディスカッションに参加",
+      "loginNow": "今すぐログイン",
+      "reply": "返信",
+      "like": "いいね",
+      "liking": "いいね中、繰り返しクリックしないでください",
+      "instructor": "講師",
+      "postNewDiscussion": "新しいディスカッションを投稿",
+      "yourQuestion": "あなたの質問やアイデア",
+      "discussionPlaceholder": "質問やアイデアを共有し、他の学生や講師と交流してください...",
+      "postDiscussion": "ディスカッションを投稿",
+      "posting": "投稿中...",
+      "replyToDiscussion": "ディスカッションに返信",
+      "yourReply": "あなたの返信",
+      "replyPlaceholder": "返信内容を入力してください...",
+      "postReply": "返信を投稿",
+      "postingReply": "投稿中..."
+    },
+    "relatedCourses": {
+      "title": "おすすめコース",
+      "subtitle": "スキルと知識を向上させるためのより多くの武術コースを発見してください",
+      "category": {
+        "weapons": "武器術",
+        "combat": "実戦",
+        "fist": "拳術"
+      }
+    },
+    "tags": {
+      "kungfu": "功夫",
+      "martialArts": "武術",
+      "selfDefense": "護身術",
+      "fitness": "フィットネス"
+    }
+  }
+}

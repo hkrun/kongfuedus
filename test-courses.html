@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>课程测试</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .course { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .category { background: #f0f0f0; padding: 5px; margin: 5px 0; }
+    </style>
+</head>
+<body>
+    <h1>课程分类测试</h1>
+    
+    <div class="category">
+        <h2>综合类 (mixed) 课程:</h2>
+        <div id="mixed-courses"></div>
+    </div>
+    
+    <div class="category">
+        <h2>所有课程:</h2>
+        <div id="all-courses"></div>
+    </div>
+
+    <script type="module">
+        // 模拟课程数据
+        const courses = [
+            { id: 'tai-chi-master', title: '太极大师', category: 'taiji' },
+            { id: 'shaolin-legacy', title: '少林传承', category: 'striking' },
+            { id: 'wing-chun-combat', title: '咏春实战', category: 'combat' },
+            { id: 'kung-fu-basics', title: '功夫基础入门', category: 'striking' },
+            { id: 'taiji-health', title: '太极养生', category: 'taiji' },
+            { id: 'sword-mastery', title: '剑术大师', category: 'weapons' },
+            { id: 'self-defense-master', title: '自卫大师', category: 'self-defense' },
+            { id: 'martial-arts-fusion', title: '武术融合', category: 'fusion' },
+            { id: 'self-defense', title: '防身术', category: 'combat' },
+            { id: 'strangle-escape', title: '绞杀技逃脱', category: 'combat' },
+            { id: 'children-martial-arts', title: '儿童武术', category: 'mixed' }
+        ];
+
+        // 过滤综合类课程
+        const mixedCourses = courses.filter(course => course.category === 'mixed');
+        
+        // 显示综合类课程
+        const mixedContainer = document.getElementById('mixed-courses');
+        if (mixedCourses.length > 0) {
+            mixedCourses.forEach(course => {
+                const div = document.createElement('div');
+                div.className = 'course';
+                div.innerHTML = `<strong>${course.title}</strong> (${course.id}) - 分类: ${course.category}`;
+                mixedContainer.appendChild(div);
+            });
+        } else {
+            mixedContainer.innerHTML = '<p>❌ 未找到综合类课程</p>';
+        }
+
+        // 显示所有课程
+        const allContainer = document.getElementById('all-courses');
+        courses.forEach(course => {
+            const div = document.createElement('div');
+            div.className = 'course';
+            div.innerHTML = `<strong>${course.title}</strong> (${course.id}) - 分类: ${course.category}`;
+            allContainer.appendChild(div);
+        });
+    </script>
+</body>
+</html>

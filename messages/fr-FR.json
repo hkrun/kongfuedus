@@ -1,0 +1,418 @@
+{
+  "common": {
+    "login": "Connexion",
+    "logout": "Déconnexion",
+    "register": "S'inscrire",
+    "my": "Mon",
+    "courses": "Cours",
+    "home": "Accueil",
+    "dashboard": "Tableau de bord",
+    "profile": "Profil",
+    "settings": "Paramètres",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "confirm": "Confirmer",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "view": "Voir",
+    "search": "Rechercher",
+    "loading": "Chargement...",
+    "error": "Erreur",
+    "success": "Succès",
+    "warning": "Avertissement",
+    "info": "Info"
+  },
+  "header": {
+    "userAvatar": "Avatar utilisateur",
+    "myPage": "Ma page",
+    "signOut": "Se déconnecter",
+    "language": "Langue"
+  },
+  "auth": {
+    "login": "Connexion",
+    "register": "S'inscrire",
+    "forgotPassword": "Mot de passe oublié",
+    "resetPassword": "Réinitialiser le mot de passe",
+    "verifyEmail": "Vérifier l'email",
+    "email": "Email",
+    "password": "Mot de passe",
+    "confirmPassword": "Confirmer le mot de passe",
+    "name": "Nom",
+    "loginSuccess": "Connexion réussie",
+    "registerSuccess": "Inscription réussie",
+    "loginError": "Échec de la connexion",
+    "registerError": "Échec de l'inscription"
+  },
+  "course": {
+    "title": "Titre du cours",
+    "description": "Description du cours",
+    "instructor": "Instructeur",
+    "duration": "Durée",
+    "level": "Niveau",
+    "price": "Prix",
+    "free": "Gratuit",
+    "purchase": "Acheter",
+    "purchased": "Acheté",
+    "startLearning": "Commencer à apprendre",
+    "continueLearning": "Continuer à apprendre",
+    "completed": "Terminé",
+    "progress": "Progrès",
+    "reviews": "Avis",
+    "discussions": "Discussions"
+  },
+  "courses": {
+    "pageTitle": "Cours d'arts martiaux",
+    "pageDescription": "Explorez notre collection complète de cours d'arts martiaux, organisés par discipline. Que vous soyez débutant ou pratiquant avancé, trouvez le cours parfait pour améliorer vos compétences.",
+    "allCourses": "Tous les cours",
+    "categories": {
+      "striking": "Arts de frappe",
+      "taiji": "Tai Chi",
+      "weapons": "Armes",
+      "selfDefense": "Autodéfense",
+      "health": "Santé et bien-être"
+    },
+    "viewCourse": "Voir le cours",
+    "enrollNow": "S'inscrire maintenant",
+    "freeTrial": "Essai gratuit",
+    "rating": "Note",
+    "students": "Étudiants",
+    "hours": "Heures",
+    "level": {
+      "beginner": "Débutant",
+      "intermediate": "Intermédiaire",
+      "advanced": "Avancé"
+    }
+  },
+  "payment": {
+    "purchase": "Achat",
+    "price": "Prix",
+    "total": "Total",
+    "paymentMethod": "Méthode de paiement",
+    "cardNumber": "Numéro de carte",
+    "expiryDate": "Date d'expiration",
+    "cvv": "CVV",
+    "payNow": "Payer maintenant",
+    "paymentSuccess": "Paiement réussi",
+    "paymentFailed": "Échec du paiement"
+  },
+  "subscription": {
+    "monthly": "Abonnement mensuel",
+    "yearly": "Abonnement annuel",
+    "cancel": "Annuler l'abonnement",
+    "active": "Actif",
+    "expired": "Expiré",
+    "renewal": "Renouvellement"
+  },
+  "language": {
+    "chinese": "中文",
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "japanese": "日本語",
+    "korean": "한국어",
+    "arabic": "العربية"
+  },
+  "home": {
+    "hero": {
+      "title": "Maître Kong Fu<br />À votre rythme",
+      "subtitle": "Apprenez d'instructeurs de classe mondiale à tout moment, n'importe où. Rejoignez des milliers d'artistes martiaux qui maîtrisent leur art grâce à nos cours vidéo dirigés par des experts.",
+      "exploreCourses": "Explorer les cours"
+    },
+    "features": {
+      "title": "Pourquoi nous choisir",
+      "subtitle": "Nous offrons l'expérience d'apprentissage d'arts martiaux en ligne la plus complète",
+      "expertInstructors": "Instructeurs experts",
+      "expertInstructorsDesc": "Apprenez de maîtres d'arts martiaux expérimentés",
+      "flexibleLearning": "Apprentissage flexible",
+      "flexibleLearningDesc": "Apprenez à votre propre rythme, à tout moment, n'importe où",
+      "highQuality": "Contenu de haute qualité",
+      "highQualityDesc": "Cours vidéo HD produits professionnellement"
+    },
+    "courses": {
+      "title": "Cours populaires",
+      "subtitle": "Explorez nos cours d'arts martiaux les plus populaires",
+      "viewAll": "Voir tout",
+      "mostPopular": "Le plus populaire",
+      "viewCourse": "Voir le cours",
+      "loadingCourses": "Chargement des cours populaires..."
+    },
+    "membership": {
+      "title": "Débloquez l'apprentissage illimité",
+      "subtitle": "Choisissez notre adhésion mensuelle pour un accès illimité à tous les cours",
+      "monthlyMembership": "Adhésion mensuelle",
+      "price": "$39.99",
+      "perMonth": "/mois",
+      "features": {
+        "unlimitedAccess": "Accès illimité à tous les 100+ cours",
+        "downloadVideos": "Télécharger des vidéos pour regarder hors ligne",
+        "whatsappAccess": "Accès WhatsApp direct aux instructeurs",
+        "liveQA": "Participer aux sessions Q&A en direct",
+        "exclusiveContent": "Contenu exclusif pour les membres"
+      },
+      "freeTrial": "Commencez votre essai gratuit de 3 jours"
+    },
+    "testimonials": {
+      "title": "Témoignages d'étudiants",
+      "subtitle": "Écoutez ce que nos étudiants ont à dire",
+      "mainTitle": "Ce que disent nos étudiants",
+      "mainSubtitle": "Écoutez les artistes martiaux qui ont transformé leurs compétences avec notre plateforme",
+      "sarah": {
+        "name": "Sarah J.",
+        "comment": "L'adhésion mensuelle vaut chaque centime ! J'ai appris tellement plus que ce que j'attendais."
+      },
+      "michael": {
+        "name": "Michael T.",
+        "title": "Blogueur de voyage & Étudiant de Karaté",
+        "comment": "En tant que blogueur de voyage, j'aime apprendre les arts martiaux de différentes cultures. Cette plateforme me permet de m'entraîner chaque fois que j'ai du temps libre, peu importe où je suis dans le monde."
+      },
+      "sophia": {
+        "name": "Sophia L.",
+        "title": "Coach de fitness & Étudiante de Taekwondo",
+        "comment": "La possibilité de contacter directement les instructeurs via WhatsApp a été inestimable. Obtenir des commentaires personnalisés sur ma technique a considérablement accéléré mes progrès."
+      },
+      "david": {
+        "name": "David R.",
+        "title": "Pratiquant de BJJ",
+        "comment": "J'ai acheté le cours de Jiu-Jitsu brésilien il y a un an et je m'y réfère encore régulièrement. La qualité vidéo est excellente, et je peux réviser les techniques chaque fois que j'ai besoin d'un rappel."
+      }
+    },
+    "cta": {
+      "title": "Commencez votre voyage d'arts martiaux aujourd'hui",
+      "subtitle": "Rejoignez des milliers d'artistes martiaux du monde entier qui maîtrisent leur art grâce à nos cours vidéo dirigés par des experts.",
+      "getStarted": "Commencer maintenant",
+      "browseAll": "Parcourir tous les cours"
+    },
+    "footer": {
+      "brandName": "Maître Kong Fu",
+      "brandDescription": "Instruction d'arts martiaux en ligne premium d'instructeurs de classe mondiale.",
+      "quickLinks": "Liens rapides",
+      "support": "Support",
+      "newsletter": "Newsletter",
+      "newsletterDescription": "Abonnez-vous pour recevoir des mises à jour sur les nouveaux cours et conseils d'arts martiaux.",
+      "allCourses": "Tous les cours",
+      "instructors": "Instructeurs",
+      "membership": "Adhésion",
+      "freeResources": "Ressources gratuites",
+      "blog": "Blog",
+      "faqs": "FAQ",
+      "contactUs": "Nous contacter",
+      "privacyPolicy": "Politique de confidentialité",
+      "termsOfService": "Conditions d'utilisation",
+      "refundPolicy": "Politique de remboursement",
+      "emailPlaceholder": "Votre adresse e-mail",
+      "privacyNotice": "Nous respectons votre vie privée. Désabonnez-vous à tout moment.",
+      "copyright": "© 2023~2025 Maître Kong Fu. Tous droits réservés."
+    }
+  },
+  "myPage": {
+    "title": "Mon Compte",
+    "subtitle": "Gérez vos progrès d'apprentissage, paramètres de compte et historique d'achat",
+    "loading": "Chargement...",
+    "tabs": {
+      "overview": "Aperçu",
+      "courses": "Mes Cours",
+      "recent": "Récemment regardés",
+      "settings": "Paramètres du compte",
+      "history": "Historique d'achat"
+    },
+    "overview": {
+      "welcome": "Bon retour",
+      "learningProgress": "Progrès d'apprentissage",
+      "recentActivity": "Activité récente",
+      "recommendedCourses": "Cours recommandés"
+    },
+    "courses": {
+      "purchasedCourses": "Cours achetés",
+      "recentVideos": "Vidéos récentes",
+      "continueLearning": "Continuer l'apprentissage",
+      "completed": "Terminé",
+      "inProgress": "En cours"
+    },
+    "history": {
+      "purchaseHistory": "Historique d'achat",
+      "orderNumber": "Numéro de commande",
+      "purchaseDate": "Date d'achat",
+      "amount": "Montant",
+      "status": "Statut",
+      "viewDetails": "Voir les détails"
+    },
+    "settings": {
+      "accountSettings": "Paramètres du compte",
+      "personalInfo": "Informations personnelles",
+      "changePassword": "Changer le mot de passe",
+      "notificationSettings": "Paramètres de notification",
+      "privacySettings": "Paramètres de confidentialité"
+    }
+  },
+  "userStatusCard": {
+    "loading": "Chargement...",
+    "error": "Impossible de charger les informations utilisateur",
+    "userAvatar": "Avatar utilisateur",
+    "noNameSet": "Aucun nom défini",
+    "expiryTime": "Heure d'expiration",
+    "willCancelAfterExpiry": "Sera annulé après expiration",
+    "learningStats": "Statistiques d'apprentissage",
+    "learningCourses": "Cours d'apprentissage",
+    "purchasedCourses": "Cours achetés",
+    "learningTime": "Temps d'apprentissage",
+    "averageProgress": "Progrès moyen",
+    "subscriptionManagement": "Gestion des abonnements",
+    "currentPlan": "Plan actuel",
+    "monthlySubscription": "Abonnement mensuel",
+    "yearlySubscription": "Abonnement annuel",
+    "freeTrial": "Essai gratuit",
+    "processing": "Traitement...",
+    "cancelSubscription": "Annuler l'abonnement",
+    "confirmCancel": "Êtes-vous sûr de vouloir annuler votre abonnement ? L'abonnement expirera à la fin de la période de facturation actuelle.",
+    "cancelSuccess": "Abonnement annulé avec succès",
+    "cancelError": "Échec de l'annulation de l'abonnement",
+    "userStatus": {
+      "trial": "Membre d'essai gratuit",
+      "subscribed": "Membre abonné",
+      "free": "Utilisateur régulier"
+    }
+  },
+  "courseDetail": {
+    "loading": "Chargement...",
+    "loadingCourse": "Chargement des informations du cours, veuillez patienter",
+    "courseNotFound": "Cours non trouvé",
+    "courseNotFoundDesc": "Désolé, nous ne pouvons pas trouver le cours demandé. Veuillez vérifier si le lien du cours est correct.",
+    "backToCourses": "Retour à la liste des cours",
+    "breadcrumb": {
+      "home": "Accueil",
+      "courses": "Cours"
+    },
+    "tabs": {
+      "overview": "Aperçu",
+      "curriculum": "Programme",
+      "instructor": "Instructeur",
+      "reviews": "Avis",
+      "discussions": "Discussions"
+    },
+    "stats": {
+      "reviews": "avis",
+      "students": "étudiants",
+      "lastUpdated": "Dernière mise à jour",
+      "hours": "heures de durée totale",
+      "lessons": "leçons"
+    },
+    "purchase": {
+      "lifetimeAccess": "Accès à vie",
+      "validity": "Valide 1 an",
+      "certificate": "Certificat",
+      "subscriptionMember": "Membre abonné - Accès illimité",
+      "purchased": "Acheté - Valide 1 an",
+      "trialPeriod": "Période d'essai - 3 jours gratuits",
+      "validUntil": "Valide jusqu'au",
+      "courseIncludes": "Ce cours comprend",
+      "videoLessons": "Leçons vidéo",
+      "mobileAccess": "Accès mobile et ordinateur",
+      "whatsappAccess": "Accès WhatsApp à l'instructeur après achat",
+      "checkingAccess": "Vérification des autorisations du cours...",
+      "continueLearning": "Continuer l'apprentissage du cours",
+      "shareCourse": "Partager avec des amis",
+      "loginToExperience": "Se connecter pour découvrir",
+      "subscriptionCancelable": "L'abonnement peut être annulé à tout moment"
+    },
+    "payment": {
+      "trialSuccess": "🎉 Félicitations ! Vous avez activé avec succès un essai gratuit de 3 jours et pouvez maintenant commencer à apprendre le cours !",
+      "purchaseSuccess": "🎉 Félicitations ! Vous avez acheté avec succès ce cours avec des droits de lecture illimités pendant 1 an !",
+      "subscriptionSuccess": "🎉 Félicitations ! Vous vous êtes abonné avec succès et pouvez maintenant commencer à apprendre le cours !",
+      "paymentCanceled": "Le paiement a été annulé. Vous pouvez réessayer de vous abonner plus tard."
+    },
+    "overview": {
+      "whatYouWillLearn": "Ce que vous apprendrez",
+      "courseDescription": "Description du cours",
+      "suitableFor": "Adapté pour",
+      "requirements": "Exigences",
+      "noExperienceRequired": "Aucune expérience en arts martiaux requise",
+      "comfortableClothes": "Vêtements d'entraînement confortables",
+      "martialArtsUniform": "Uniforme d'arts martiaux recommandé (non obligatoire)",
+      "practiceSpace": "Espace d'entraînement",
+      "courseSummary": "Résumé du cours",
+      "level": "Niveau",
+      "duration": "Durée",
+      "totalVideoDuration": "Durée totale des vidéos",
+      "lessonCount": "Nombre de leçons",
+      "lastUpdated": "Dernière mise à jour",
+      "language": "Langue",
+      "chinese": "Chinois",
+      "suggestedWeeks": "Suggéré {weeks} semaines",
+      "yourInstructor": "Votre instructeur",
+      "viewFullProfile": "Voir le profil complet"
+    },
+    "curriculum": {
+      "chapter": "Chapitre {number}",
+      "lessons": "leçons",
+      "minutes": "minutes",
+      "playing": "En cours de lecture"
+    },
+    "instructor": {
+      "aboutInstructor": "À propos de {name}",
+      "contactInstructor": "Contacter l'instructeur",
+      "contactDesc": "Les étudiants qui achètent ce cours auront un accès WhatsApp direct à l'instructeur pour un guidage personnalisé.",
+      "youWillGet": "Vous obtiendrez",
+      "personalizedFeedback": "Retour technique personnalisé",
+      "answerQuestions": "Répondre à vos questions spécifiques",
+      "progressGuidance": "Guidance du progrès d'entraînement",
+      "purchaseToContact": "Acheter le cours pour contacter l'instructeur",
+      "loginToExperience": "Se connecter pour découvrir"
+    },
+    "reviews": {
+      "studentReviews": "Avis des étudiants",
+      "reviewsCount": "{count} avis",
+      "averageRating": "sur 5",
+      "writeReview": "Écrire un avis",
+      "shareExperience": "Partagez votre expérience avec ce cours pour aider d'autres étudiants à prendre une décision.",
+      "alreadyReviewed": "Vous avez déjà évalué ce cours",
+      "noReviews": "Pas encore d'avis",
+      "loadMore": "Charger plus d'avis",
+      "loginToView": "Se connecter pour voir les avis détaillés",
+      "loginNow": "Se connecter maintenant",
+      "rating": "Note",
+      "reviewContent": "Contenu de l'avis",
+      "reviewPlaceholder": "Partagez votre expérience avec ce cours pour aider d'autres étudiants à prendre une décision...",
+      "submitReview": "Soumettre l'avis",
+      "submitting": "Soumission en cours...",
+      "star": "étoile"
+    },
+    "discussions": {
+      "courseDiscussions": "Discussions du cours",
+      "discussWithOthers": "Communiquer avec d'autres étudiants et instructeurs",
+      "startNewDiscussion": "Commencer une nouvelle discussion",
+      "postQuestion": "Publier une question ou un commentaire",
+      "noDiscussions": "Pas encore de discussions",
+      "loginToParticipate": "Se connecter pour participer aux discussions",
+      "loginNow": "Se connecter maintenant",
+      "reply": "Répondre",
+      "like": "J'aime",
+      "liking": "En cours de traitement, veuillez ne pas cliquer plusieurs fois",
+      "instructor": "Instructeur",
+      "postNewDiscussion": "Publier une nouvelle discussion",
+      "yourQuestion": "Votre question ou idée",
+      "discussionPlaceholder": "Partagez vos questions ou idées, communiquez avec d'autres étudiants et instructeurs...",
+      "postDiscussion": "Publier la discussion",
+      "posting": "Publication en cours...",
+      "replyToDiscussion": "Répondre à la discussion",
+      "yourReply": "Votre réponse",
+      "replyPlaceholder": "Entrez le contenu de votre réponse...",
+      "postReply": "Publier la réponse",
+      "postingReply": "Publication en cours..."
+    },
+    "relatedCourses": {
+      "title": "Vous pourriez aussi aimer",
+      "subtitle": "Découvrez plus de cours d'arts martiaux pour améliorer vos compétences et vos connaissances",
+      "category": {
+        "weapons": "Armes",
+        "combat": "Combat",
+        "fist": "Techniques de poing"
+      }
+    },
+    "tags": {
+      "kungfu": "Kung Fu",
+      "martialArts": "Arts martiaux",
+      "selfDefense": "Autodéfense",
+      "fitness": "Fitness"
+    }
+  }
+}

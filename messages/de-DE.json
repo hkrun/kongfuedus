@@ -1,0 +1,418 @@
+{
+  "common": {
+    "login": "Anmelden",
+    "logout": "Abmelden",
+    "register": "Registrieren",
+    "my": "Mein",
+    "courses": "Kurse",
+    "home": "Startseite",
+    "dashboard": "Dashboard",
+    "profile": "Profil",
+    "settings": "Einstellungen",
+    "save": "Speichern",
+    "cancel": "Abbrechen",
+    "confirm": "Bestätigen",
+    "delete": "Löschen",
+    "edit": "Bearbeiten",
+    "view": "Anzeigen",
+    "search": "Suchen",
+    "loading": "Laden...",
+    "error": "Fehler",
+    "success": "Erfolg",
+    "warning": "Warnung",
+    "info": "Info"
+  },
+  "header": {
+    "userAvatar": "Benutzer-Avatar",
+    "myPage": "Meine Seite",
+    "signOut": "Abmelden",
+    "language": "Sprache"
+  },
+  "auth": {
+    "login": "Anmelden",
+    "register": "Registrieren",
+    "forgotPassword": "Passwort vergessen",
+    "resetPassword": "Passwort zurücksetzen",
+    "verifyEmail": "E-Mail verifizieren",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "confirmPassword": "Passwort bestätigen",
+    "name": "Name",
+    "loginSuccess": "Anmeldung erfolgreich",
+    "registerSuccess": "Registrierung erfolgreich",
+    "loginError": "Anmeldung fehlgeschlagen",
+    "registerError": "Registrierung fehlgeschlagen"
+  },
+  "course": {
+    "title": "Kurstitel",
+    "description": "Kursbeschreibung",
+    "instructor": "Dozent",
+    "duration": "Dauer",
+    "level": "Niveau",
+    "price": "Preis",
+    "free": "Kostenlos",
+    "purchase": "Kaufen",
+    "purchased": "Gekauft",
+    "startLearning": "Lernen beginnen",
+    "continueLearning": "Lernen fortsetzen",
+    "completed": "Abgeschlossen",
+    "progress": "Fortschritt",
+    "reviews": "Bewertungen",
+    "discussions": "Diskussionen"
+  },
+  "courses": {
+    "pageTitle": "Kampfkunst-Kurse",
+    "pageDescription": "Entdecken Sie unsere umfassende Sammlung von Kampfkunst-Kursen, organisiert nach Disziplinen. Ob Sie Anfänger oder fortgeschrittener Praktiker sind, finden Sie den perfekten Kurs zur Verbesserung Ihrer Fähigkeiten.",
+    "allCourses": "Alle Kurse",
+    "categories": {
+      "striking": "Schlagtechniken",
+      "taiji": "Tai Chi",
+      "weapons": "Waffen",
+      "selfDefense": "Selbstverteidigung",
+      "health": "Gesundheit & Wellness"
+    },
+    "viewCourse": "Kurs anzeigen",
+    "enrollNow": "Jetzt einschreiben",
+    "freeTrial": "Kostenlose Testversion",
+    "rating": "Bewertung",
+    "students": "Schüler",
+    "hours": "Stunden",
+    "level": {
+      "beginner": "Anfänger",
+      "intermediate": "Mittelstufe",
+      "advanced": "Fortgeschritten"
+    }
+  },
+  "payment": {
+    "purchase": "Kaufen",
+    "price": "Preis",
+    "total": "Gesamt",
+    "paymentMethod": "Zahlungsmethode",
+    "cardNumber": "Kartennummer",
+    "expiryDate": "Ablaufdatum",
+    "cvv": "CVV",
+    "payNow": "Jetzt bezahlen",
+    "paymentSuccess": "Zahlung erfolgreich",
+    "paymentFailed": "Zahlung fehlgeschlagen"
+  },
+  "subscription": {
+    "monthly": "Monatliches Abonnement",
+    "yearly": "Jährliches Abonnement",
+    "cancel": "Abonnement kündigen",
+    "active": "Aktiv",
+    "expired": "Abgelaufen",
+    "renewal": "Verlängerung"
+  },
+  "language": {
+    "chinese": "中文",
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "japanese": "日本語",
+    "korean": "한국어",
+    "arabic": "العربية"
+  },
+  "home": {
+    "hero": {
+      "title": "Kong Fu Meister<br />Nach Ihrem Zeitplan",
+      "subtitle": "Lernen Sie jederzeit und überall von Weltklasse-Trainern. Schließen Sie sich Tausenden von Kampfkünstlern an, die ihr Handwerk durch unsere von Experten geleiteten Videokurse meistern.",
+      "exploreCourses": "Kurse erkunden"
+    },
+    "features": {
+      "title": "Warum uns wählen",
+      "subtitle": "Wir bieten die umfassendste Online-Kampfkunst-Lernerfahrung",
+      "expertInstructors": "Experten-Trainer",
+      "expertInstructorsDesc": "Lernen Sie von erfahrenen Kampfkunst-Meistern",
+      "flexibleLearning": "Flexibles Lernen",
+      "flexibleLearningDesc": "Lernen Sie in Ihrem eigenen Tempo, jederzeit und überall",
+      "highQuality": "Hochwertige Inhalte",
+      "highQualityDesc": "Professionell produzierte HD-Videokurse"
+    },
+    "courses": {
+      "title": "Beliebte Kurse",
+      "subtitle": "Entdecken Sie unsere beliebtesten Kampfkunst-Kurse",
+      "viewAll": "Alle anzeigen",
+      "mostPopular": "Am beliebtesten",
+      "viewCourse": "Kurs anzeigen",
+      "loadingCourses": "Beliebte Kurse werden geladen..."
+    },
+    "membership": {
+      "title": "Unbegrenztes Lernen freischalten",
+      "subtitle": "Wählen Sie unsere monatliche Mitgliedschaft für unbegrenzten Zugang zu allen Kursen",
+      "monthlyMembership": "Monatliche Mitgliedschaft",
+      "price": "$39.99",
+      "perMonth": "/Monat",
+      "features": {
+        "unlimitedAccess": "Unbegrenzter Zugang zu allen 100+ Kursen",
+        "downloadVideos": "Videos zum Offline-Ansehen herunterladen",
+        "whatsappAccess": "Direkter WhatsApp-Zugang zu Trainern",
+        "liveQA": "An Live-Q&A-Sitzungen teilnehmen",
+        "exclusiveContent": "Exklusive Mitglieder-Inhalte"
+      },
+      "freeTrial": "Starten Sie Ihre 3-tägige kostenlose Testversion"
+    },
+    "testimonials": {
+      "title": "Schüler-Bewertungen",
+      "subtitle": "Hören Sie, was unsere Schüler zu sagen haben",
+      "mainTitle": "Was unsere Schüler sagen",
+      "mainSubtitle": "Hören Sie von Kampfkünstlern, die ihre Fähigkeiten mit unserer Plattform transformiert haben",
+      "sarah": {
+        "name": "Sarah J.",
+        "comment": "Die monatliche Mitgliedschaft ist jeden Cent wert! Ich habe viel mehr gelernt, als ich erwartet hatte."
+      },
+      "michael": {
+        "name": "Michael T.",
+        "title": "Reise-Blogger & Karate-Schüler",
+        "comment": "Als Reise-Blogger liebe ich es, Kampfkünste aus verschiedenen Kulturen zu lernen. Diese Plattform lässt mich trainieren, wann immer ich Freizeit habe, egal wo auf der Welt ich bin."
+      },
+      "sophia": {
+        "name": "Sophia L.",
+        "title": "Fitness-Trainer & Taekwondo-Schülerin",
+        "comment": "Die Möglichkeit, Trainer direkt über WhatsApp zu kontaktieren, war unschätzbar. Personalisiertes Feedback zu meiner Technik hat meinen Fortschritt dramatisch beschleunigt."
+      },
+      "david": {
+        "name": "David R.",
+        "title": "BJJ-Praktizierender",
+        "comment": "Ich habe vor einem Jahr den brasilianischen Jiu-Jitsu-Kurs gekauft und beziehe mich noch regelmäßig darauf. Die Videoqualität ist ausgezeichnet, und ich kann Techniken überprüfen, wann immer ich eine Auffrischung brauche."
+      }
+    },
+    "cta": {
+      "title": "Beginnen Sie heute Ihre Kampfkunst-Reise",
+      "subtitle": "Schließen Sie sich Tausenden von Kampfkünstlern auf der ganzen Welt an, die ihr Handwerk durch unsere von Experten geleiteten Videokurse meistern.",
+      "getStarted": "Jetzt starten",
+      "browseAll": "Alle Kurse durchsuchen"
+    },
+    "footer": {
+      "brandName": "Kong Fu Meister",
+      "brandDescription": "Premium Online-Kampfkunst-Unterricht von Weltklasse-Trainern.",
+      "quickLinks": "Schnelle Links",
+      "support": "Support",
+      "newsletter": "Newsletter",
+      "newsletterDescription": "Abonnieren Sie Updates zu neuen Kursen und Kampfkunst-Tipps.",
+      "allCourses": "Alle Kurse",
+      "instructors": "Trainer",
+      "membership": "Mitgliedschaft",
+      "freeResources": "Kostenlose Ressourcen",
+      "blog": "Blog",
+      "faqs": "Häufig gestellte Fragen",
+      "contactUs": "Kontaktieren Sie uns",
+      "privacyPolicy": "Datenschutzrichtlinie",
+      "termsOfService": "Nutzungsbedingungen",
+      "refundPolicy": "Rückerstattungsrichtlinie",
+      "emailPlaceholder": "Ihre E-Mail-Adresse",
+      "privacyNotice": "Wir respektieren Ihre Privatsphäre. Abbestellen Sie jederzeit.",
+      "copyright": "© 2023~2025 Kong Fu Meister. Alle Rechte vorbehalten."
+    }
+  },
+  "myPage": {
+    "title": "Mein Konto",
+    "subtitle": "Verwalten Sie Ihren Lernfortschritt, Kontoeinstellungen und Kaufhistorie",
+    "loading": "Laden...",
+    "tabs": {
+      "overview": "Übersicht",
+      "courses": "Meine Kurse",
+      "recent": "Kürzlich angesehen",
+      "settings": "Kontoeinstellungen",
+      "history": "Kaufhistorie"
+    },
+    "overview": {
+      "welcome": "Willkommen zurück",
+      "learningProgress": "Lernfortschritt",
+      "recentActivity": "Letzte Aktivitäten",
+      "recommendedCourses": "Empfohlene Kurse"
+    },
+    "courses": {
+      "purchasedCourses": "Gekaufte Kurse",
+      "recentVideos": "Kürzlich angesehen",
+      "continueLearning": "Lernen fortsetzen",
+      "completed": "Abgeschlossen",
+      "inProgress": "In Bearbeitung"
+    },
+    "history": {
+      "purchaseHistory": "Kaufhistorie",
+      "orderNumber": "Bestellnummer",
+      "purchaseDate": "Kaufdatum",
+      "amount": "Betrag",
+      "status": "Status",
+      "viewDetails": "Details anzeigen"
+    },
+    "settings": {
+      "accountSettings": "Kontoeinstellungen",
+      "personalInfo": "Persönliche Informationen",
+      "changePassword": "Passwort ändern",
+      "notificationSettings": "Benachrichtigungseinstellungen",
+      "privacySettings": "Datenschutzeinstellungen"
+    }
+  },
+  "userStatusCard": {
+    "loading": "Laden...",
+    "error": "Benutzerinformationen können nicht geladen werden",
+    "userAvatar": "Benutzer-Avatar",
+    "noNameSet": "Kein Name festgelegt",
+    "expiryTime": "Ablaufzeit",
+    "willCancelAfterExpiry": "Wird nach Ablauf gekündigt",
+    "learningStats": "Lernstatistiken",
+    "learningCourses": "Lernkurse",
+    "purchasedCourses": "Gekaufte Kurse",
+    "learningTime": "Lernzeit",
+    "averageProgress": "Durchschnittlicher Fortschritt",
+    "subscriptionManagement": "Abonnement-Verwaltung",
+    "currentPlan": "Aktueller Plan",
+    "monthlySubscription": "Monatliches Abonnement",
+    "yearlySubscription": "Jährliches Abonnement",
+    "freeTrial": "Kostenlose Testversion",
+    "processing": "Verarbeitung...",
+    "cancelSubscription": "Abonnement kündigen",
+    "confirmCancel": "Sind Sie sicher, dass Sie Ihr Abonnement kündigen möchten? Das Abonnement läuft am Ende des aktuellen Abrechnungszeitraums ab.",
+    "cancelSuccess": "Abonnement erfolgreich gekündigt",
+    "cancelError": "Abonnement-Kündigung fehlgeschlagen",
+    "userStatus": {
+      "trial": "Kostenlose Testversion-Mitglied",
+      "subscribed": "Abonnement-Mitglied",
+      "free": "Normaler Benutzer"
+    }
+  },
+  "courseDetail": {
+    "loading": "Laden...",
+    "loadingCourse": "Kursinformationen werden geladen, bitte warten",
+    "courseNotFound": "Kurs nicht gefunden",
+    "courseNotFoundDesc": "Entschuldigung, wir können den angeforderten Kurs nicht finden. Bitte überprüfen Sie, ob der Kurslink korrekt ist.",
+    "backToCourses": "Zurück zur Kursliste",
+    "breadcrumb": {
+      "home": "Startseite",
+      "courses": "Kurse"
+    },
+    "tabs": {
+      "overview": "Übersicht",
+      "curriculum": "Lehrplan",
+      "instructor": "Lehrer",
+      "reviews": "Bewertungen",
+      "discussions": "Diskussionen"
+    },
+    "stats": {
+      "reviews": "Bewertungen",
+      "students": "Schüler",
+      "lastUpdated": "Zuletzt aktualisiert",
+      "hours": "Stunden Gesamtdauer",
+      "lessons": "Lektionen"
+    },
+    "purchase": {
+      "lifetimeAccess": "Lebenslanger Zugang",
+      "validity": "1 Jahr gültig",
+      "certificate": "Zertifikat",
+      "subscriptionMember": "Abonnement-Mitglied - Unbegrenzter Zugang",
+      "purchased": "Gekauft - 1 Jahr gültig",
+      "trialPeriod": "Testzeitraum - 3 Tage kostenlos",
+      "validUntil": "Gültig bis",
+      "courseIncludes": "Dieser Kurs beinhaltet",
+      "videoLessons": "Video-Lektionen",
+      "mobileAccess": "Mobil- und Computerzugang",
+      "whatsappAccess": "WhatsApp-Zugang zum Lehrer nach dem Kauf",
+      "checkingAccess": "Kursberechtigungen werden überprüft...",
+      "continueLearning": "Kurslernen fortsetzen",
+      "shareCourse": "Mit Freunden teilen",
+      "loginToExperience": "Anmelden zum Erleben",
+      "subscriptionCancelable": "Abonnement kann jederzeit gekündigt werden"
+    },
+    "payment": {
+      "trialSuccess": "🎉 Herzlichen Glückwunsch! Sie haben erfolgreich eine 3-tägige kostenlose Testversion aktiviert und können jetzt mit dem Kurslernen beginnen!",
+      "purchaseSuccess": "🎉 Herzlichen Glückwunsch! Sie haben diesen Kurs erfolgreich gekauft und haben 1 Jahr lang unbegrenzte Wiedergaberechte!",
+      "subscriptionSuccess": "🎉 Herzlichen Glückwunsch! Sie haben erfolgreich abonniert und können jetzt mit dem Kurslernen beginnen!",
+      "paymentCanceled": "Zahlung wurde storniert. Sie können später erneut abonnieren."
+    },
+    "overview": {
+      "whatYouWillLearn": "Was Sie lernen werden",
+      "courseDescription": "Kursbeschreibung",
+      "suitableFor": "Geeignet für",
+      "requirements": "Anforderungen",
+      "noExperienceRequired": "Keine Kampfkunsterfahrung erforderlich",
+      "comfortableClothes": "Bequeme Trainingskleidung",
+      "martialArtsUniform": "Kampfkunstuniform empfohlen (nicht zwingend)",
+      "practiceSpace": "Übungsraum",
+      "courseSummary": "Kurszusammenfassung",
+      "level": "Level",
+      "duration": "Dauer",
+      "totalVideoDuration": "Gesamte Videodauer",
+      "lessonCount": "Anzahl Lektionen",
+      "lastUpdated": "Zuletzt aktualisiert",
+      "language": "Sprache",
+      "chinese": "Chinesisch",
+      "suggestedWeeks": "Empfohlene {weeks} Wochen",
+      "yourInstructor": "Ihr Lehrer",
+      "viewFullProfile": "Vollständiges Profil anzeigen"
+    },
+    "curriculum": {
+      "chapter": "Kapitel {number}",
+      "lessons": "Lektionen",
+      "minutes": "Minuten",
+      "playing": "Wird abgespielt"
+    },
+    "instructor": {
+      "aboutInstructor": "Über {name}",
+      "contactInstructor": "Lehrer kontaktieren",
+      "contactDesc": "Schüler, die diesen Kurs kaufen, erhalten direkten WhatsApp-Zugang zum Lehrer für personalisierte Anleitung.",
+      "youWillGet": "Sie erhalten",
+      "personalizedFeedback": "Personalisierte technische Rückmeldung",
+      "answerQuestions": "Beantwortung Ihrer spezifischen Fragen",
+      "progressGuidance": "Trainingsfortschritt-Anleitung",
+      "purchaseToContact": "Kurs kaufen, um Lehrer zu kontaktieren",
+      "loginToExperience": "Anmelden zum Erleben"
+    },
+    "reviews": {
+      "studentReviews": "Schülerbewertungen",
+      "reviewsCount": "{count} Bewertungen",
+      "averageRating": "von 5",
+      "writeReview": "Bewertung schreiben",
+      "shareExperience": "Teilen Sie Ihre Erfahrungen mit diesem Kurs, um anderen Schülern bei der Entscheidung zu helfen.",
+      "alreadyReviewed": "Sie haben diesen Kurs bereits bewertet",
+      "noReviews": "Noch keine Bewertungen",
+      "loadMore": "Mehr Bewertungen laden",
+      "loginToView": "Anmelden, um detaillierte Bewertungen anzuzeigen",
+      "loginNow": "Jetzt anmelden",
+      "rating": "Bewertung",
+      "reviewContent": "Bewertungsinhalt",
+      "reviewPlaceholder": "Teilen Sie Ihre Erfahrungen mit diesem Kurs, um anderen Schülern bei der Entscheidung zu helfen...",
+      "submitReview": "Bewertung einreichen",
+      "submitting": "Wird eingereicht...",
+      "star": "Stern"
+    },
+    "discussions": {
+      "courseDiscussions": "Kursdiskussionen",
+      "discussWithOthers": "Mit anderen Schülern und Lehrern kommunizieren",
+      "startNewDiscussion": "Neue Diskussion starten",
+      "postQuestion": "Frage oder Kommentar posten",
+      "noDiscussions": "Noch keine Diskussionen",
+      "loginToParticipate": "Anmelden, um an Diskussionen teilzunehmen",
+      "loginNow": "Jetzt anmelden",
+      "reply": "Antworten",
+      "like": "Gefällt mir",
+      "liking": "Gefällt mir wird verarbeitet, bitte nicht wiederholt klicken",
+      "instructor": "Lehrer",
+      "postNewDiscussion": "Neue Diskussion posten",
+      "yourQuestion": "Ihre Frage oder Idee",
+      "discussionPlaceholder": "Teilen Sie Ihre Fragen oder Ideen, kommunizieren Sie mit anderen Schülern und Lehrern...",
+      "postDiscussion": "Diskussion posten",
+      "posting": "Wird gepostet...",
+      "replyToDiscussion": "Auf Diskussion antworten",
+      "yourReply": "Ihre Antwort",
+      "replyPlaceholder": "Geben Sie Ihren Antwortinhalt ein...",
+      "postReply": "Antwort posten",
+      "postingReply": "Wird gepostet..."
+    },
+    "relatedCourses": {
+      "title": "Das könnte Ihnen auch gefallen",
+      "subtitle": "Entdecken Sie mehr Kampfkunstkurse, um Ihre Fähigkeiten und Ihr Wissen zu verbessern",
+      "category": {
+        "weapons": "Waffen",
+        "combat": "Kampf",
+        "fist": "Fausttechniken"
+      }
+    },
+    "tags": {
+      "kungfu": "Kung Fu",
+      "martialArts": "Kampfkunst",
+      "selfDefense": "Selbstverteidigung",
+      "fitness": "Fitness"
+    }
+  }
+}

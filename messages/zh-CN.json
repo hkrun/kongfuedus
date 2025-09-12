@@ -1,0 +1,418 @@
+{
+  "common": {
+    "login": "登录",
+    "logout": "退出",
+    "register": "注册",
+    "my": "我的",
+    "courses": "课程",
+    "home": "首页",
+    "dashboard": "仪表板",
+    "profile": "个人资料",
+    "settings": "设置",
+    "save": "保存",
+    "cancel": "取消",
+    "confirm": "确认",
+    "delete": "删除",
+    "edit": "编辑",
+    "view": "查看",
+    "search": "搜索",
+    "loading": "加载中...",
+    "error": "错误",
+    "success": "成功",
+    "warning": "警告",
+    "info": "信息"
+  },
+  "header": {
+    "userAvatar": "用户头像",
+    "myPage": "我的",
+    "signOut": "退出",
+    "language": "语言"
+  },
+  "auth": {
+    "login": "登录",
+    "register": "注册",
+    "forgotPassword": "忘记密码",
+    "resetPassword": "重置密码",
+    "verifyEmail": "验证邮箱",
+    "email": "邮箱",
+    "password": "密码",
+    "confirmPassword": "确认密码",
+    "name": "姓名",
+    "loginSuccess": "登录成功",
+    "registerSuccess": "注册成功",
+    "loginError": "登录失败",
+    "registerError": "注册失败"
+  },
+  "course": {
+    "title": "课程标题",
+    "description": "课程描述",
+    "instructor": "讲师",
+    "duration": "时长",
+    "level": "难度",
+    "price": "价格",
+    "free": "免费",
+    "purchase": "购买",
+    "purchased": "已购买",
+    "startLearning": "开始学习",
+    "continueLearning": "继续学习",
+    "completed": "已完成",
+    "progress": "进度",
+    "reviews": "评价",
+    "discussions": "讨论"
+  },
+  "courses": {
+    "pageTitle": "武术课程",
+    "pageDescription": "探索我们全面的武术课程集合，按学科分类。无论您是初学者还是高级练习者，都能找到提升技能的完美课程。",
+    "allCourses": "所有课程",
+    "categories": {
+      "striking": "拳术类",
+      "taiji": "太极类",
+      "weapons": "器械类",
+      "selfDefense": "自卫类",
+      "health": "养生类"
+    },
+    "viewCourse": "查看课程",
+    "enrollNow": "立即报名",
+    "freeTrial": "免费试学",
+    "rating": "评分",
+    "students": "学员",
+    "hours": "小时",
+    "level": {
+      "beginner": "初级",
+      "intermediate": "中级",
+      "advanced": "高级"
+    }
+  },
+  "courseDetail": {
+    "loading": "加载中...",
+    "loadingCourse": "正在加载课程信息，请稍候",
+    "courseNotFound": "课程未找到",
+    "courseNotFoundDesc": "抱歉，我们无法找到您请求的课程。请检查课程链接是否正确。",
+    "backToCourses": "返回课程列表",
+    "breadcrumb": {
+      "home": "首页",
+      "courses": "课程"
+    },
+    "tabs": {
+      "overview": "概览",
+      "curriculum": "课程大纲",
+      "instructor": "讲师",
+      "reviews": "评价",
+      "discussions": "讨论"
+    },
+    "stats": {
+      "reviews": "条评价",
+      "students": "学员",
+      "lastUpdated": "最后更新",
+      "hours": "小时总时长",
+      "lessons": "节课"
+    },
+    "purchase": {
+      "lifetimeAccess": "终身访问",
+      "validity": "1年有效期",
+      "certificate": "结业证书",
+      "subscriptionMember": "订阅会员 - 无限访问",
+      "purchased": "已购买 - 1年有效期",
+      "trialPeriod": "试用期 - 3天免费",
+      "validUntil": "有效期至",
+      "courseIncludes": "本课程包含",
+      "videoLessons": "视频课程",
+      "mobileAccess": "手机和电脑访问",
+      "whatsappAccess": "购买后获得讲师WhatsApp访问权限",
+      "checkingAccess": "正在检查课程权限...",
+      "continueLearning": "继续学习课程",
+      "shareCourse": "分享给朋友",
+      "loginToExperience": "登录后体验",
+      "subscriptionCancelable": "订阅后可随时取消"
+    },
+    "payment": {
+      "trialSuccess": "🎉 恭喜！您已成功激活3天免费试用，现在可以开始学习课程了！",
+      "purchaseSuccess": "🎉 恭喜！您已成功购买此课程，拥有1年内无限次播放权限！",
+      "subscriptionSuccess": "🎉 恭喜！您已成功订阅，现在可以开始学习课程了！",
+      "paymentCanceled": "支付已取消。您可以稍后重新尝试订阅。"
+    },
+    "overview": {
+      "whatYouWillLearn": "你将学到什么",
+      "courseDescription": "课程描述",
+      "suitableFor": "适合人群",
+      "requirements": "学习要求",
+      "noExperienceRequired": "无需武术经验",
+      "comfortableClothes": "舒适的运动服装",
+      "martialArtsUniform": "武术服推荐但不强制",
+      "practiceSpace": "练习空间",
+      "courseSummary": "课程摘要",
+      "level": "级别",
+      "duration": "时长",
+      "totalVideoDuration": "总视频时长",
+      "lessonCount": "课时数",
+      "lastUpdated": "最后更新",
+      "language": "语言",
+      "chinese": "中文",
+      "suggestedWeeks": "建议 {weeks} 周",
+      "yourInstructor": "你的讲师",
+      "viewFullProfile": "查看完整资料"
+    },
+    "curriculum": {
+      "chapter": "第{number}章",
+      "lessons": "节课",
+      "minutes": "分钟",
+      "playing": "播放中"
+    },
+    "instructor": {
+      "aboutInstructor": "关于 {name}",
+      "contactInstructor": "联系讲师",
+      "contactDesc": "购买此课程的学生将获得讲师的WhatsApp直接访问权限，获得个性化指导。",
+      "youWillGet": "你将获得",
+      "personalizedFeedback": "技术个性化反馈",
+      "answerQuestions": "回答你的具体问题",
+      "progressGuidance": "训练进度指导",
+      "purchaseToContact": "购买课程联系讲师",
+      "loginToExperience": "登录后体验"
+    },
+    "reviews": {
+      "studentReviews": "学员评价",
+      "reviewsCount": "{count} 条评价",
+      "averageRating": "满分5分",
+      "writeReview": "写评价",
+      "shareExperience": "分享您对这门课程的体验，帮助其他学员做出决定。",
+      "alreadyReviewed": "您已经评价过这门课程了",
+      "noReviews": "暂无评价",
+      "loadMore": "加载更多评价",
+      "loginToView": "登录后查看详细评价",
+      "loginNow": "立即登录",
+      "rating": "评分",
+      "reviewContent": "评价内容",
+      "reviewPlaceholder": "分享您对这门课程的体验，帮助其他学员做出决定...",
+      "submitReview": "提交评价",
+      "submitting": "提交中...",
+      "star": "星"
+    },
+    "discussions": {
+      "courseDiscussions": "课程讨论",
+      "discussWithOthers": "与其他学员和讲师进行交流",
+      "startNewDiscussion": "开始新讨论",
+      "postQuestion": "发布问题或评论",
+      "noDiscussions": "暂无讨论",
+      "loginToParticipate": "登录后参与讨论",
+      "loginNow": "立即登录",
+      "reply": "回复",
+      "like": "赞",
+      "liking": "正在点赞中，请勿重复点击",
+      "instructor": "讲师",
+      "postNewDiscussion": "发布新讨论",
+      "yourQuestion": "您的问题或想法",
+      "discussionPlaceholder": "分享您的问题或想法，与其他学员和讲师进行交流...",
+      "postDiscussion": "发布讨论",
+      "posting": "发布中...",
+      "replyToDiscussion": "回复讨论",
+      "yourReply": "您的回复",
+      "replyPlaceholder": "输入您的回复内容...",
+      "postReply": "发布回复",
+      "postingReply": "发布中..."
+    },
+    "relatedCourses": {
+      "title": "您可能还喜欢",
+      "subtitle": "发现更多武术课程来提升您的技能和知识",
+      "category": {
+        "weapons": "器械类",
+        "combat": "实战类",
+        "fist": "拳术类"
+      }
+    },
+    "tags": {
+      "kungfu": "功夫",
+      "martialArts": "武术",
+      "selfDefense": "自卫",
+      "fitness": "健身"
+    }
+  },
+  "myPage": {
+    "title": "我的账户",
+    "subtitle": "管理您的学习进度、账户设置和购买记录",
+    "loading": "加载中...",
+    "tabs": {
+      "overview": "概览",
+      "courses": "我的课程",
+      "recent": "最近观看",
+      "settings": "账户设置",
+      "history": "购买记录"
+    },
+    "overview": {
+      "welcome": "欢迎回来",
+      "learningProgress": "学习进度",
+      "recentActivity": "最近活动",
+      "recommendedCourses": "推荐课程"
+    },
+    "courses": {
+      "purchasedCourses": "已购买课程",
+      "recentVideos": "最近观看",
+      "continueLearning": "继续学习",
+      "completed": "已完成",
+      "inProgress": "进行中"
+    },
+    "history": {
+      "purchaseHistory": "购买记录",
+      "orderNumber": "订单号",
+      "purchaseDate": "购买日期",
+      "amount": "金额",
+      "status": "状态",
+      "viewDetails": "查看详情"
+    },
+    "settings": {
+      "accountSettings": "账户设置",
+      "personalInfo": "个人信息",
+      "changePassword": "修改密码",
+      "notificationSettings": "通知设置",
+      "privacySettings": "隐私设置"
+    }
+  },
+  "userStatusCard": {
+    "loading": "加载中...",
+    "error": "无法加载用户信息",
+    "userAvatar": "用户头像",
+    "noNameSet": "未设置姓名",
+    "expiryTime": "到期时间",
+    "willCancelAfterExpiry": "将在到期后取消",
+    "learningStats": "学习统计",
+    "learningCourses": "学习课程",
+    "purchasedCourses": "购买课程",
+    "learningTime": "学习时长",
+    "averageProgress": "平均进度",
+    "subscriptionManagement": "订阅管理",
+    "currentPlan": "当前计划",
+    "monthlySubscription": "月度订阅",
+    "yearlySubscription": "年度订阅",
+    "freeTrial": "免费试用",
+    "processing": "处理中...",
+    "cancelSubscription": "取消订阅",
+    "confirmCancel": "确定要取消订阅吗？订阅将在当前计费周期结束后失效。",
+    "cancelSuccess": "订阅已成功取消",
+    "cancelError": "取消订阅失败",
+    "userStatus": {
+      "trial": "免费体验会员",
+      "subscribed": "订阅会员",
+      "free": "普通用户"
+    }
+  },
+  "payment": {
+    "purchase": "购买",
+    "price": "价格",
+    "total": "总计",
+    "paymentMethod": "支付方式",
+    "cardNumber": "卡号",
+    "expiryDate": "有效期",
+    "cvv": "CVV",
+    "payNow": "立即支付",
+    "paymentSuccess": "支付成功",
+    "paymentFailed": "支付失败"
+  },
+  "subscription": {
+    "monthly": "月度订阅",
+    "yearly": "年度订阅",
+    "cancel": "取消订阅",
+    "active": "活跃",
+    "expired": "已过期",
+    "renewal": "续费"
+  },
+  "language": {
+    "chinese": "中文",
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "japanese": "日本語",
+    "korean": "한국어",
+    "arabic": "العربية"
+  },
+  "home": {
+    "hero": {
+      "title": "功夫大师<br />按您的日程安排",
+      "subtitle": "随时随地跟随世界级教练学习。加入数千名武术家，通过我们专家指导的视频课程掌握技艺。",
+      "exploreCourses": "探索课程"
+    },
+    "features": {
+      "title": "为什么选择我们",
+      "subtitle": "我们提供最全面的在线武术学习体验",
+      "expertInstructors": "专家教练",
+      "expertInstructorsDesc": "向经验丰富的武术大师学习",
+      "flexibleLearning": "灵活学习",
+      "flexibleLearningDesc": "随时随地按自己的节奏学习",
+      "highQuality": "高质量内容",
+      "highQualityDesc": "专业制作的高清视频课程"
+    },
+    "courses": {
+      "title": "热门课程",
+      "subtitle": "探索我们最受欢迎的武术课程",
+      "viewAll": "查看全部",
+      "mostPopular": "最受欢迎",
+      "viewCourse": "查看课程",
+      "loadingCourses": "正在加载热门课程..."
+    },
+    "membership": {
+      "title": "解锁无限学习",
+      "subtitle": "选择我们的月度会员，无限访问所有课程",
+      "monthlyMembership": "月度会员",
+      "price": "$39.99",
+      "perMonth": "/月",
+      "features": {
+        "unlimitedAccess": "无限访问100+课程",
+        "downloadVideos": "下载视频离线观看",
+        "whatsappAccess": "直接WhatsApp联系教练",
+        "liveQA": "参与实时问答环节",
+        "exclusiveContent": "专属会员内容"
+      },
+      "freeTrial": "开始3天免费试用"
+    },
+    "testimonials": {
+      "title": "学员评价",
+      "subtitle": "听听我们的学员怎么说",
+      "mainTitle": "学员怎么说",
+      "mainSubtitle": "听听那些通过我们平台改变技能的武术家们的故事",
+      "sarah": {
+        "name": "Sarah J.",
+        "comment": "月度会员物超所值！我学到的东西比我预期的多得多。"
+      },
+      "michael": {
+        "name": "Michael T.",
+        "title": "旅行博主 & 空手道学员",
+        "comment": "作为一名旅行博主，我喜欢学习不同文化的武术。这个平台让我无论在世界任何地方，只要有空闲时间就能训练。"
+      },
+      "sophia": {
+        "name": "Sophia L.",
+        "title": "健身教练 & 跆拳道学员",
+        "comment": "能够直接通过WhatsApp联系教练非常宝贵。获得对我技术的个性化反馈大大加速了我的进步。"
+      },
+      "david": {
+        "name": "David R.",
+        "title": "巴西柔术练习者",
+        "comment": "我一年前购买了巴西柔术课程，现在仍然经常参考。视频质量非常好，我可以在需要复习技巧时随时回顾。"
+      }
+    },
+    "cta": {
+      "title": "今天开始您的武术之旅",
+      "subtitle": "加入全球数千名武术家，通过我们专家指导的视频课程掌握技艺。",
+      "getStarted": "立即开始",
+      "browseAll": "浏览所有课程"
+    },
+    "footer": {
+      "brandName": "功夫大师",
+      "brandDescription": "来自世界级教练的优质在线武术指导。",
+      "quickLinks": "快速链接",
+      "support": "支持",
+      "newsletter": "新闻通讯",
+      "newsletterDescription": "订阅以获取新课程和武术技巧的更新。",
+      "allCourses": "所有课程",
+      "instructors": "教练",
+      "membership": "会员",
+      "freeResources": "免费资源",
+      "blog": "博客",
+      "faqs": "常见问题",
+      "contactUs": "联系我们",
+      "privacyPolicy": "隐私政策",
+      "termsOfService": "服务条款",
+      "refundPolicy": "退款政策",
+      "emailPlaceholder": "您的邮箱地址",
+      "privacyNotice": "我们尊重您的隐私。随时可以取消订阅。",
+      "copyright": "© 2023~2025 功夫大师。保留所有权利。"
+    }
+  }
+}

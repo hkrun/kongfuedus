@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 字体预加载和优化 */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+/* 确保字体在加载前就有备用方案 */
+.font-montserrat {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-display: swap; /* 优化字体加载策略 */
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0a0a0a;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+.container-page {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-white hover:bg-primary-700 transition-colors;
+}
+
+.btn-muted {
+  @apply inline-flex items-center justify-center rounded-md border border-gray-300 px-4 py-2 text-gray-900 hover:bg-gray-50;
+}
+
+/* 图片走马灯 */
+.marquee {
+  @apply w-full overflow-hidden border-y border-gray-200 bg-white;
+}
+.marquee-track {
+  @apply flex; 
+  animation-name: marquee-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes marquee-scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+/* 播放图标专用样式 - 确保在所有情况下都保持正确大小 */
+.play-icon-large {
+  font-size: 3rem !important;
+  line-height: 1 !important;
+}
+
+.fa-play-circle.play-icon-large {
+  font-size: 3rem !important;
+  line-height: 1 !important;
+}
+
+/* LOGO优化样式 - 确保在所有情况下都保持正确大小 */
+.logo-container {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.logo-icon {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.logo-text {
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 视频播放区域长宽比优化 */
+.video-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+}
+
+.video-container img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 兼容不支持aspect-ratio的浏览器 */
+@supports not (aspect-ratio: 16/9) {
+  .video-container::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%; /* 16:9 比例 (9/16 = 0.5625) */
+  }
+  
+  .video-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* 自定义Video.js播放器样式 */
+.video-player-container {
+  @apply w-full;
+}
+
+.video-js {
+  @apply w-full h-auto;
+  aspect-ratio: 16/9;
+  max-width: 100%;
+}
+
+/* 确保视频播放器响应式 */
+@media (max-width: 768px) {
+  .video-js {
+    aspect-ratio: 16/9;
+  }
+}
+
+.video-js .vjs-big-play-button {
+  @apply bg-orange-500 border-orange-500;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 40px;
+  margin-left: -40px;
+  margin-top: -40px;
+}
+
+.video-js .vjs-big-play-button:hover {
+  @apply bg-orange-600 border-orange-600;
+}
+
+.video-js .vjs-control-bar {
+  @apply bg-black bg-opacity-80;
+}
+
+.video-js .vjs-progress-control .vjs-progress-holder {
+  @apply bg-gray-600;
+}
+
+.video-js .vjs-play-progress {
+  @apply bg-orange-500;
+}
+
+.video-js .vjs-load-progress {
+  @apply bg-gray-400;
+}
+
+.video-js .vjs-time-control {
+  @apply text-white;
+}
+
+.video-js .vjs-subtitles-button {
+  @apply text-white;
+}
+
+.video-js .vjs-subtitles-button:hover {
+  @apply text-orange-400;
+}
+
+/* 课程章节列表样式 */
+.chapter-list {
+  @apply space-y-2;
+}
+
+.chapter-item {
+  @apply transition-all duration-200;
+}
+
+.chapter-item:hover {
+  @apply bg-gray-50;
+}
+
+.lesson-item {
+  @apply transition-all duration-200;
+}
+
+.lesson-item:hover {
+  @apply bg-gray-100;
+}
+
+.lesson-item.active {
+  @apply bg-orange-100 text-orange-700;
+}
+
+/* 响应式设计 */
+@media (max-width: 1024px) {
+  .video-js {
+    aspect-ratio: 16/9;
+  }
+}
+
+@media (max-width: 768px) {
+  .video-js .vjs-big-play-button {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 30px;
+    margin-left: -30px;
+    margin-top: -30px;
+  }
+}
+
+/* 课程大纲播放状态样式 */
+.lesson-playing {
+  @apply bg-orange-50 border-l-4 border-orange-500;
+}
+
+.lesson-playing .fa-play-circle {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.lesson-playing .playing-dot {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+

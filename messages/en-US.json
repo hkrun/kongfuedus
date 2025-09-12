@@ -1,0 +1,418 @@
+{
+  "common": {
+    "login": "Login",
+    "logout": "Logout",
+    "register": "Register",
+    "my": "My",
+    "courses": "Courses",
+    "home": "Home",
+    "dashboard": "Dashboard",
+    "profile": "Profile",
+    "settings": "Settings",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "search": "Search",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "warning": "Warning",
+    "info": "Info"
+  },
+  "header": {
+    "userAvatar": "User Avatar",
+    "myPage": "My Page",
+    "signOut": "Sign Out",
+    "language": "Language"
+  },
+  "auth": {
+    "login": "Login",
+    "register": "Register",
+    "forgotPassword": "Forgot Password",
+    "resetPassword": "Reset Password",
+    "verifyEmail": "Verify Email",
+    "email": "Email",
+    "password": "Password",
+    "confirmPassword": "Confirm Password",
+    "name": "Name",
+    "loginSuccess": "Login successful",
+    "registerSuccess": "Registration successful",
+    "loginError": "Login failed",
+    "registerError": "Registration failed"
+  },
+  "course": {
+    "title": "Course Title",
+    "description": "Course Description",
+    "instructor": "Instructor",
+    "duration": "Duration",
+    "level": "Level",
+    "price": "Price",
+    "free": "Free",
+    "purchase": "Purchase",
+    "purchased": "Purchased",
+    "startLearning": "Start Learning",
+    "continueLearning": "Continue Learning",
+    "completed": "Completed",
+    "progress": "Progress",
+    "reviews": "Reviews",
+    "discussions": "Discussions"
+  },
+  "courses": {
+    "pageTitle": "Martial Arts Courses",
+    "pageDescription": "Explore our comprehensive collection of martial arts courses, organized by discipline. Whether you're a beginner or advanced practitioner, find the perfect course to enhance your skills.",
+    "allCourses": "All Courses",
+    "categories": {
+      "striking": "Striking Arts",
+      "taiji": "Tai Chi",
+      "weapons": "Weapons",
+      "selfDefense": "Self Defense",
+      "health": "Health & Wellness"
+    },
+    "viewCourse": "View Course",
+    "enrollNow": "Enroll Now",
+    "freeTrial": "Free Trial",
+    "rating": "Rating",
+    "students": "Students",
+    "hours": "Hours",
+    "level": {
+      "beginner": "Beginner",
+      "intermediate": "Intermediate",
+      "advanced": "Advanced"
+    }
+  },
+  "courseDetail": {
+    "loading": "Loading...",
+    "loadingCourse": "Loading course information, please wait",
+    "courseNotFound": "Course Not Found",
+    "courseNotFoundDesc": "Sorry, we cannot find the course you requested. Please check if the course link is correct.",
+    "backToCourses": "Back to Course List",
+    "breadcrumb": {
+      "home": "Home",
+      "courses": "Courses"
+    },
+    "tabs": {
+      "overview": "Overview",
+      "curriculum": "Curriculum",
+      "instructor": "Instructor",
+      "reviews": "Reviews",
+      "discussions": "Discussions"
+    },
+    "stats": {
+      "reviews": "reviews",
+      "students": "students",
+      "lastUpdated": "Last updated",
+      "hours": "hours total duration",
+      "lessons": "lessons"
+    },
+    "purchase": {
+      "lifetimeAccess": "Lifetime Access",
+      "validity": "1 Year Validity",
+      "certificate": "Certificate",
+      "subscriptionMember": "Subscription Member - Unlimited Access",
+      "purchased": "Purchased - 1 Year Validity",
+      "trialPeriod": "Trial Period - 3 Days Free",
+      "validUntil": "Valid Until",
+      "courseIncludes": "This course includes",
+      "videoLessons": "Video Lessons",
+      "mobileAccess": "Mobile and Computer Access",
+      "whatsappAccess": "WhatsApp access to instructor after purchase",
+      "checkingAccess": "Checking course permissions...",
+      "continueLearning": "Continue Learning Course",
+      "shareCourse": "Share with Friends",
+      "loginToExperience": "Login to Experience",
+      "subscriptionCancelable": "Subscription can be canceled anytime"
+    },
+    "payment": {
+      "trialSuccess": "🎉 Congratulations! You have successfully activated a 3-day free trial and can now start learning the course!",
+      "purchaseSuccess": "🎉 Congratulations! You have successfully purchased this course with unlimited playback rights for 1 year!",
+      "subscriptionSuccess": "🎉 Congratulations! You have successfully subscribed and can now start learning the course!",
+      "paymentCanceled": "Payment has been canceled. You can try subscribing again later."
+    },
+    "overview": {
+      "whatYouWillLearn": "What You'll Learn",
+      "courseDescription": "Course Description",
+      "suitableFor": "Suitable For",
+      "requirements": "Requirements",
+      "noExperienceRequired": "No martial arts experience required",
+      "comfortableClothes": "Comfortable workout clothes",
+      "martialArtsUniform": "Martial arts uniform recommended but not mandatory",
+      "practiceSpace": "Practice space",
+      "courseSummary": "Course Summary",
+      "level": "Level",
+      "duration": "Duration",
+      "totalVideoDuration": "Total Video Duration",
+      "lessonCount": "Lesson Count",
+      "lastUpdated": "Last Updated",
+      "language": "Language",
+      "chinese": "Chinese",
+      "suggestedWeeks": "Suggested {weeks} weeks",
+      "yourInstructor": "Your Instructor",
+      "viewFullProfile": "View Full Profile"
+    },
+    "curriculum": {
+      "chapter": "Chapter {number}",
+      "lessons": "lessons",
+      "minutes": "minutes",
+      "playing": "Playing"
+    },
+    "instructor": {
+      "aboutInstructor": "About {name}",
+      "contactInstructor": "Contact Instructor",
+      "contactDesc": "Students who purchase this course will get direct WhatsApp access to the instructor for personalized guidance.",
+      "youWillGet": "You will get",
+      "personalizedFeedback": "Personalized technical feedback",
+      "answerQuestions": "Answer your specific questions",
+      "progressGuidance": "Training progress guidance",
+      "purchaseToContact": "Purchase Course to Contact Instructor",
+      "loginToExperience": "Login to Experience"
+    },
+    "reviews": {
+      "studentReviews": "Student Reviews",
+      "reviewsCount": "{count} reviews",
+      "averageRating": "out of 5",
+      "writeReview": "Write Review",
+      "shareExperience": "Share your experience with this course to help other students make decisions.",
+      "alreadyReviewed": "You have already reviewed this course",
+      "noReviews": "No reviews yet",
+      "loadMore": "Load More Reviews",
+      "loginToView": "Login to view detailed reviews",
+      "loginNow": "Login Now",
+      "rating": "Rating",
+      "reviewContent": "Review Content",
+      "reviewPlaceholder": "Share your experience with this course to help other students make decisions...",
+      "submitReview": "Submit Review",
+      "submitting": "Submitting...",
+      "star": "star"
+    },
+    "discussions": {
+      "courseDiscussions": "Course Discussions",
+      "discussWithOthers": "Communicate with other students and instructors",
+      "startNewDiscussion": "Start New Discussion",
+      "postQuestion": "Post Question or Comment",
+      "noDiscussions": "No discussions yet",
+      "loginToParticipate": "Login to participate in discussions",
+      "loginNow": "Login Now",
+      "reply": "Reply",
+      "like": "Like",
+      "liking": "Liking, please do not click repeatedly",
+      "instructor": "Instructor",
+      "postNewDiscussion": "Post New Discussion",
+      "yourQuestion": "Your Question or Idea",
+      "discussionPlaceholder": "Share your questions or ideas, communicate with other students and instructors...",
+      "postDiscussion": "Post Discussion",
+      "posting": "Posting...",
+      "replyToDiscussion": "Reply to Discussion",
+      "yourReply": "Your Reply",
+      "replyPlaceholder": "Enter your reply content...",
+      "postReply": "Post Reply",
+      "postingReply": "Posting..."
+    },
+    "relatedCourses": {
+      "title": "You May Also Like",
+      "subtitle": "Discover more martial arts courses to enhance your skills and knowledge",
+      "category": {
+        "weapons": "Weapons",
+        "combat": "Combat",
+        "fist": "Fist Arts"
+      }
+    },
+    "tags": {
+      "kungfu": "Kung Fu",
+      "martialArts": "Martial Arts",
+      "selfDefense": "Self Defense",
+      "fitness": "Fitness"
+    }
+  },
+  "myPage": {
+    "title": "My Account",
+    "subtitle": "Manage your learning progress, account settings and purchase history",
+    "loading": "Loading...",
+    "tabs": {
+      "overview": "Overview",
+      "courses": "My Courses",
+      "recent": "Recent Videos",
+      "settings": "Account Settings",
+      "history": "Purchase History"
+    },
+    "overview": {
+      "welcome": "Welcome back",
+      "learningProgress": "Learning Progress",
+      "recentActivity": "Recent Activity",
+      "recommendedCourses": "Recommended Courses"
+    },
+    "courses": {
+      "purchasedCourses": "Purchased Courses",
+      "recentVideos": "Recent Videos",
+      "continueLearning": "Continue Learning",
+      "completed": "Completed",
+      "inProgress": "In Progress"
+    },
+    "history": {
+      "purchaseHistory": "Purchase History",
+      "orderNumber": "Order Number",
+      "purchaseDate": "Purchase Date",
+      "amount": "Amount",
+      "status": "Status",
+      "viewDetails": "View Details"
+    },
+    "settings": {
+      "accountSettings": "Account Settings",
+      "personalInfo": "Personal Information",
+      "changePassword": "Change Password",
+      "notificationSettings": "Notification Settings",
+      "privacySettings": "Privacy Settings"
+    }
+  },
+  "userStatusCard": {
+    "loading": "Loading...",
+    "error": "Unable to load user information",
+    "userAvatar": "User Avatar",
+    "noNameSet": "No name set",
+    "expiryTime": "Expiry Time",
+    "willCancelAfterExpiry": "Will cancel after expiry",
+    "learningStats": "Learning Statistics",
+    "learningCourses": "Learning Courses",
+    "purchasedCourses": "Purchased Courses",
+    "learningTime": "Learning Time",
+    "averageProgress": "Average Progress",
+    "subscriptionManagement": "Subscription Management",
+    "currentPlan": "Current Plan",
+    "monthlySubscription": "Monthly Subscription",
+    "yearlySubscription": "Yearly Subscription",
+    "freeTrial": "Free Trial",
+    "processing": "Processing...",
+    "cancelSubscription": "Cancel Subscription",
+    "confirmCancel": "Are you sure you want to cancel your subscription? The subscription will expire at the end of the current billing period.",
+    "cancelSuccess": "Subscription successfully cancelled",
+    "cancelError": "Failed to cancel subscription",
+    "userStatus": {
+      "trial": "Free Trial Member",
+      "subscribed": "Subscribed Member",
+      "free": "Regular User"
+    }
+  },
+  "payment": {
+    "purchase": "Purchase",
+    "price": "Price",
+    "total": "Total",
+    "paymentMethod": "Payment Method",
+    "cardNumber": "Card Number",
+    "expiryDate": "Expiry Date",
+    "cvv": "CVV",
+    "payNow": "Pay Now",
+    "paymentSuccess": "Payment successful",
+    "paymentFailed": "Payment failed"
+  },
+  "subscription": {
+    "monthly": "Monthly Subscription",
+    "yearly": "Yearly Subscription",
+    "cancel": "Cancel Subscription",
+    "active": "Active",
+    "expired": "Expired",
+    "renewal": "Renewal"
+  },
+  "language": {
+    "chinese": "中文",
+    "english": "English",
+    "german": "Deutsch",
+    "french": "Français",
+    "japanese": "日本語",
+    "korean": "한국어",
+    "arabic": "العربية"
+  },
+  "home": {
+    "hero": {
+      "title": "Kong Fu Master<br />On Your Schedule",
+      "subtitle": "Learn from world-class instructors anytime, anywhere. Join thousands of martial artists mastering their craft through our expert-led video courses.",
+      "exploreCourses": "Explore Courses"
+    },
+    "features": {
+      "title": "Why Choose Us",
+      "subtitle": "We provide the most comprehensive online martial arts learning experience",
+      "expertInstructors": "Expert Instructors",
+      "expertInstructorsDesc": "Learn from experienced martial arts masters",
+      "flexibleLearning": "Flexible Learning",
+      "flexibleLearningDesc": "Learn at your own pace, anytime, anywhere",
+      "highQuality": "High Quality Content",
+      "highQualityDesc": "Professionally produced HD video courses"
+    },
+    "courses": {
+      "title": "Popular Courses",
+      "subtitle": "Explore our most popular martial arts courses",
+      "viewAll": "View All",
+      "mostPopular": "Most Popular",
+      "viewCourse": "View Course",
+      "loadingCourses": "Loading popular courses..."
+    },
+    "membership": {
+      "title": "Unlock Unlimited Learning",
+      "subtitle": "Choose our monthly membership for unlimited access to all courses",
+      "monthlyMembership": "Monthly Membership",
+      "price": "$39.99",
+      "perMonth": "/month",
+      "features": {
+        "unlimitedAccess": "Unlimited access to all 100+ courses",
+        "downloadVideos": "Download videos for offline viewing",
+        "whatsappAccess": "Direct WhatsApp access to instructors",
+        "liveQA": "Participate in live Q&A sessions",
+        "exclusiveContent": "Exclusive member-only content"
+      },
+      "freeTrial": "Start Your 3-Day Free Trial"
+    },
+    "testimonials": {
+      "title": "Student Testimonials",
+      "subtitle": "Hear what our students have to say",
+      "mainTitle": "What Our Students Say",
+      "mainSubtitle": "Hear from martial artists who have transformed their skills with our platform",
+      "sarah": {
+        "name": "Sarah J.",
+        "comment": "The monthly membership is worth every penny! I've learned so much more than I expected."
+      },
+      "michael": {
+        "name": "Michael T.",
+        "title": "Travel Blogger & Karate Student",
+        "comment": "As a travel blogger, I love learning martial arts from different cultures. This platform lets me train whenever I have free time, no matter where I am in the world."
+      },
+      "sophia": {
+        "name": "Sophia L.",
+        "title": "Fitness Coach & Taekwondo Student",
+        "comment": "The ability to contact instructors directly through WhatsApp has been invaluable. Getting personalized feedback on my technique has accelerated my progress dramatically."
+      },
+      "david": {
+        "name": "David R.",
+        "title": "BJJ Practitioner",
+        "comment": "I purchased the Brazilian Jiu-Jitsu course a year ago and still refer back to it regularly. The video quality is excellent, and I can review techniques whenever I need a refresher."
+      }
+    },
+    "cta": {
+      "title": "Start Your Martial Arts Journey Today",
+      "subtitle": "Join thousands of martial artists around the world who are mastering their craft through our expert-led video courses.",
+      "getStarted": "Get Started Now",
+      "browseAll": "Browse All Courses"
+    },
+    "footer": {
+      "brandName": "Kong Fu Master",
+      "brandDescription": "Premium online martial arts instruction from world-class instructors.",
+      "quickLinks": "Quick Links",
+      "support": "Support",
+      "newsletter": "Newsletter",
+      "newsletterDescription": "Subscribe to get updates on new courses and martial arts tips.",
+      "allCourses": "All Courses",
+      "instructors": "Instructors",
+      "membership": "Membership",
+      "freeResources": "Free Resources",
+      "blog": "Blog",
+      "faqs": "FAQs",
+      "contactUs": "Contact Us",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "refundPolicy": "Refund Policy",
+      "emailPlaceholder": "Your email address",
+      "privacyNotice": "We respect your privacy. Unsubscribe at any time.",
+      "copyright": "© 2023~2025 Kong Fu Master. All rights reserved."
+    }
+  }
+}
