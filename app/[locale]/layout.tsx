@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { locales } from '@/lib/i18n';
+import Script from 'next/script';
 
 type Props = {
   children: React.ReactNode;
@@ -40,6 +41,9 @@ export default async function LocaleLayout({
   // 获取翻译消息
   const messages = await getMessages();
 
+  // 读取GA ID
+  const gaId = process.env.NEXT_PUBLIC_GA_ID;
+
   return (
     <html lang={locale} dir={locale === 'ar-SA' ? 'rtl' : 'ltr'}>
       <head>
@@ -52,6 +56,19 @@ export default async function LocaleLayout({
             {children}
           </AuthProvider>
         </NextIntlClientProvider>
+        {gaId && (
+          <>
+            <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} />
+            <Script id="google-analytics">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${gaId}');
+              `}
+            </Script>
+          </>
+        )}
       </body>
     </html>
   );
