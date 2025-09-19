@@ -8,6 +8,7 @@ import {
   EmbeddedCheckoutProvider,
   EmbeddedCheckout
 } from '@stripe/react-stripe-js';
+import { purchaseCourse } from '@/lib/analytics';
 
 interface PaymentModalProps {
   isOpen: boolean;
@@ -115,6 +116,13 @@ export default function PaymentModal({
     console.log('支付成功回调被触发');
     onClose();
     
+    // 跟踪购买事件（仅限一次性购买，不包括试用）
+    if (mode === 'purchase') {
+      // 从价格字符串中提取数字（移除货币符号）
+      const priceValue = parseFloat(price.replace(/[^\d.]/g, '')) || 0;
+      purchaseCourse(courseId, courseTitle, 'Martial Arts Course', priceValue);
+    }
+    
     // 显示即时成功提示
     const successMessage = mode === 'trial' 
       ? '🎉 恭喜！您已成功激活3天免费试用！'
@@ -152,7 +160,7 @@ export default function PaymentModal({
         successDiv.parentNode.removeChild(successDiv);
       }
     }, 2000);
-  }, [onClose, mode, onPaymentSuccess]);
+  }, [onClose, mode, onPaymentSuccess, courseId, courseTitle, price]);
 
   // 获取客户端密钥 - 优化版本
   const fetchClientSecret = useCallback(() => {

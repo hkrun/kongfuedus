@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import { login } from "@/lib/analytics";
 
 export default function LoginForm() {
   const [formData, setFormData] = useState({
@@ -67,6 +68,9 @@ export default function LoginForm() {
       if (result?.error) {
         setMessage("邮箱或密码错误");
       } else {
+        // 跟踪用户登录事件
+        login('email');
+        
         // 登录成功，重定向到回调URL或仪表盘
         console.log('登录成功，跳转到:', callbackUrl);
         // 使用 window.location.href 避免类型问题
@@ -82,6 +86,9 @@ export default function LoginForm() {
   const handleGoogleLogin = async () => {
     setLoading(true);
     try {
+      // 跟踪Google登录事件
+      login('google');
+      
       await signIn("google", { callbackUrl });
     } catch (error) {
       setMessage("Google登录失败，请稍后重试");

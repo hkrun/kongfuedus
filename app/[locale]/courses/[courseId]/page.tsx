@@ -12,6 +12,7 @@ import MilestoneTimeline from "../../../../components/MilestoneTimeline";
 import CourseVideoSection from "../../../../components/CourseVideoSection";
 import { useSubmission } from "../../../../hooks/useSubmission";
 import { getMultiLangContent, getMultiLangArrayContent, getLocaleFromPath, SupportedLocale } from "../../../../utils/i18n";
+import { viewCourse } from "../../../../lib/analytics";
 // 移除导入，因为现在使用API调用
 
 export default function CourseDetailPage({ params }: { params: { courseId: string } }) {
@@ -330,6 +331,11 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
           setCourse(courseDetail);
           setCourses(allCourses);
           console.log('课程数据加载成功:', courseDetail.title);
+          
+          // 跟踪课程浏览
+          const courseName = getMultiLangContent(courseDetail.title, currentLocale);
+          const category = getMultiLangContent(courseDetail.category, currentLocale);
+          viewCourse(params.courseId, courseName, category);
         } else {
           console.error('课程未找到:', params.courseId);
         }

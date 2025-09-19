@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import VideoPlayer from './VideoPlayer';
 import { getMultiLangContent, getLocaleFromPath, SupportedLocale } from '../utils/i18n';
+import { playVideo, completeVideo } from '../lib/analytics';
 
 interface Lesson {
   id: number;
@@ -119,17 +120,20 @@ const CourseVideoSection: React.FC<CourseVideoSectionProps> = ({ course, chapter
     }
   }, [currentPlayingLesson, chapters, expandedChapters, isInitialized]);
 
-  // 只在课程变化时打印日志
+  // 只在课程变化时打印日志和跟踪视频播放
   useEffect(() => {
-    if (currentLesson) {
+    if (currentLesson && course) {
       console.log('🎬 开始播放课程:', { 
         lessonTitle: currentLesson.title, 
         videoUrl: currentLesson.videoUrl,
         lessonId: currentLesson.id,
         chapterId: currentChapter?.id
       });
+      
+      // 跟踪视频播放事件
+      playVideo(currentLesson.id.toString(), course.id);
     }
-  }, [currentLesson?.id]);
+  }, [currentLesson?.id, course?.id]);
 
   // 切换章节展开状态
   const toggleChapter = (chapterId: number) => {
@@ -159,6 +163,12 @@ const CourseVideoSection: React.FC<CourseVideoSectionProps> = ({ course, chapter
   // 视频播放结束
   const handleVideoEnd = () => {
     console.log(`课程 ${currentLesson?.id} 播放完成`);
+    
+    // 跟踪视频完成事件
+    if (currentLesson && course) {
+      completeVideo(currentLesson.id.toString(), course.id, 100);
+    }
+    
     // 可以在这里自动播放下一个课程或显示完成提示
   };
 

@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
+import { signUp } from "@/lib/analytics";
 
 export default function RegisterForm() {
   const [formData, setFormData] = useState({
@@ -88,6 +89,10 @@ export default function RegisterForm() {
       if (response.ok) {
         setMessage("注册成功！正在跳转到登录页面...");
         setIsSuccess(true);
+        
+        // 跟踪用户注册事件
+        signUp('email');
+        
         // 清空表单
         setFormData({
           name: "",
