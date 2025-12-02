@@ -18,8 +18,11 @@ export default function Logo() {
         </svg>
       </div>
       
-      {/* 文字部分，使用CSS类确保一致性 */}
-      <span className="logo-text text-blue-900 transition-all duration-300 group-hover:text-blue-800">
+      {/* 文字部分 - 移动端显示 "Kong Fu"，PC端显示 "Kong Fu Master" */}
+      <span className="logo-text md:hidden text-sm text-blue-900 transition-all duration-300 group-hover:text-blue-800">
+        Kong Fu
+      </span>
+      <span className="logo-text hidden md:inline text-base text-blue-900 transition-all duration-300 group-hover:text-blue-800">
         Kong Fu Master
       </span>
     </Link>

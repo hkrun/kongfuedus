@@ -10,6 +10,7 @@ import { getMultiLangContent, getLocaleFromPath, SupportedLocale } from "../../u
 export default function HomePage() {
   const t = useTranslations();
   const [currentLocale, setCurrentLocale] = useState<SupportedLocale>('zh');
+  const [fullLocale, setFullLocale] = useState<string>('zh-CN'); // 完整的语言代码，如 zh-CN, en-US
   
   // 添加自定义样式用于文本截断
   const textTruncateStyle = {
@@ -25,9 +26,14 @@ export default function HomePage() {
   // 课程数据将在 useEffect 中动态导入
   const [popularCourses, setPopularCourses] = useState<any[]>([]);
   useEffect(() => {
-    // 获取当前语言
+    // 获取当前语言（简化格式）
     const locale = getLocaleFromPath(window.location.pathname);
     setCurrentLocale(locale);
+    
+    // 获取完整的语言代码（从URL路径中提取）
+    const pathSegments = window.location.pathname.split('/').filter(Boolean);
+    const fullLocaleFromPath = pathSegments[0] || 'zh-CN'; // 默认使用 zh-CN
+    setFullLocale(fullLocaleFromPath);
     // Mobile menu toggle
     const mobileMenuButton = document.querySelector('.fa-bars')?.parentElement;
     const mobileMenu = document.querySelector('.md\\:hidden:not(.hidden)');
@@ -193,7 +199,7 @@ export default function HomePage() {
                     </div>
                     <span className="font-semibold" style={{ color: 'rgb(26 54 93 / var(--tw-text-opacity, 1))' }}>{course.price}</span>
                   </div>
-                  <Link href={`/courses/${course.id}`} className="block w-full py-2 text-white text-center rounded-md hover:bg-blue-800 transition-all duration-300" style={{ backgroundColor: 'rgb(26 54 93 / var(--tw-bg-opacity, 1))' }}>
+                  <Link href={`/${fullLocale}/courses/${course.id}`} className="block w-full py-2 text-white text-center rounded-md hover:bg-blue-800 transition-all duration-300" style={{ backgroundColor: 'rgb(26 54 93 / var(--tw-bg-opacity, 1))' }}>
                     {t('home.courses.viewCourse')}
                   </Link>
                 </div>

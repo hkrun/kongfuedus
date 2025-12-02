@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     console.log('📅 事件时间:', new Date().toLocaleString('zh-CN'));
     console.log('🔍 项目ID:', process.env.PROJECT_ID);
     
-    // 项目过滤函数 - 临时放宽限制以便调试
+    // 项目过滤函数 - 严格检查项目ID
     const isProjectEvent = (eventData: any) => {
       console.log('🔍 开始项目事件过滤检查...');
       
@@ -66,15 +66,16 @@ export async function POST(request: NextRequest) {
       console.log('  - 事件中的项目ID:', projectId);
       console.log('  - 环境变量中的项目ID:', envProjectId);
       
-      // 临时放宽项目ID检查，以便调试
+      // 严格检查：如果事件缺少项目ID，拒绝处理
       if (!projectId) {
-        console.log('⚠️ 事件缺少项目ID，但继续处理以便调试');
-        return true;
+        console.log('❌ 事件缺少项目ID，拒绝处理（可能来自其他项目）');
+        return false;
       }
       
+      // 严格检查：项目ID必须完全匹配
       if (projectId !== envProjectId) {
-        console.log(`⚠️ 事件项目ID不匹配: ${projectId} vs ${envProjectId}，但继续处理以便调试`);
-        return true;
+        console.log(`❌ 事件项目ID不匹配: ${projectId} vs ${envProjectId}，拒绝处理（来自其他项目）`);
+        return false;
       }
       
       console.log(`✅ 事件项目ID匹配: ${projectId}，继续处理`);

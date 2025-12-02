@@ -19,6 +19,9 @@ export default function Header() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  
+  // 检测是否为RTL语言（阿拉伯语）
+  const isRTL = locale === 'ar-SA';
 
   // 监听session变化，确保用户名更新时能及时反映
   useEffect(() => {
@@ -115,7 +118,7 @@ export default function Header() {
             <Logo />
           </div>
           
-          <div className="flex items-center space-x-4">
+          <div className="flex items-center space-x-2">
             {status === "loading" ? (
               <div className="px-4 py-2">
                 <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-orange-500"></div>
@@ -152,9 +155,9 @@ export default function Header() {
                   </svg>
                 </button>
 
-                {/* 下拉菜单 */}
+                {/* 下拉菜单 - RTL语言从左侧对齐，LTR语言从右侧对齐 */}
                 {showDropdown && (
-                  <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+                  <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-2 w-48 max-w-[calc(100vw-2rem)] bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50`}>
                     <button
                       onClick={handleMyPage}
                       className="flex items-center w-full px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 transition-colors duration-200"
@@ -194,8 +197,9 @@ export default function Header() {
                 title={t('header.language')}
               >
                 <span className="text-lg">{localeFlags[locale as keyof typeof localeFlags]}</span>
+                {/* 移动端隐藏下拉箭头，桌面端显示 */}
                 <svg
-                  className={`w-4 h-4 text-gray-600 transition-transform duration-200 ${
+                  className={`hidden md:block w-4 h-4 text-gray-600 transition-transform duration-200 ${
                     showLanguageDropdown ? 'rotate-180' : ''
                   }`}
                   fill="none"
@@ -206,9 +210,9 @@ export default function Header() {
                 </svg>
               </button>
 
-              {/* Language Dropdown */}
+              {/* Language Dropdown - RTL语言从左侧对齐，LTR语言从右侧对齐 */}
               {showLanguageDropdown && (
-                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50">
+                <div className={`absolute ${isRTL ? 'left-0' : 'right-0'} mt-2 w-48 max-w-[calc(100vw-2rem)] bg-white rounded-md shadow-lg border border-gray-200 py-1 z-50`}>
                   {locales.map((loc) => (
                     <button
                       key={loc}
@@ -231,11 +235,11 @@ export default function Header() {
             </div>
             
             {/* Mobile menu button */}
-            <button type="button" className="md:hidden text-gray-700 hover:text-orange-500 transition-all duration-300">
+            {/* <button type="button" className="md:hidden text-gray-700 hover:text-orange-500 transition-all duration-300">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
