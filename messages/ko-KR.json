@@ -6,6 +6,7 @@
     "my": "내",
     "courses": "강의",
     "home": "홈",
+    "back": "뒤로",
     "dashboard": "대시보드",
     "profile": "프로필",
     "settings": "설정",
@@ -27,21 +28,6 @@
     "myPage": "내 페이지",
     "signOut": "로그아웃",
     "language": "언어"
-  },
-  "auth": {
-    "login": "로그인",
-    "register": "회원가입",
-    "forgotPassword": "비밀번호 찾기",
-    "resetPassword": "비밀번호 재설정",
-    "verifyEmail": "이메일 인증",
-    "email": "이메일",
-    "password": "비밀번호",
-    "confirmPassword": "비밀번호 확인",
-    "name": "이름",
-    "loginSuccess": "로그인 성공",
-    "registerSuccess": "회원가입 성공",
-    "loginError": "로그인 실패",
-    "registerError": "회원가입 실패"
   },
   "course": {
     "title": "강의 제목",
@@ -65,11 +51,14 @@
     "pageDescription": "분야별로 정리된 포괄적인 무술 강의 컬렉션을 탐색하세요. 초보자든 고급 연습자든, 기술을 향상시킬 완벽한 강의를 찾을 수 있습니다.",
     "allCourses": "모든 강의",
     "categories": {
+      "title": "강의 카테고리",
       "striking": "권법류",
       "taiji": "태극류",
       "weapons": "무기류",
       "selfDefense": "자위술류",
-      "health": "양생류"
+      "health": "양생류",
+      "combat": "실전류",
+      "mixed": "종합류"
     },
     "viewCourse": "강의 보기",
     "enrollNow": "지금 등록",
@@ -81,6 +70,15 @@
       "beginner": "초급",
       "intermediate": "중급",
       "advanced": "고급"
+    },
+    "loadingCourses": "강의 로딩 중...",
+    "loadMore": "더 많은 강의 로드",
+    "sort": {
+      "mostPopular": "인기순",
+      "newest": "최신순",
+      "priceLowToHigh": "가격: 낮은순",
+      "priceHighToLow": "가격: 높은순",
+      "highestRated": "평점순"
     }
   },
   "payment": {
@@ -93,15 +91,15 @@
     "cvv": "CVV",
     "payNow": "지금 결제",
     "paymentSuccess": "결제 성공",
-    "paymentFailed": "결제 실패"
-  },
-  "subscription": {
-    "monthly": "월간 구독",
-    "yearly": "연간 구독",
-    "cancel": "구독 취소",
-    "active": "활성",
-    "expired": "만료됨",
-    "renewal": "갱신"
+    "paymentFailed": "결제 실패",
+    "trialSuccess": "🎉 축하합니다! 3일 무료 체험을 성공적으로 활성화했습니다!",
+    "purchaseSuccess": "🎉 축하합니다! 이 강의를 성공적으로 구매했습니다!",
+    "paymentPreparationFailed": "결제 준비 실패",
+    "retry": "다시 시도",
+    "loadingPaymentInfo": "결제 정보 로딩 중...",
+    "preparing": "준비 중...",
+    "purchaseThisCourse": "이 강의 구매",
+    "freeTrialButton": "3일 무료 체험"
   },
   "language": {
     "chinese": "中文",
@@ -198,11 +196,191 @@
       "contactUs": "문의하기",
       "privacyPolicy": "개인정보 보호정책",
       "termsOfService": "서비스 약관",
-      "refundPolicy": "환불 정책",
+      "refundPolicy": "결제 및 환불 정책",
       "emailPlaceholder": "이메일 주소",
       "privacyNotice": "우리는 귀하의 개인정보를 존중합니다. 언제든지 구독을 취소할 수 있습니다.",
-      "copyright": "© 2023~2025 공부 마스터. 모든 권리 보유."
+      "copyright": "© 2023~2025 공부 마스터. 모든 권리 보유.",
+      "address": "123 무술 거리, 도쿄, 일본",
+      "phone": "+81 123 456 7890",
+      "email": "zjhkrun@gmail.com"
     }
+  },
+  "contact": {
+    "title": "문의하기",
+    "description": "질문이나 제안이 있으신가요? 아래 양식을 작성해 주시면 최대한 빨리 답변드리겠습니다.",
+    "nameLabel": "이름",
+    "namePlaceholder": "이름을 입력하세요",
+    "emailLabel": "이메일",
+    "emailPlaceholder": "이메일 주소를 입력하세요",
+    "messageLabel": "메시지",
+    "messagePlaceholder": "질문이나 제안을 알려주세요...",
+    "submit": "제출",
+    "submitting": "제출 중...",
+    "cancel": "취소",
+    "successTitle": "제출 완료!",
+    "successMessage": "피드백 감사합니다. 곧 연락드리겠습니다.",
+    "errors": {
+      "nameRequired": "이름을 입력하세요",
+      "emailRequired": "이메일 주소를 입력하세요",
+      "emailInvalid": "유효한 이메일 주소를 입력하세요",
+      "messageRequired": "메시지를 입력하세요"
+    }
+  },
+  "faq": {
+    "title": "자주 묻는 질문",
+    "description": "Kong Fu Master에 대한 자주 묻는 질문의 답변 찾기",
+    "stillNeedHelp": "여전히 도움이 필요하신가요? 문의하기:",
+    "categories": {
+      "courseAccess": "코스 액세스 정보",
+      "membership": "멤버십 정보",
+      "payment": "결제 및 환불 정보",
+      "learning": "학습 기능 정보",
+      "account": "계정 관리 정보",
+      "technical": "기술 지원 정보"
+    },
+    "courseAccess": {
+      "q1": "코스를 구매하려면 어떻게 해야 하나요?",
+      "a1": "코스 페이지를 탐색하고 관심 있는 코스를 선택한 후 '이 코스 구매' 버튼을 클릭하고 안전한 결제 프로세스를 통해 구매를 완료하세요. 결제가 성공하면 즉시 코스에 액세스할 수 있습니다.",
+      "q2": "멤버십과 단일 코스 구매의 차이점은 무엇인가요?",
+      "a2": "단일 코스 구매는 구매한 특정 코스에만 액세스할 수 있으며 유효 기간은 1년입니다. 월간 멤버십($39.99/월)은 모든 100개 이상의 코스에 무제한 액세스를 제공하며 비디오 다운로드, 강사 직접 연락, 라이브 Q&A 참여 등의 추가 혜택도 포함됩니다.",
+      "q3": "3일 무료 체험은 어떻게 작동하나요?",
+      "a3": "신규 사용자는 3일 무료 체험을 활성화하여 모든 멤버십 코스에 무료로 액세스할 수 있습니다. 체험 기간이 끝나기 전에 요금 없이 구독을 취소할 수 있습니다. 취소하지 않으면 자동으로 월간 멤버십으로 전환되고 청구가 시작됩니다.",
+      "q4": "구매 후 얼마나 빨리 학습을 시작할 수 있나요?",
+      "a4": "결제가 성공하면 코스 액세스가 즉시 활성화되며 바로 학습을 시작할 수 있습니다. '내 코스' 페이지에서 구매한 모든 코스를 찾을 수 있습니다."
+    },
+    "membership": {
+      "q1": "월간 멤버십에는 어떤 혜택이 포함되나요?",
+      "a1": "월간 멤버십($39.99/월)에는 다음이 포함됩니다: 모든 100개 이상의 코스에 대한 무제한 액세스, 오프라인 시청을 위한 비디오 다운로드, WhatsApp을 통한 강사 직접 연락, 라이브 Q&A 세션 참여, 멤버 전용 콘텐츠 액세스 등.",
+      "q2": "멤버는 몇 개의 코스에 액세스할 수 있나요?",
+      "a2": "멤버는 플랫폼의 모든 코스에 무제한으로 액세스할 수 있습니다. 현재 태극권, 소림, 영춘권, 자위술, 어린이 무술 등 100개 이상의 전문 무술 코스가 있으며 지속적으로 새로운 코스를 추가하고 있습니다.",
+      "q3": "멤버는 비디오를 다운로드할 수 있나요?",
+      "a3": "네, 월간 멤버는 코스 비디오를 로컬 기기에 다운로드하여 언제 어디서나 오프라인으로 시청할 수 있습니다. 네트워크 제한을 받지 않습니다. 인터넷 액세스가 없는 환경에서 학습하려는 사용자에게 매우 편리합니다.",
+      "q4": "멤버십 구독을 취소하려면 어떻게 해야 하나요?",
+      "a4": "'내' 페이지의 구독 상태 섹션으로 이동하여 '구독 취소' 버튼을 클릭하세요. 취소 후 멤버십 혜택은 현재 청구 주기가 끝날 때 만료되며 즉시 종료되지 않습니다."
+    },
+    "payment": {
+      "q1": "어떤 결제 방법이 지원되나요?",
+      "a1": "Visa, MasterCard 등의 국제 신용카드와 알리페이, 위챗페이 등의 제3자 결제 플랫폼을 포함한 다양한 안전하고 편리한 결제 방법을 지원합니다. 모든 결제는 Stripe 암호화를 통해 안전하게 처리됩니다.",
+      "q2": "환불을 신청하려면 어떻게 해야 하나요?",
+      "a2": "계정에 로그인하고 '내 주문' 페이지로 이동하여 환불하려는 주문을 찾은 후 '환불 신청' 버튼을 클릭하세요. 단일 코스 구매는 시청 시간이 20%를 초과하지 않는 경우 7일 이내에 환불할 수 있습니다. 멤버십은 혜택을 사용하지 않은 경우 3일 이내에 전액 환불할 수 있습니다. 자세한 내용은 환불 정책을 참조하세요.",
+      "q3": "환불이 도착하는 데 얼마나 걸리나요?",
+      "a3": "환불 신청이 승인된 후 5-7영업일 이내에 원래 결제 계정으로 금액을 환불합니다. 구체적인 도착 시간은 결제 기관 및 은행의 처리 속도에 따라 다르며 일반적으로 7-14영업일 이내에 완료됩니다.",
+      "q4": "이미 시청한 코스를 환불받을 수 있나요?",
+      "a4": "코스 콘텐츠의 20% 이상을 시청했거나 구매 후 7일 이상 경과한 경우 환불이 지원되지 않습니다. 그러나 코스에 심각한 품질 문제가 있거나 설명과 크게 다른 경우 고객 서비스에 연락하여 상황을 설명하면 특별 검토를 진행합니다."
+    },
+    "learning": {
+      "q1": "학습 진행률을 추적하려면 어떻게 해야 하나요?",
+      "a1": "시스템이 자동으로 학습 진행률을 기록합니다. '내 코스' 페이지에서 각 코스의 완료율, 마지막 시청 시간 등의 정보를 볼 수 있습니다. 코스 세부 정보 페이지에도 각 챕터의 완료 상태가 표시됩니다.",
+      "q2": "비디오는 자막을 지원하나요?",
+      "a2": "네, 코스 비디오는 중국어, 영어, 일본어, 한국어, 독일어, 프랑스어, 아랍어를 포함한 다국어 자막을 지원합니다. 비디오 플레이어에서 원하는 자막 언어를 선택할 수 있습니다.",
+      "q3": "오프라인으로 시청할 수 있나요?",
+      "a3": "월간 멤버는 코스 비디오를 로컬 기기에 다운로드하여 오프라인으로 시청할 수 있습니다. 단일 코스 구매 사용자는 온라인으로 시청해야 하지만 비디오는 적응형 비트레이트를 지원하여 인터넷 연결이 느린 경우에도 원활한 재생을 보장합니다.",
+      "q4": "코스 유효 기간은 얼마나 되나요?",
+      "a4": "단일 코스 구매의 유효 기간은 1년이며 유효 기간 동안 무제한으로 시청할 수 있습니다. 월간 멤버는 구독 기간 동안 모든 코스에 액세스할 수 있습니다. 구독을 취소하면 현재 청구 주기가 끝날 때 액세스 권한이 상실됩니다."
+    },
+    "account": {
+      "q1": "개인 정보를 수정하려면 어떻게 해야 하나요?",
+      "a1": "로그인 후 '내' 페이지로 이동하여 '계정 설정' 탭을 클릭하면 이름 등의 개인 정보를 수정할 수 있습니다. 이메일 주소는 고유한 계정 식별자 역할을 하므로 현재 수정할 수 없습니다.",
+      "q2": "비밀번호를 잊어버린 경우 어떻게 해야 하나요?",
+      "a2": "로그인 페이지에서 '비밀번호 찾기' 링크를 클릭하고 등록된 이메일을 입력하세요. 비밀번호 재설정 링크를 이메일로 보내드립니다. 링크를 클릭한 후 새 비밀번호를 설정할 수 있습니다.",
+      "q3": "계정을 삭제하려면 어떻게 해야 하나요?",
+      "a3": "계정을 삭제하려면 zjhkrun@gmail.com으로 이메일을 보내 삭제 요청을 설명하세요. 계정 삭제 후 학습 기록, 구매 기록 등의 데이터가 영구적으로 삭제되며 구매한 코스 및 멤버십 혜택을 복구할 수 없다는 점에 유의하세요."
+    },
+    "technical": {
+      "q1": "비디오가 재생되지 않으면 어떻게 해야 하나요?",
+      "a1": "먼저 인터넷 연결이 정상인지 확인하세요. 네트워크가 정상이지만 비디오가 여전히 재생되지 않으면 페이지를 새로고침하거나 브라우저를 전환해 보세요. 문제가 지속되면 고객 서비스에 연락하여 기기 모델 및 브라우저 버전 정보를 제공하세요.",
+      "q2": "어떤 브라우저가 지원되나요?",
+      "a2": "플랫폼은 Chrome, Firefox, Safari, Edge 등 모든 주요 최신 브라우저를 지원합니다. 최상의 경험을 위해 최신 버전의 브라우저를 사용하는 것이 좋습니다.",
+      "q3": "모바일 기기에서 사용할 수 있나요?",
+      "a3": "네, 웹사이트는 모바일 기기 액세스를 완벽하게 지원합니다. 휴대폰이나 태블릿 브라우저에서 https://www.kongfunow.com을 방문하여 데스크톱과 동일한 학습 경험을 즐길 수 있습니다. 멤버 사용자는 모바일 기기에 비디오를 다운로드하여 오프라인으로 시청할 수도 있습니다."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "환영합니다",
+      "subtitle": "계속 학습하려면 계정에 로그인하세요",
+      "emailLabel": "이메일",
+      "emailPlaceholder": "이메일을 입력하세요",
+      "passwordLabel": "비밀번호",
+      "passwordPlaceholder": "비밀번호를 입력하세요",
+      "forgotPassword": "비밀번호를 잊으셨나요?",
+      "loginButton": "로그인",
+      "or": "또는",
+      "googleLogin": "Google로 로그인",
+      "noAccount": "계정이 없으신가요?",
+      "registerNow": "지금 등록",
+      "errors": {
+        "emailRequired": "이메일을 입력하세요",
+        "emailInvalid": "유효한 이메일 주소를 입력하세요",
+        "passwordRequired": "비밀번호를 입력하세요",
+        "invalidCredentials": "이메일 또는 비밀번호가 올바르지 않습니다",
+        "loginFailed": "로그인 실패, 나중에 다시 시도하세요",
+        "googleLoginFailed": "Google 로그인 실패, 나중에 다시 시도하세요"
+      }
+    },
+    "register": {
+      "nameLabel": "이름",
+      "namePlaceholder": "이름을 입력하세요",
+      "emailLabel": "이메일",
+      "emailPlaceholder": "이메일을 입력하세요",
+      "passwordLabel": "비밀번호",
+      "passwordPlaceholder": "비밀번호를 입력하세요",
+      "passwordHelper": "8자 이상, 대문자, 소문자 및 숫자 포함",
+      "confirmPasswordLabel": "비밀번호 확인",
+      "confirmPasswordPlaceholder": "비밀번호를 다시 입력하세요",
+      "registerButton": "등록"
+    },
+    "forgotPassword": {
+      "title": "비밀번호를 잊으셨나요?",
+      "subtitle": "이메일 주소를 입력하시면 비밀번호 재설정 링크를 보내드립니다",
+      "emailLabel": "이메일",
+      "emailPlaceholder": "이메일을 입력하세요",
+      "sendButton": "재설정 링크 보내기",
+      "successMessage": "비밀번호 재설정 링크가 이메일로 전송되었습니다. 이메일을 확인하고 링크를 클릭하여 비밀번호를 재설정하세요.",
+      "rememberPassword": "비밀번호가 기억나셨나요?",
+      "loginNow": "지금 로그인",
+      "errors": {
+        "emailRequired": "이메일을 입력하세요",
+        "emailInvalid": "유효한 이메일 주소를 입력하세요",
+        "sendFailed": "재설정 이메일 전송 실패, 나중에 다시 시도하세요"
+      }
+    },
+    "resetPassword": {
+      "title": "비밀번호 재설정",
+      "subtitle": "새 비밀번호를 입력하세요",
+      "newPasswordLabel": "새 비밀번호",
+      "newPasswordPlaceholder": "새 비밀번호를 입력하세요",
+      "passwordHelper": "8자 이상, 대문자, 소문자 및 숫자 포함",
+      "confirmPasswordLabel": "새 비밀번호 확인",
+      "confirmPasswordPlaceholder": "새 비밀번호를 다시 입력하세요",
+      "resetButton": "비밀번호 재설정",
+      "successMessage": "비밀번호 재설정 성공! 3초 후 로그인 페이지로 이동합니다.",
+      "invalidLinkTitle": "유효하지 않은 링크",
+      "invalidLinkMessage": "액세스한 비밀번호 재설정 링크가 유효하지 않거나 만료되었습니다.",
+      "requestAgain": "다시 요청",
+      "rememberPassword": "비밀번호가 기억나셨나요?",
+      "loginNow": "지금 로그인",
+      "errors": {
+        "invalidLink": "유효하지 않은 재설정 링크",
+        "passwordRequired": "새 비밀번호를 입력하세요",
+        "passwordTooShort": "비밀번호는 8자 이상이어야 합니다",
+        "passwordWeak": "비밀번호에는 대문자, 소문자 및 숫자가 포함되어야 합니다",
+        "confirmRequired": "새 비밀번호를 확인하세요",
+        "passwordMismatch": "비밀번호가 일치하지 않습니다",
+        "resetFailed": "비밀번호 재설정 실패, 나중에 다시 시도하세요"
+      }
+    }
+  },
+  "subscription": {
+    "status": "구독 상태",
+    "noSubscription": "아직 구독을 활성화하지 않았습니다",
+    "startTrialHint": "\"3일 무료 체험\"을 클릭하여 시작",
+    "freeTrial": "무료 체험 중",
+    "trialEnds": "체험 종료: ",
+    "trialAutoConvert": "체험 종료 후 자동으로 $39/월 구독으로 전환됩니다",
+    "monthlyMember": "월간 멤버",
+    "nextBilling": "다음 청구: ",
+    "monthlyPrice": "$39/월"
   },
   "myPage": {
     "title": "내 계정",
@@ -223,25 +401,91 @@
     },
     "courses": {
       "purchasedCourses": "구매한 강의",
+      "myCourses": "내 강의",
       "recentVideos": "최근 시청",
       "continueLearning": "학습 계속하기",
       "completed": "완료",
-      "inProgress": "진행 중"
+      "inProgress": "진행 중",
+      "noCoursesYet": "아직 구매한 강의가 없습니다",
+      "browseCourses": "강의 둘러보기",
+      "subscriptionUser": "구독 사용자",
+      "learningProgress": "학습 진행률",
+      "lastWatched": "마지막 시청",
+      "inProgressStatus": "학습 중",
+      "notStarted": "시작 안 함",
+      "expiresAt": "만료",
+      "showingItems": "{start} - {end}개 표시 (전체 {total}개)",
+      "previousPage": "이전",
+      "nextPage": "다음",
+      "viewAllCourses": "모든 강의 보기 ({total})"
+    },
+    "recent": {
+      "recentWatched": "최근 시청",
+      "recentVideos": "최근 재생한 동영상",
+      "totalVideos": "동영상 {total}개",
+      "noVideosYet": "아직 시청한 동영상이 없습니다",
+      "startLearning": "학습 시작",
+      "justNow": "방금",
+      "hoursAgo": "{hours}시간 전",
+      "yesterday": "어제",
+      "watchProgress": "시청 진행률",
+      "continueWatching": "계속 시청",
+      "startWatching": "시청 시작",
+      "viewAllVideos": "모든 동영상 보기 ({total})"
     },
     "history": {
       "purchaseHistory": "구매 기록",
       "orderNumber": "주문 번호",
       "purchaseDate": "구매 날짜",
       "amount": "금액",
-      "status": "상태",
-      "viewDetails": "자세히 보기"
+      "viewDetails": "자세히 보기",
+      "noHistory": "구매 기록이 없습니다",
+      "noHistoryDesc": "강의나 구독을 구매하면 기록이 여기에 표시됩니다",
+      "totalRecords": "총 {total}개 기록",
+      "filter": {
+        "all": "전체",
+        "course": "강의",
+        "subscription": "구독"
+      },
+      "status": {
+        "active": "활성",
+        "canceled": "취소됨",
+        "expired": "만료됨",
+        "refunded": "환불됨"
+      },
+      "expiringSoon": "곧 만료",
+      "expiresAt": "만료 시간",
+      "coursePurchase": "강의 구매",
+      "platformSubscription": "플랫폼 구독",
+      "orderId": "주문 ID",
+      "transactionId": "거래 ID"
     },
     "settings": {
       "accountSettings": "계정 설정",
       "personalInfo": "개인 정보",
       "changePassword": "비밀번호 변경",
       "notificationSettings": "알림 설정",
-      "privacySettings": "개인정보 설정"
+      "privacySettings": "개인정보 설정",
+      "name": "이름",
+      "namePlaceholder": "이름을 입력하세요",
+      "email": "이메일 주소",
+      "emailCannotChange": "이메일 주소는 변경할 수 없습니다",
+      "currentPassword": "현재 비밀번호",
+      "currentPasswordPlaceholder": "현재 비밀번호를 입력하세요",
+      "newPassword": "새 비밀번호",
+      "newPasswordPlaceholder": "새 비밀번호를 입력하세요 (최소 6자)",
+      "confirmPassword": "새 비밀번호 확인",
+      "confirmPasswordPlaceholder": "새 비밀번호를 다시 입력하세요",
+      "saveChanges": "변경 사항 저장",
+      "saving": "저장 중...",
+      "changing": "변경 중...",
+      "errors": {
+        "nameRequired": "이름은 필수입니다",
+        "currentPasswordRequired": "현재 비밀번호를 입력하세요",
+        "newPasswordRequired": "새 비밀번호를 입력하세요",
+        "passwordMinLength": "비밀번호는 최소 6자 이상이어야 합니다",
+        "passwordMismatch": "비밀번호가 일치하지 않습니다"
+      }
     }
   },
   "userStatusCard": {
@@ -356,7 +600,8 @@
       "answerQuestions": "구체적인 질문에 답변",
       "progressGuidance": "훈련 진도 지도",
       "purchaseToContact": "강의 구매하여 강사 연락",
-      "loginToExperience": "로그인하여 체험"
+      "loginToExperience": "로그인하여 체험",
+      "description": "풍부한 교육 경험과 깊은 무술 기초를 가지고 있습니다. 중국 전통 무술 문화를 계승하고 발전시키는 데 전념하며, 학생들이 실용적인 무술 기술을 습득할 수 있도록 돕고 있습니다."
     },
     "reviews": {
       "studentReviews": "학생 리뷰",
@@ -412,7 +657,8 @@
       "kungfu": "쿵푸",
       "martialArts": "무술",
       "selfDefense": "자위술",
-      "fitness": "피트니스"
+      "fitness": "피트니스",
+      "martialArtsPhilosophy": "무술 철학"
     }
   }
 }

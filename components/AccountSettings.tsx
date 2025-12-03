@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
+import { useTranslations, useLocale } from 'next-intl';
 
 interface UserProfile {
   user: {
@@ -14,6 +15,8 @@ interface UserProfile {
 }
 
 export default function AccountSettings() {
+  const t = useTranslations();
+  const locale = useLocale();
   const { data: session, update } = useSession();
   const [profile, setProfile] = useState<UserProfile | null>(null);
   const [loading, setLoading] = useState(true);
@@ -58,7 +61,7 @@ export default function AccountSettings() {
     const newErrors: Record<string, string> = {};
 
     if (!formData.name.trim()) {
-      newErrors.name = '姓名不能为空';
+      newErrors.name = t('myPage.settings.errors.nameRequired');
     }
 
     setErrors(newErrors);
@@ -69,17 +72,17 @@ export default function AccountSettings() {
     const newErrors: Record<string, string> = {};
 
     if (!passwordForm.currentPassword) {
-      newErrors.currentPassword = '请输入当前密码';
+      newErrors.currentPassword = t('myPage.settings.errors.currentPasswordRequired');
     }
 
     if (!passwordForm.newPassword) {
-      newErrors.newPassword = '请输入新密码';
+      newErrors.newPassword = t('myPage.settings.errors.newPasswordRequired');
     } else if (passwordForm.newPassword.length < 6) {
-      newErrors.newPassword = '新密码长度至少6位';
+      newErrors.newPassword = t('myPage.settings.errors.passwordMinLength');
     }
 
     if (passwordForm.newPassword !== passwordForm.confirmPassword) {
-      newErrors.confirmPassword = '两次输入的密码不一致';
+      newErrors.confirmPassword = t('myPage.settings.errors.passwordMismatch');
     }
 
     setErrors(newErrors);
@@ -135,14 +138,14 @@ export default function AccountSettings() {
         });
         window.dispatchEvent(userUpdateEvent);
 
-        alert('个人信息更新成功！');
+        alert(t('myPage.settings.updateSuccess'));
       } else {
         const error = await response.json();
-        alert(error.error || '更新失败');
+        alert(error.error || t('myPage.settings.updateFailed'));
       }
     } catch (error) {
       console.error('更新个人信息失败:', error);
-      alert('更新失败');
+      alert(t('myPage.settings.updateFailed'));
     } finally {
       setSaving(false);
     }
@@ -167,7 +170,7 @@ export default function AccountSettings() {
       });
 
       if (response.ok) {
-        alert('密码修改成功！');
+        alert(t('myPage.settings.passwordChangeSuccess'));
         setPasswordForm({
           currentPassword: '',
           newPassword: '',
@@ -175,11 +178,11 @@ export default function AccountSettings() {
         });
       } else {
         const error = await response.json();
-        alert(error.error || '密码修改失败');
+        alert(error.error || t('myPage.settings.passwordChangeFailed'));
       }
     } catch (error) {
       console.error('修改密码失败:', error);
-      alert('密码修改失败');
+      alert(t('myPage.settings.passwordChangeFailed'));
     } finally {
       setSaving(false);
     }
@@ -216,13 +219,13 @@ export default function AccountSettings() {
   }
 
   const tabs = [
-    { id: 'profile', label: '个人信息', icon: '👤' },
-    { id: 'password', label: '修改密码', icon: '🔒' }
+    { id: 'profile', label: t('myPage.settings.personalInfo'), icon: '👤' },
+    { id: 'password', label: t('myPage.settings.changePassword'), icon: '🔒' }
   ];
 
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
-      <h3 className="text-lg font-semibold text-gray-900 mb-6">账户设置</h3>
+      <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('myPage.settings.accountSettings')}</h3>
 
       {/* 标签页导航 */}
       <div className="mb-6">
@@ -251,7 +254,7 @@ export default function AccountSettings() {
         <form onSubmit={handleSaveProfile} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              姓名
+              {t('myPage.settings.name')}
             </label>
             <input
               type="text"
@@ -260,7 +263,7 @@ export default function AccountSettings() {
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
                 errors.name ? 'border-red-300' : 'border-gray-300'
               }`}
-              placeholder="请输入您的姓名"
+              placeholder={t('myPage.settings.namePlaceholder')}
             />
             {errors.name && (
               <p className="mt-1 text-sm text-red-600">{errors.name}</p>
@@ -270,7 +273,7 @@ export default function AccountSettings() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              邮箱地址
+              {t('myPage.settings.email')}
             </label>
             <input
               type="email"
@@ -279,7 +282,7 @@ export default function AccountSettings() {
               className="w-full px-3 py-2 border border-gray-300 rounded-md bg-gray-50 text-gray-500"
             />
             <p className="mt-1 text-sm text-gray-500">
-              邮箱地址不可修改
+              {t('myPage.settings.emailCannotChange')}
             </p>
           </div>
 
@@ -289,7 +292,7 @@ export default function AccountSettings() {
               disabled={saving}
               className="px-6 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {saving ? '保存中...' : '保存更改'}
+              {saving ? t('myPage.settings.saving') : t('myPage.settings.saveChanges')}
             </button>
           </div>
         </form>
@@ -300,7 +303,7 @@ export default function AccountSettings() {
         <form onSubmit={handleChangePassword} className="space-y-6">
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              当前密码
+              {t('myPage.settings.currentPassword')}
             </label>
             <input
               type="password"
@@ -309,7 +312,7 @@ export default function AccountSettings() {
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
                 errors.currentPassword ? 'border-red-300' : 'border-gray-300'
               }`}
-              placeholder="请输入当前密码"
+              placeholder={t('myPage.settings.currentPasswordPlaceholder')}
             />
             {errors.currentPassword && (
               <p className="mt-1 text-sm text-red-600">{errors.currentPassword}</p>
@@ -318,7 +321,7 @@ export default function AccountSettings() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              新密码
+              {t('myPage.settings.newPassword')}
             </label>
             <input
               type="password"
@@ -327,7 +330,7 @@ export default function AccountSettings() {
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
                 errors.newPassword ? 'border-red-300' : 'border-gray-300'
               }`}
-              placeholder="请输入新密码（至少6位）"
+              placeholder={t('myPage.settings.newPasswordPlaceholder')}
             />
             {errors.newPassword && (
               <p className="mt-1 text-sm text-red-600">{errors.newPassword}</p>
@@ -336,7 +339,7 @@ export default function AccountSettings() {
 
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              确认新密码
+              {t('myPage.settings.confirmPassword')}
             </label>
             <input
               type="password"
@@ -345,7 +348,7 @@ export default function AccountSettings() {
               className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500 focus:border-transparent ${
                 errors.confirmPassword ? 'border-red-300' : 'border-gray-300'
               }`}
-              placeholder="请再次输入新密码"
+              placeholder={t('myPage.settings.confirmPasswordPlaceholder')}
             />
             {errors.confirmPassword && (
               <p className="mt-1 text-sm text-red-600">{errors.confirmPassword}</p>
@@ -358,7 +361,7 @@ export default function AccountSettings() {
               disabled={saving}
               className="px-6 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {saving ? '修改中...' : '修改密码'}
+              {saving ? t('myPage.settings.changing') : t('myPage.settings.changePassword')}
             </button>
           </div>
         </form>

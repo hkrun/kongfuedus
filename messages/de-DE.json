@@ -6,6 +6,7 @@
     "my": "Mein",
     "courses": "Kurse",
     "home": "Startseite",
+    "back": "Zurück",
     "dashboard": "Dashboard",
     "profile": "Profil",
     "settings": "Einstellungen",
@@ -65,11 +66,14 @@
     "pageDescription": "Entdecken Sie unsere umfassende Sammlung von Kampfkunst-Kursen, organisiert nach Disziplinen. Ob Sie Anfänger oder fortgeschrittener Praktiker sind, finden Sie den perfekten Kurs zur Verbesserung Ihrer Fähigkeiten.",
     "allCourses": "Alle Kurse",
     "categories": {
+      "title": "Kurskategorien",
       "striking": "Schlagtechniken",
       "taiji": "Tai Chi",
       "weapons": "Waffen",
       "selfDefense": "Selbstverteidigung",
-      "health": "Gesundheit & Wellness"
+      "health": "Gesundheit & Wellness",
+      "combat": "Kampf",
+      "mixed": "Gemischt"
     },
     "viewCourse": "Kurs anzeigen",
     "enrollNow": "Jetzt einschreiben",
@@ -81,6 +85,15 @@
       "beginner": "Anfänger",
       "intermediate": "Mittelstufe",
       "advanced": "Fortgeschritten"
+    },
+    "loadingCourses": "Kurse werden geladen...",
+    "loadMore": "Weitere Kurse laden",
+    "sort": {
+      "mostPopular": "Beliebteste",
+      "newest": "Neueste",
+      "priceLowToHigh": "Preis: Niedrig bis Hoch",
+      "priceHighToLow": "Preis: Hoch bis Niedrig",
+      "highestRated": "Höchste Bewertung"
     }
   },
   "payment": {
@@ -93,7 +106,15 @@
     "cvv": "CVV",
     "payNow": "Jetzt bezahlen",
     "paymentSuccess": "Zahlung erfolgreich",
-    "paymentFailed": "Zahlung fehlgeschlagen"
+    "paymentFailed": "Zahlung fehlgeschlagen",
+    "trialSuccess": "🎉 Herzlichen Glückwunsch! Sie haben erfolgreich eine 3-tägige kostenlose Testversion aktiviert!",
+    "purchaseSuccess": "🎉 Herzlichen Glückwunsch! Sie haben diesen Kurs erfolgreich gekauft!",
+    "paymentPreparationFailed": "Zahlungsvorbereitung fehlgeschlagen",
+    "retry": "Wiederholen",
+    "loadingPaymentInfo": "Zahlungsinformationen werden geladen...",
+    "preparing": "Vorbereitung...",
+    "purchaseThisCourse": "Diesen Kurs kaufen",
+    "freeTrialButton": "3-Tage kostenlose Testversion"
   },
   "subscription": {
     "monthly": "Monatliches Abonnement",
@@ -198,11 +219,191 @@
       "contactUs": "Kontaktieren Sie uns",
       "privacyPolicy": "Datenschutzrichtlinie",
       "termsOfService": "Nutzungsbedingungen",
-      "refundPolicy": "Rückerstattungsrichtlinie",
+      "refundPolicy": "Zahlungs- und Rückerstattungsrichtlinie",
       "emailPlaceholder": "Ihre E-Mail-Adresse",
       "privacyNotice": "Wir respektieren Ihre Privatsphäre. Abbestellen Sie jederzeit.",
-      "copyright": "© 2023~2025 Kong Fu Meister. Alle Rechte vorbehalten."
+      "copyright": "© 2023~2025 Kong Fu Meister. Alle Rechte vorbehalten.",
+      "address": "123 Kampfkunststraße, Tokio, Japan",
+      "phone": "+81 123 456 7890",
+      "email": "zjhkrun@gmail.com"
     }
+  },
+  "contact": {
+    "title": "Kontaktieren Sie uns",
+    "description": "Haben Sie Fragen oder Vorschläge? Bitte füllen Sie das folgende Formular aus und wir werden uns so schnell wie möglich bei Ihnen melden.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Geben Sie Ihren Namen ein",
+    "emailLabel": "E-Mail",
+    "emailPlaceholder": "Geben Sie Ihre E-Mail-Adresse ein",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Teilen Sie uns Ihre Fragen oder Vorschläge mit...",
+    "submit": "Absenden",
+    "submitting": "Wird gesendet...",
+    "cancel": "Abbrechen",
+    "successTitle": "Erfolgreich gesendet!",
+    "successMessage": "Vielen Dank für Ihr Feedback. Wir werden uns bald bei Ihnen melden.",
+    "errors": {
+      "nameRequired": "Bitte geben Sie Ihren Namen ein",
+      "emailRequired": "Bitte geben Sie Ihre E-Mail-Adresse ein",
+      "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+      "messageRequired": "Bitte geben Sie Ihre Nachricht ein"
+    }
+  },
+  "faq": {
+    "title": "Häufig gestellte Fragen",
+    "description": "Finden Sie Antworten auf häufige Fragen zu Kong Fu Master",
+    "stillNeedHelp": "Brauchen Sie noch Hilfe? Kontaktieren Sie uns:",
+    "categories": {
+      "courseAccess": "Über Kurszugang",
+      "membership": "Über Mitgliedschaft",
+      "payment": "Über Zahlung & Rückerstattung",
+      "learning": "Über Lernfunktionen",
+      "account": "Über Kontoverwaltung",
+      "technical": "Über technischen Support"
+    },
+    "courseAccess": {
+      "q1": "Wie kaufe ich einen Kurs?",
+      "a1": "Sie können die Kursseite durchsuchen, einen Kurs auswählen, der Sie interessiert, auf die Schaltfläche 'Diesen Kurs kaufen' klicken und den Kauf über unseren sicheren Zahlungsprozess abschließen. Nach erfolgreicher Zahlung erhalten Sie sofort Zugang zum Kurs.",
+      "q2": "Was ist der Unterschied zwischen Mitgliedschaft und Einzelkurskauf?",
+      "a2": "Ein Einzelkurskauf gewährt nur Zugang zu dem spezifischen Kurs, den Sie kaufen, gültig für 1 Jahr. Die monatliche Mitgliedschaft ($39.99/Monat) bietet unbegrenzten Zugang zu allen 100+ Kursen sowie zusätzliche Vorteile wie Video-Downloads, direkten Kontakt mit Trainern, Teilnahme an Live-Q&A und mehr.",
+      "q3": "Wie funktioniert die 3-tägige kostenlose Testversion?",
+      "a3": "Neue Benutzer können eine 3-tägige kostenlose Testversion aktivieren, um kostenlos auf alle Mitgliedschaftskurse zuzugreifen. Vor Ende der Testversion können Sie Ihr Abonnement ohne Gebühren kündigen. Wenn Sie nicht kündigen, wird es automatisch in eine monatliche Mitgliedschaft umgewandelt und die Abrechnung beginnt.",
+      "q4": "Wie schnell kann ich nach dem Kauf mit dem Lernen beginnen?",
+      "a4": "Der Kurszugang wird sofort nach erfolgreicher Zahlung aktiviert, und Sie können sofort mit dem Lernen beginnen. Sie finden alle Ihre gekauften Kurse auf der Seite 'Meine Kurse'."
+    },
+    "membership": {
+      "q1": "Welche Vorteile beinhaltet die monatliche Mitgliedschaft?",
+      "a1": "Die monatliche Mitgliedschaft ($39.99/Monat) beinhaltet: unbegrenzten Zugang zu allen 100+ Kursen, Video-Downloads für Offline-Ansicht, direkten Kontakt mit Trainern über WhatsApp, Teilnahme an Live-Q&A-Sitzungen, Zugang zu exklusiven Mitgliederinhalten und mehr.",
+      "q2": "Auf wie viele Kurse können Mitglieder zugreifen?",
+      "a2": "Mitglieder haben unbegrenzten Zugang zu allen Kursen auf der Plattform. Derzeit gibt es 100+ professionelle Kampfkunstkurse, die Tai Chi, Shaolin, Wing Chun, Selbstverteidigung, Kinder-Kampfkünste und weitere Kategorien abdecken. Wir fügen kontinuierlich neue Kurse hinzu.",
+      "q3": "Können Mitglieder Videos herunterladen?",
+      "a3": "Ja, monatliche Mitglieder können Kursvideos auf ihre lokalen Geräte herunterladen und jederzeit und überall offline ansehen, ohne Netzwerkbeschränkungen. Dies ist sehr praktisch für Benutzer, die in Umgebungen ohne Internetzugang lernen möchten.",
+      "q4": "Wie kündige ich mein Mitgliedschaftsabonnement?",
+      "a4": "Sie können zur Seite 'Mein' gehen und auf die Schaltfläche 'Abonnement kündigen' im Abonnementstatus-Bereich klicken. Nach der Kündigung laufen Ihre Mitgliedschaftsvorteile am Ende des aktuellen Abrechnungszyklus ab und werden nicht sofort beendet."
+    },
+    "payment": {
+      "q1": "Welche Zahlungsmethoden werden unterstützt?",
+      "a1": "Wir unterstützen verschiedene sichere und bequeme Zahlungsmethoden, darunter: Visa, MasterCard und andere internationale Kreditkarten sowie Alipay, WeChat Pay und andere Drittanbieter-Zahlungsplattformen. Alle Zahlungen werden sicher über Stripe-Verschlüsselung verarbeitet.",
+      "q2": "Wie beantrage ich eine Rückerstattung?",
+      "a2": "Bitte melden Sie sich bei Ihrem Konto an, gehen Sie zur Seite 'Meine Bestellungen', finden Sie die Bestellung, die Sie zurückerstatten möchten, und klicken Sie auf die Schaltfläche 'Rückerstattung beantragen'. Einzelkurskäufe können innerhalb von 7 Tagen zurückerstattet werden, wenn die Anzeigezeit 20% nicht überschreitet. Mitgliedschaften können innerhalb von 3 Tagen vollständig zurückerstattet werden, wenn Vorteile nicht genutzt wurden. Weitere Informationen finden Sie in unserer Rückerstattungsrichtlinie.",
+      "q3": "Wie lange dauert es, bis eine Rückerstattung eintrifft?",
+      "a3": "Nach Genehmigung Ihres Rückerstattungsantrags erstatten wir den Betrag innerhalb von 5-7 Werktagen auf Ihr ursprüngliches Zahlungskonto zurück. Die spezifische Ankunftszeit hängt von Ihrer Zahlungsinstitution und der Bankverarbeitung ab und wird normalerweise innerhalb von 7-14 Werktagen abgeschlossen.",
+      "q4": "Kann ich eine Rückerstattung für Kurse erhalten, die ich bereits angesehen habe?",
+      "a4": "Wenn Sie mehr als 20% des Kursinhalts angesehen haben oder mehr als 7 Tage seit dem Kauf vergangen sind, werden Rückerstattungen nicht unterstützt. Wenn der Kurs jedoch schwerwiegende Qualitätsprobleme aufweist oder erheblich von der Beschreibung abweicht, können Sie sich an den Kundenservice wenden, um die Situation zu erklären, und wir werden eine spezielle Überprüfung durchführen."
+    },
+    "learning": {
+      "q1": "Wie verfolge ich meinen Lernfortschritt?",
+      "a1": "Das System zeichnet automatisch Ihren Lernfortschritt auf. Auf der Seite 'Meine Kurse' können Sie den Abschlussprozentsatz, die letzte Anzeigezeit und andere Informationen für jeden Kurs sehen. Die Kursdetailseite zeigt auch den Abschlussstatus jedes Kapitels an.",
+      "q2": "Unterstützen Videos Untertitel?",
+      "a2": "Ja, unsere Kursvideos unterstützen mehrsprachige Untertitel, darunter Chinesisch, Englisch, Japanisch, Koreanisch, Deutsch, Französisch und Arabisch. Sie können Ihre bevorzugte Untertitelsprache im Videoplayer auswählen.",
+      "q3": "Kann ich offline ansehen?",
+      "a3": "Monatliche Mitglieder können Kursvideos auf lokale Geräte herunterladen und offline ansehen. Einzelkurskäufer müssen online ansehen, aber unsere Videos unterstützen adaptive Bitrate und gewährleisten eine reibungslose Wiedergabe auch bei langsameren Internetverbindungen.",
+      "q4": "Wie lange ist die Kursgültigkeitsdauer?",
+      "a4": "Einzelkurskäufe sind 1 Jahr gültig, mit unbegrenzter Ansicht während der Gültigkeitsdauer. Monatliche Mitglieder können während des Abonnementzeitraums auf alle Kurse zugreifen. Nach Kündigung des Abonnements geht der Zugang am Ende des aktuellen Abrechnungszyklus verloren."
+    },
+    "account": {
+      "q1": "Wie ändere ich meine persönlichen Informationen?",
+      "a1": "Nach dem Einloggen gehen Sie zur Seite 'Mein' und klicken Sie auf die Registerkarte 'Kontoeinstellungen', um persönliche Informationen wie Ihren Namen zu ändern. Die E-Mail-Adresse dient als eindeutige Kontoidentifikation und kann derzeit nicht geändert werden.",
+      "q2": "Was ist, wenn ich mein Passwort vergesse?",
+      "a2": "Klicken Sie auf der Anmeldeseite auf den Link 'Passwort vergessen' und geben Sie Ihre registrierte E-Mail ein. Wir senden Ihnen einen Link zum Zurücksetzen des Passworts an Ihre E-Mail. Nach dem Klicken auf den Link können Sie ein neues Passwort festlegen.",
+      "q3": "Wie lösche ich mein Konto?",
+      "a3": "Um Ihr Konto zu löschen, senden Sie bitte eine E-Mail an zjhkrun@gmail.com und erklären Sie Ihren Löschantrag. Bitte beachten Sie, dass nach der Kontolöschung Ihre Lernaufzeichnungen, Kaufaufzeichnungen und andere Daten dauerhaft gelöscht werden und gekaufte Kurse und Mitgliedschaftsvorteile nicht wiederhergestellt werden können."
+    },
+    "technical": {
+      "q1": "Was soll ich tun, wenn das Video nicht abgespielt wird?",
+      "a1": "Bitte überprüfen Sie zunächst, ob Ihre Internetverbindung normal ist. Wenn das Netzwerk in Ordnung ist, das Video aber immer noch nicht abgespielt wird, versuchen Sie, die Seite zu aktualisieren oder den Browser zu wechseln. Wenn das Problem weiterhin besteht, wenden Sie sich bitte an den Kundenservice und geben Sie Ihr Gerätemodell und Ihre Browserversion an.",
+      "q2": "Welche Browser werden unterstützt?",
+      "a2": "Unsere Plattform unterstützt alle gängigen modernen Browser, einschließlich Chrome, Firefox, Safari, Edge usw. Für das beste Erlebnis empfehlen wir die Verwendung der neuesten Version Ihres Browsers.",
+      "q3": "Kann ich es auf mobilen Geräten verwenden?",
+      "a3": "Ja, unsere Website unterstützt vollständig den Zugriff auf mobile Geräte. Sie können https://www.kongfunow.com in Ihrem Mobil- oder Tablet-Browser besuchen und das gleiche Lernerlebnis wie auf dem Desktop genießen. Mitglieder können auch Videos auf mobile Geräte herunterladen und offline ansehen."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Willkommen zurück",
+      "subtitle": "Melden Sie sich bei Ihrem Konto an, um weiter zu lernen",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "passwordLabel": "Passwort",
+      "passwordPlaceholder": "Geben Sie Ihr Passwort ein",
+      "forgotPassword": "Passwort vergessen?",
+      "loginButton": "Anmelden",
+      "or": "oder",
+      "googleLogin": "Mit Google anmelden",
+      "noAccount": "Noch kein Konto?",
+      "registerNow": "Jetzt registrieren",
+      "errors": {
+        "emailRequired": "Bitte geben Sie Ihre E-Mail ein",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "passwordRequired": "Bitte geben Sie Ihr Passwort ein",
+        "invalidCredentials": "Ungültige E-Mail oder Passwort",
+        "loginFailed": "Anmeldung fehlgeschlagen, bitte versuchen Sie es später erneut",
+        "googleLoginFailed": "Google-Anmeldung fehlgeschlagen, bitte versuchen Sie es später erneut"
+      }
+    },
+    "register": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Geben Sie Ihren Namen ein",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "passwordLabel": "Passwort",
+      "passwordPlaceholder": "Geben Sie ein Passwort ein",
+      "passwordHelper": "Mindestens 8 Zeichen mit Groß-, Kleinbuchstaben und Zahlen",
+      "confirmPasswordLabel": "Passwort bestätigen",
+      "confirmPasswordPlaceholder": "Geben Sie das Passwort erneut ein",
+      "registerButton": "Registrieren"
+    },
+    "forgotPassword": {
+      "title": "Passwort vergessen?",
+      "subtitle": "Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen einen Link zum Zurücksetzen des Passworts",
+      "emailLabel": "E-Mail",
+      "emailPlaceholder": "Geben Sie Ihre E-Mail ein",
+      "sendButton": "Zurücksetzungslink senden",
+      "successMessage": "Der Link zum Zurücksetzen des Passworts wurde an Ihre E-Mail gesendet. Bitte überprüfen Sie Ihre E-Mail und klicken Sie auf den Link, um Ihr Passwort zurückzusetzen.",
+      "rememberPassword": "Erinnern Sie sich an Ihr Passwort?",
+      "loginNow": "Jetzt anmelden",
+      "errors": {
+        "emailRequired": "Bitte geben Sie Ihre E-Mail ein",
+        "emailInvalid": "Bitte geben Sie eine gültige E-Mail-Adresse ein",
+        "sendFailed": "Fehler beim Senden der Zurücksetzungs-E-Mail, bitte versuchen Sie es später erneut"
+      }
+    },
+    "resetPassword": {
+      "title": "Passwort zurücksetzen",
+      "subtitle": "Geben Sie Ihr neues Passwort ein",
+      "newPasswordLabel": "Neues Passwort",
+      "newPasswordPlaceholder": "Geben Sie ein neues Passwort ein",
+      "passwordHelper": "Mindestens 8 Zeichen mit Groß-, Kleinbuchstaben und Zahlen",
+      "confirmPasswordLabel": "Neues Passwort bestätigen",
+      "confirmPasswordPlaceholder": "Geben Sie das neue Passwort erneut ein",
+      "resetButton": "Passwort zurücksetzen",
+      "successMessage": "Passwort erfolgreich zurückgesetzt! Weiterleitung zur Anmeldeseite in 3 Sekunden.",
+      "invalidLinkTitle": "Ungültiger Link",
+      "invalidLinkMessage": "Der Link zum Zurücksetzen des Passworts, auf den Sie zugegriffen haben, ist ungültig oder abgelaufen.",
+      "requestAgain": "Erneut anfordern",
+      "rememberPassword": "Erinnern Sie sich an Ihr Passwort?",
+      "loginNow": "Jetzt anmelden",
+      "errors": {
+        "invalidLink": "Ungültiger Zurücksetzungslink",
+        "passwordRequired": "Bitte geben Sie ein neues Passwort ein",
+        "passwordTooShort": "Passwort muss mindestens 8 Zeichen lang sein",
+        "passwordWeak": "Passwort muss Groß-, Kleinbuchstaben und Zahlen enthalten",
+        "confirmRequired": "Bitte bestätigen Sie das neue Passwort",
+        "passwordMismatch": "Passwörter stimmen nicht überein",
+        "resetFailed": "Passwort-Zurücksetzung fehlgeschlagen, bitte versuchen Sie es später erneut"
+      }
+    }
+  },
+  "subscription": {
+    "status": "Abonnementstatus",
+    "noSubscription": "Sie haben noch kein Abonnement aktiviert",
+    "startTrialHint": "Klicken Sie auf \"3-Tage-Testversion\", um zu starten",
+    "freeTrial": "Kostenlose Testversion",
+    "trialEnds": "Testversion endet: ",
+    "trialAutoConvert": "Wird nach der Testversion automatisch in ein $39/Monat-Abonnement umgewandelt",
+    "monthlyMember": "Monatliches Mitglied",
+    "nextBilling": "Nächste Abrechnung: ",
+    "monthlyPrice": "$39/Monat"
   },
   "myPage": {
     "title": "Mein Konto",
@@ -223,25 +424,91 @@
     },
     "courses": {
       "purchasedCourses": "Gekaufte Kurse",
+      "myCourses": "Meine Kurse",
       "recentVideos": "Kürzlich angesehen",
       "continueLearning": "Lernen fortsetzen",
       "completed": "Abgeschlossen",
-      "inProgress": "In Bearbeitung"
+      "inProgress": "In Bearbeitung",
+      "noCoursesYet": "Noch keine Kurse gekauft",
+      "browseCourses": "Kurse durchsuchen",
+      "subscriptionUser": "Abonnement-Benutzer",
+      "learningProgress": "Lernfortschritt",
+      "lastWatched": "Zuletzt angesehen",
+      "inProgressStatus": "In Bearbeitung",
+      "notStarted": "Nicht gestartet",
+      "expiresAt": "Läuft ab",
+      "showingItems": "Zeige {start} - {end} von {total} Einträgen",
+      "previousPage": "Zurück",
+      "nextPage": "Weiter",
+      "viewAllCourses": "Alle Kurse anzeigen ({total})"
+    },
+    "recent": {
+      "recentWatched": "Kürzlich angesehen",
+      "recentVideos": "Kürzlich angesehene Videos",
+      "totalVideos": "{total} Videos",
+      "noVideosYet": "Noch keine Videos angesehen",
+      "startLearning": "Lernen beginnen",
+      "justNow": "Gerade eben",
+      "hoursAgo": "vor {hours} Stunden",
+      "yesterday": "Gestern",
+      "watchProgress": "Wiedergabefortschritt",
+      "continueWatching": "Weiter ansehen",
+      "startWatching": "Ansehen beginnen",
+      "viewAllVideos": "Alle Videos anzeigen ({total})"
     },
     "history": {
       "purchaseHistory": "Kaufhistorie",
       "orderNumber": "Bestellnummer",
       "purchaseDate": "Kaufdatum",
       "amount": "Betrag",
-      "status": "Status",
-      "viewDetails": "Details anzeigen"
+      "viewDetails": "Details anzeigen",
+      "noHistory": "Keine Kaufhistorie",
+      "noHistoryDesc": "Ihre Kaufaufzeichnungen werden hier angezeigt, nachdem Sie Kurse oder Abonnements gekauft haben",
+      "totalRecords": "{total} Einträge",
+      "filter": {
+        "all": "Alle",
+        "course": "Kurse",
+        "subscription": "Abonnements"
+      },
+      "status": {
+        "active": "Aktiv",
+        "canceled": "Storniert",
+        "expired": "Abgelaufen",
+        "refunded": "Erstattet"
+      },
+      "expiringSoon": "Läuft bald ab",
+      "expiresAt": "Läuft ab am",
+      "coursePurchase": "Kurskauf",
+      "platformSubscription": "Plattform-Abonnement",
+      "orderId": "Bestell-ID",
+      "transactionId": "Transaktions-ID"
     },
     "settings": {
       "accountSettings": "Kontoeinstellungen",
       "personalInfo": "Persönliche Informationen",
       "changePassword": "Passwort ändern",
       "notificationSettings": "Benachrichtigungseinstellungen",
-      "privacySettings": "Datenschutzeinstellungen"
+      "privacySettings": "Datenschutzeinstellungen",
+      "name": "Name",
+      "namePlaceholder": "Geben Sie Ihren Namen ein",
+      "email": "E-Mail-Adresse",
+      "emailCannotChange": "E-Mail-Adresse kann nicht geändert werden",
+      "currentPassword": "Aktuelles Passwort",
+      "currentPasswordPlaceholder": "Geben Sie das aktuelle Passwort ein",
+      "newPassword": "Neues Passwort",
+      "newPasswordPlaceholder": "Geben Sie ein neues Passwort ein (mindestens 6 Zeichen)",
+      "confirmPassword": "Neues Passwort bestätigen",
+      "confirmPasswordPlaceholder": "Geben Sie das neue Passwort erneut ein",
+      "saveChanges": "Änderungen speichern",
+      "saving": "Wird gespeichert...",
+      "changing": "Wird geändert...",
+      "errors": {
+        "nameRequired": "Name darf nicht leer sein",
+        "currentPasswordRequired": "Bitte geben Sie das aktuelle Passwort ein",
+        "newPasswordRequired": "Bitte geben Sie ein neues Passwort ein",
+        "passwordMinLength": "Passwort muss mindestens 6 Zeichen lang sein",
+        "passwordMismatch": "Passwörter stimmen nicht überein"
+      }
     }
   },
   "userStatusCard": {
@@ -356,7 +623,8 @@
       "answerQuestions": "Beantwortung Ihrer spezifischen Fragen",
       "progressGuidance": "Trainingsfortschritt-Anleitung",
       "purchaseToContact": "Kurs kaufen, um Lehrer zu kontaktieren",
-      "loginToExperience": "Anmelden zum Erleben"
+      "loginToExperience": "Anmelden zum Erleben",
+      "description": "Mit reicher Unterrichtserfahrung und tiefgreifenden Kampfkunstkenntnissen. Verpflichtet, die traditionelle chinesische Kampfkunstkultur zu bewahren und zu fördern und den Schülern zu helfen, praktische Kampfkunstfähigkeiten zu erlernen."
     },
     "reviews": {
       "studentReviews": "Schülerbewertungen",
@@ -412,7 +680,8 @@
       "kungfu": "Kung Fu",
       "martialArts": "Kampfkunst",
       "selfDefense": "Selbstverteidigung",
-      "fitness": "Fitness"
+      "fitness": "Fitness",
+      "martialArtsPhilosophy": "Kampfkunst-Philosophie"
     }
   }
 }

@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import PaymentModal from './PaymentModal';
 
 interface PurchaseButtonProps {
@@ -20,6 +21,7 @@ export default function PurchaseButton({
   price = "¥99",
   onPaymentSuccess
 }: PurchaseButtonProps) {
+  const t = useTranslations();
   const { data: session, status } = useSession();
   const router = useRouter();
   const [showPaymentModal, setShowPaymentModal] = useState(false);
@@ -51,15 +53,15 @@ export default function PurchaseButton({
         {status === 'loading' ? (
           <div className="flex items-center justify-center">
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-            加载中...
+            {t('common.loading')}
           </div>
         ) : !session?.user?.id || !session?.user?.email ? (
           <div className="flex items-center justify-center">
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-            准备中...
+            {t('payment.preparing')}
           </div>
         ) : (
-          '购买此课程'
+          t('payment.purchaseThisCourse')
         )}
       </button>
 

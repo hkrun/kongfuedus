@@ -978,9 +978,9 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                       <h2 className="font-bold text-2xl text-[#1a365d] mb-2">{course.instructor}</h2>
                       <p className="text-gray-600 text-lg mb-3">{course.intro}</p>
                       <div className="flex flex-wrap gap-2">
-                        <span className="bg-[#1a365d]/10 text-[#1a365d] px-3 py-1 rounded-full text-sm">功夫</span>
-                        <span className="bg-[#1a365d]/10 text-[#1a365d] px-3 py-1 rounded-full text-sm">自卫</span>
-                        <span className="bg-[#1a365d]/10 text-[#1a365d] px-3 py-1 rounded-full text-sm">武术哲学</span>
+                        <span className="bg-[#1a365d]/10 text-[#1a365d] px-3 py-1 rounded-full text-sm">{t('courseDetail.tags.kungfu')}</span>
+                        <span className="bg-[#1a365d]/10 text-[#1a365d] px-3 py-1 rounded-full text-sm">{t('courseDetail.tags.selfDefense')}</span>
+                        <span className="bg-[#1a365d]/10 text-[#1a365d] px-3 py-1 rounded-full text-sm">{t('courseDetail.tags.martialArtsPhilosophy')}</span>
                       </div>
                  </div>
              </div>
@@ -988,7 +988,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                   <div className="mb-8">
                     <h3 className="font-semibold text-xl text-gray-800 mb-4">{t('courseDetail.instructor.aboutInstructor', {name: course.instructor})}</h3>
                     <div className="prose prose-lg text-gray-700 max-w-none">
-                      <p>{course.intro}，拥有丰富的教学经验和深厚的武术功底。致力于传承和发扬中国传统武术文化，帮助学员掌握实用的武术技能。</p>
+                      <p>{course.intro}，{t('courseDetail.instructor.description')}</p>
                     </div>
                   </div>
                       </div>

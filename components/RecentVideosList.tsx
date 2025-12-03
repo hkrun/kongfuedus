@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { useTranslations, useLocale } from 'next-intl';
 
 interface Video {
   id: string;
@@ -28,6 +29,8 @@ interface RecentVideosListProps {
 }
 
 export default function RecentVideosList({ limit }: RecentVideosListProps) {
+  const t = useTranslations();
+  const locale = useLocale();
   const [data, setData] = useState<RecentVideosResponse | null>(null);
   const [loading, setLoading] = useState(true);
 
@@ -58,13 +61,22 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
     const diffInHours = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60));
     
     if (diffInHours < 1) {
-      return '刚刚';
+      return t('myPage.recent.justNow');
     } else if (diffInHours < 24) {
-      return `${diffInHours}小时前`;
+      return t('myPage.recent.hoursAgo', { hours: diffInHours });
     } else if (diffInHours < 48) {
-      return '昨天';
+      return t('myPage.recent.yesterday');
     } else {
-      return date.toLocaleDateString('zh-CN');
+      const localeMap: { [key: string]: string } = {
+        'zh': 'zh-CN',
+        'ja': 'ja-JP',
+        'ko': 'ko-KR',
+        'de': 'de-DE',
+        'fr': 'fr-FR',
+        'ar': 'ar-SA',
+        'en': 'en-US'
+      };
+      return date.toLocaleDateString(localeMap[locale] || 'en-US');
     }
   };
 
@@ -110,16 +122,16 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
     return (
       <div className="bg-white rounded-lg shadow-md p-6">
         <h3 className="text-lg font-semibold text-gray-900 mb-4">
-          {limit ? '最近观看' : '最近播放视频'}
+          {limit ? t('myPage.recent.recentWatched') : t('myPage.recent.recentVideos')}
         </h3>
         <div className="text-center py-8">
           <div className="text-gray-400 text-6xl mb-4">🎬</div>
-          <p className="text-gray-500 mb-4">还没有观看任何视频</p>
+          <p className="text-gray-500 mb-4">{t('myPage.recent.noVideosYet')}</p>
           <Link
-            href="/courses"
+            href={`/${locale}/courses`}
             className="inline-flex items-center px-4 py-2 bg-orange-500 text-white font-medium rounded-md hover:bg-orange-600 transition-colors duration-200"
           >
-            开始学习
+            {t('myPage.recent.startLearning')}
           </Link>
         </div>
       </div>
@@ -130,11 +142,11 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
     <div className="bg-white rounded-lg shadow-md p-6">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-lg font-semibold text-gray-900">
-          {limit ? '最近观看' : '最近播放视频'}
+          {limit ? t('myPage.recent.recentWatched') : t('myPage.recent.recentVideos')}
         </h3>
         {!limit && (
           <span className="text-sm text-gray-500">
-            共 {data.total} 个视频
+            {t('myPage.recent.totalVideos', { total: data.total })}
           </span>
         )}
       </div>
@@ -143,7 +155,7 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
         {data.videos.map((video) => (
           <Link
             key={video.id}
-            href={`/courses/${video.courseId}${video.lessonId ? `?lesson=${video.lessonId}` : ''}`}
+            href={`/${locale}/courses/${video.courseId}${video.lessonId ? `?lesson=${video.lessonId}` : ''}`}
             className="flex items-center space-x-4 p-3 border border-gray-200 rounded-lg hover:border-orange-300 hover:shadow-md transition-all duration-200"
           >
             {/* 视频缩略图占位符 */}
@@ -162,7 +174,7 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
               {/* 进度条 */}
               <div className="mb-2">
                 <div className="flex items-center justify-between text-xs text-gray-600 mb-1">
-                  <span>观看进度</span>
+                  <span>{t('myPage.recent.watchProgress')}</span>
                   <span>{Math.round(video.progress)}%</span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-1.5">
@@ -186,7 +198,7 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
                 {video.isCompleted && (
                   <div className="flex items-center text-green-600">
                     <span className="mr-1">✅</span>
-                    已完成
+                    {t('myPage.courses.completed')}
                   </div>
                 )}
               </div>
@@ -195,15 +207,15 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
             <div className="flex-shrink-0">
               {video.isCompleted ? (
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                  ✅ 已完成
+                  ✅ {t('myPage.courses.completed')}
                 </span>
               ) : video.progress > 0 ? (
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-                  📖 继续观看
+                  📖 {t('myPage.recent.continueWatching')}
                 </span>
               ) : (
                 <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-800">
-                  ▶ 开始观看
+                  ▶ {t('myPage.recent.startWatching')}
                 </span>
               )}
             </div>
@@ -215,10 +227,10 @@ export default function RecentVideosList({ limit }: RecentVideosListProps) {
       {limit && data.total > limit && (
         <div className="mt-4 text-center">
           <Link
-            href="/my?tab=recent"
+            href={`/${locale}/my?tab=recent`}
             className="text-orange-600 hover:text-orange-700 text-sm font-medium"
           >
-            查看全部视频 ({data.total})
+            {t('myPage.recent.viewAllVideos', { total: data.total })}
           </Link>
         </div>
       )}

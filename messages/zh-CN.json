@@ -6,6 +6,7 @@
     "my": "我的",
     "courses": "课程",
     "home": "首页",
+    "back": "返回",
     "dashboard": "仪表板",
     "profile": "个人资料",
     "settings": "设置",
@@ -29,19 +30,80 @@
     "language": "语言"
   },
   "auth": {
-    "login": "登录",
-    "register": "注册",
-    "forgotPassword": "忘记密码",
-    "resetPassword": "重置密码",
-    "verifyEmail": "验证邮箱",
-    "email": "邮箱",
-    "password": "密码",
-    "confirmPassword": "确认密码",
-    "name": "姓名",
-    "loginSuccess": "登录成功",
-    "registerSuccess": "注册成功",
-    "loginError": "登录失败",
-    "registerError": "注册失败"
+    "login": {
+      "title": "欢迎回来",
+      "subtitle": "登录您的账户以继续学习",
+      "emailLabel": "邮箱地址",
+      "emailPlaceholder": "请输入您的邮箱",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "请输入您的密码",
+      "forgotPassword": "忘记密码？",
+      "loginButton": "登录",
+      "or": "或",
+      "googleLogin": "使用 Google 登录",
+      "noAccount": "还没有账户？",
+      "registerNow": "立即注册",
+      "errors": {
+        "emailRequired": "请输入邮箱地址",
+        "emailInvalid": "请输入有效的邮箱地址",
+        "passwordRequired": "请输入密码",
+        "invalidCredentials": "邮箱或密码错误",
+        "loginFailed": "登录失败，请稍后重试",
+        "googleLoginFailed": "Google登录失败，请稍后重试"
+      }
+    },
+    "register": {
+      "nameLabel": "姓名",
+      "namePlaceholder": "请输入您的姓名",
+      "emailLabel": "邮箱地址",
+      "emailPlaceholder": "请输入您的邮箱",
+      "passwordLabel": "密码",
+      "passwordPlaceholder": "请输入密码",
+      "passwordHelper": "密码至少8位，包含大小写字母和数字",
+      "confirmPasswordLabel": "确认密码",
+      "confirmPasswordPlaceholder": "请再次输入密码",
+      "registerButton": "注册"
+    },
+    "forgotPassword": {
+      "title": "忘记密码？",
+      "subtitle": "请输入您的邮箱地址，我们将发送密码重置链接给您",
+      "emailLabel": "邮箱地址",
+      "emailPlaceholder": "请输入您的邮箱",
+      "sendButton": "发送重置链接",
+      "successMessage": "密码重置链接已发送到您的邮箱，请检查并点击链接重置密码。",
+      "rememberPassword": "记起密码了？",
+      "loginNow": "立即登录",
+      "errors": {
+        "emailRequired": "请输入邮箱地址",
+        "emailInvalid": "请输入有效的邮箱地址",
+        "sendFailed": "发送重置邮件失败，请稍后重试"
+      }
+    },
+    "resetPassword": {
+      "title": "重置密码",
+      "subtitle": "请输入您的新密码",
+      "newPasswordLabel": "新密码",
+      "newPasswordPlaceholder": "请输入新密码",
+      "passwordHelper": "密码至少8位，包含大小写字母和数字",
+      "confirmPasswordLabel": "确认新密码",
+      "confirmPasswordPlaceholder": "请再次输入新密码",
+      "resetButton": "重置密码",
+      "successMessage": "密码重置成功！3秒后将跳转到登录页面。",
+      "invalidLinkTitle": "无效链接",
+      "invalidLinkMessage": "您访问的密码重置链接无效或已过期。",
+      "requestAgain": "重新申请重置",
+      "rememberPassword": "记起密码了？",
+      "loginNow": "立即登录",
+      "errors": {
+        "invalidLink": "无效的重置链接",
+        "passwordRequired": "请输入新密码",
+        "passwordTooShort": "密码至少需要8个字符",
+        "passwordWeak": "密码需要包含大小写字母和数字",
+        "confirmRequired": "请确认新密码",
+        "passwordMismatch": "两次输入的密码不一致",
+        "resetFailed": "密码重置失败，请稍后重试"
+      }
+    }
   },
   "course": {
     "title": "课程标题",
@@ -65,11 +127,14 @@
     "pageDescription": "探索我们全面的武术课程集合，按学科分类。无论您是初学者还是高级练习者，都能找到提升技能的完美课程。",
     "allCourses": "所有课程",
     "categories": {
+      "title": "课程分类",
       "striking": "拳术类",
       "taiji": "太极类",
       "weapons": "器械类",
       "selfDefense": "自卫类",
-      "health": "养生类"
+      "health": "养生类",
+      "combat": "实战类",
+      "mixed": "综合类"
     },
     "viewCourse": "查看课程",
     "enrollNow": "立即报名",
@@ -81,6 +146,15 @@
       "beginner": "初级",
       "intermediate": "中级",
       "advanced": "高级"
+    },
+    "loadingCourses": "加载课程中...",
+    "loadMore": "加载更多课程",
+    "sort": {
+      "mostPopular": "最受欢迎",
+      "newest": "最新",
+      "priceLowToHigh": "价格：从低到高",
+      "priceHighToLow": "价格：从高到低",
+      "highestRated": "评分最高"
     }
   },
   "courseDetail": {
@@ -167,7 +241,8 @@
       "answerQuestions": "回答你的具体问题",
       "progressGuidance": "训练进度指导",
       "purchaseToContact": "购买课程联系讲师",
-      "loginToExperience": "登录后体验"
+      "loginToExperience": "登录后体验",
+      "description": "拥有丰富的教学经验和深厚的武术功底。致力于传承和发扬中国传统武术文化，帮助学员掌握实用的武术技能。"
     },
     "reviews": {
       "studentReviews": "学员评价",
@@ -223,7 +298,8 @@
       "kungfu": "功夫",
       "martialArts": "武术",
       "selfDefense": "自卫",
-      "fitness": "健身"
+      "fitness": "健身",
+      "martialArtsPhilosophy": "武术哲学"
     }
   },
   "myPage": {
@@ -245,25 +321,95 @@
     },
     "courses": {
       "purchasedCourses": "已购买课程",
+      "myCourses": "我的课程",
       "recentVideos": "最近观看",
       "continueLearning": "继续学习",
       "completed": "已完成",
-      "inProgress": "进行中"
+      "inProgress": "进行中",
+      "noCoursesYet": "还没有购买任何课程",
+      "browseCourses": "浏览课程",
+      "subscriptionUser": "订阅用户",
+      "learningProgress": "学习进度",
+      "lastWatched": "最后观看",
+      "inProgressStatus": "学习中",
+      "notStarted": "未开始",
+      "expiresAt": "到期",
+      "showingItems": "显示第 {start} - {end} 条，共 {total} 条",
+      "previousPage": "上一页",
+      "nextPage": "下一页",
+      "viewAllCourses": "查看全部课程 ({total})"
+    },
+    "recent": {
+      "recentWatched": "最近观看",
+      "recentVideos": "最近播放视频",
+      "totalVideos": "共 {total} 个视频",
+      "noVideosYet": "还没有观看任何视频",
+      "startLearning": "开始学习",
+      "justNow": "刚刚",
+      "hoursAgo": "{hours}小时前",
+      "yesterday": "昨天",
+      "watchProgress": "观看进度",
+      "continueWatching": "继续观看",
+      "startWatching": "开始观看",
+      "viewAllVideos": "查看全部视频 ({total})"
     },
     "history": {
       "purchaseHistory": "购买记录",
       "orderNumber": "订单号",
       "purchaseDate": "购买日期",
       "amount": "金额",
-      "status": "状态",
-      "viewDetails": "查看详情"
+      "viewDetails": "查看详情",
+      "noHistory": "暂无购买记录",
+      "noHistoryDesc": "您购买课程或订阅后，记录将显示在这里",
+      "totalRecords": "共 {total} 条记录",
+      "filter": {
+        "all": "全部",
+        "course": "课程",
+        "subscription": "订阅"
+      },
+      "status": {
+        "active": "有效",
+        "canceled": "已取消",
+        "expired": "已过期",
+        "refunded": "已退款"
+      },
+      "expiringSoon": "即将到期",
+      "expiresAt": "到期时间",
+      "coursePurchase": "课程购买",
+      "platformSubscription": "平台订阅",
+      "orderId": "订单ID",
+      "transactionId": "交易ID"
     },
     "settings": {
       "accountSettings": "账户设置",
       "personalInfo": "个人信息",
       "changePassword": "修改密码",
       "notificationSettings": "通知设置",
-      "privacySettings": "隐私设置"
+      "privacySettings": "隐私设置",
+      "name": "姓名",
+      "namePlaceholder": "请输入您的姓名",
+      "email": "邮箱地址",
+      "emailCannotChange": "邮箱地址不可修改",
+      "currentPassword": "当前密码",
+      "currentPasswordPlaceholder": "请输入当前密码",
+      "newPassword": "新密码",
+      "newPasswordPlaceholder": "请输入新密码（至少6位）",
+      "confirmPassword": "确认新密码",
+      "confirmPasswordPlaceholder": "请再次输入新密码",
+      "saveChanges": "保存更改",
+      "saving": "保存中...",
+      "changing": "修改中...",
+      "errors": {
+        "nameRequired": "姓名不能为空",
+        "currentPasswordRequired": "请输入当前密码",
+        "newPasswordRequired": "请输入新密码",
+        "passwordMinLength": "新密码长度至少6位",
+        "passwordMismatch": "两次输入的密码不一致"
+      },
+      "updateSuccess": "个人信息更新成功！",
+      "updateFailed": "更新失败",
+      "passwordChangeSuccess": "密码修改成功！",
+      "passwordChangeFailed": "密码修改失败"
     }
   },
   "userStatusCard": {
@@ -304,7 +450,15 @@
     "cvv": "CVV",
     "payNow": "立即支付",
     "paymentSuccess": "支付成功",
-    "paymentFailed": "支付失败"
+    "paymentFailed": "支付失败",
+    "trialSuccess": "🎉 恭喜！您已成功激活3天免费试用！",
+    "purchaseSuccess": "🎉 恭喜！您已成功购买此课程！",
+    "paymentPreparationFailed": "支付准备失败",
+    "retry": "重试",
+    "loadingPaymentInfo": "正在加载支付信息...",
+    "preparing": "准备中...",
+    "purchaseThisCourse": "购买此课程",
+    "freeTrialButton": "3天免费试看"
   },
   "subscription": {
     "monthly": "月度订阅",
@@ -312,7 +466,16 @@
     "cancel": "取消订阅",
     "active": "活跃",
     "expired": "已过期",
-    "renewal": "续费"
+    "renewal": "续费",
+    "status": "订阅状态",
+    "noSubscription": "您还没有激活订阅",
+    "startTrialHint": "点击\"3天免费试看\"开始试用",
+    "freeTrial": "免费试用中",
+    "trialEnds": "试用期结束：",
+    "trialAutoConvert": "试用期结束后将自动转为$39/月订阅",
+    "monthlyMember": "月度会员",
+    "nextBilling": "下次扣费：",
+    "monthlyPrice": "$39/月"
   },
   "language": {
     "chinese": "中文",
@@ -409,10 +572,103 @@
       "contactUs": "联系我们",
       "privacyPolicy": "隐私政策",
       "termsOfService": "服务条款",
-      "refundPolicy": "退款政策",
+      "refundPolicy": "支付与退款政策",
       "emailPlaceholder": "您的邮箱地址",
       "privacyNotice": "我们尊重您的隐私。随时可以取消订阅。",
-      "copyright": "© 2023~2025 功夫大师。保留所有权利。"
+      "copyright": "© 2023~2025 功夫大师。保留所有权利。",
+      "address": "123 武术街，东京，日本",
+      "phone": "+81 123 456 7890",
+      "email": "zjhkrun@gmail.com"
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "description": "有任何问题或建议？请填写下面的表单，我们会尽快回复您。",
+    "nameLabel": "姓名",
+    "namePlaceholder": "请输入您的姓名",
+    "emailLabel": "电子邮箱",
+    "emailPlaceholder": "请输入您的邮箱地址",
+    "messageLabel": "留言内容",
+    "messagePlaceholder": "请告诉我们您的问题或建议...",
+    "submit": "提交",
+    "submitting": "提交中...",
+    "cancel": "取消",
+    "successTitle": "提交成功！",
+    "successMessage": "感谢您的反馈，我们会尽快与您联系。",
+    "errors": {
+      "nameRequired": "请输入您的姓名",
+      "emailRequired": "请输入您的邮箱地址",
+      "emailInvalid": "请输入有效的邮箱地址",
+      "messageRequired": "请输入留言内容"
+    }
+  },
+  "faq": {
+    "title": "常见问题",
+    "description": "查找关于 Kong Fu Master 的常见问题解答",
+    "stillNeedHelp": "还有其他问题？请联系我们：",
+    "categories": {
+      "courseAccess": "关于课程访问",
+      "membership": "关于会员服务",
+      "payment": "关于支付和退款",
+      "learning": "关于学习功能",
+      "account": "关于账户管理",
+      "technical": "关于技术支持"
+    },
+    "courseAccess": {
+      "q1": "如何购买课程？",
+      "a1": "您可以浏览课程页面，选择感兴趣的课程，点击\"购买此课程\"按钮，然后通过安全的支付流程完成购买。支付成功后，您将立即获得课程访问权限。",
+      "q2": "会员和单课程购买有什么区别？",
+      "a2": "单课程购买只能访问您购买的特定课程，有效期为1年。月度会员（$39.99/月）可以无限访问所有100+课程，还包括视频下载、直接联系教练、参与直播问答等额外权益。",
+      "q3": "3天免费试用如何使用？",
+      "a3": "新用户可以开通3天免费试用，试用期内可以免费访问所有会员课程。试用期结束前，您可以选择取消订阅，不会产生任何费用。如果不取消，将自动转为月度会员并开始收费。",
+      "q4": "购买后多久可以开始学习？",
+      "a4": "支付成功后，课程访问权限会立即开通，您可以马上开始学习。您可以在\"我的课程\"页面找到已购买的所有课程。"
+    },
+    "membership": {
+      "q1": "月度会员包含哪些权益？",
+      "a1": "月度会员（$39.99/月）包含：无限访问所有100+课程、下载视频离线观看、通过WhatsApp直接联系教练、参与直播问答环节、获取会员专属内容等特权。",
+      "q2": "会员可以访问多少课程？",
+      "a2": "会员可以无限访问平台上的所有课程，目前有100+门专业武术课程，涵盖太极、少林、咏春、自卫术、儿童武术等多个类别，并且我们会持续更新新课程。",
+      "q3": "会员可以下载视频吗？",
+      "a3": "是的，月度会员可以下载课程视频到本地设备，随时随地离线观看，不受网络限制。这对于想要在没有网络的环境下学习的用户非常方便。",
+      "q4": "如何取消会员订阅？",
+      "a4": "您可以在\"我的\"页面的订阅状态部分，点击\"取消订阅\"按钮。取消后，您的会员权益将在当前计费周期结束时到期，不会立即失效。"
+    },
+    "payment": {
+      "q1": "支持哪些支付方式？",
+      "a1": "我们支持多种安全便捷的支付方式，包括：Visa、MasterCard等国际信用卡，以及支付宝、微信支付等第三方支付平台。所有支付都通过Stripe安全加密处理。",
+      "q2": "如何申请退款？",
+      "a2": "请登录您的账户，进入\"我的订单\"页面，找到需要退款的订单，点击\"申请退款\"按钮。单课程购买在7天内且观看时长不超过20%可申请退款；会员在开通3天内未使用权益可申请全额退款。详情请查看退款政策。",
+      "q3": "退款需要多久到账？",
+      "a3": "退款申请审核通过后，我们会在5-7个工作日内将款项退回您的原支付账户。具体到账时间取决于您的支付机构和银行的处理速度，通常在7-14个工作日内完成。",
+      "q4": "已观看的课程可以退款吗？",
+      "a4": "如果您已观看课程内容超过总时长的20%，或购买超过7天，将不支持退款。但如果课程存在严重质量问题或与描述严重不符，您可以联系客服说明情况，我们会进行特殊审核。"
+    },
+    "learning": {
+      "q1": "如何跟踪学习进度？",
+      "a1": "系统会自动记录您的学习进度。在\"我的课程\"页面，您可以看到每门课程的完成百分比、最后观看时间等信息。在课程详情页，也会显示每个章节的完成状态。",
+      "q2": "视频支持字幕吗？",
+      "a2": "是的，我们的课程视频支持多语言字幕，包括中文、英文、日文、韩文、德文、法文和阿拉伯文。您可以在视频播放器中选择您需要的字幕语言。",
+      "q3": "可以离线观看吗？",
+      "a3": "月度会员可以下载课程视频到本地设备进行离线观看。单课程购买用户需要在线观看，但我们的视频支持自适应码率，即使在网络较慢的情况下也能流畅播放。",
+      "q4": "课程有效期是多久？",
+      "a4": "单课程购买的有效期为1年，在有效期内可以无限次观看。月度会员在订阅期间可以访问所有课程，取消订阅后将在当前计费周期结束时失去访问权限。"
+    },
+    "account": {
+      "q1": "如何修改个人信息？",
+      "a1": "登录后进入\"我的\"页面，点击\"账户设置\"标签，您可以修改姓名等个人信息。邮箱地址作为账户唯一标识，暂不支持修改。",
+      "q2": "忘记密码怎么办？",
+      "a2": "在登录页面点击\"忘记密码\"链接，输入您的注册邮箱，我们会发送密码重置链接到您的邮箱。点击链接后，您可以设置新密码。",
+      "q3": "如何注销账户？",
+      "a3": "如需注销账户，请发送邮件至 zjhkrun@gmail.com，说明您的注销需求。请注意，账户注销后，您的学习记录、购买记录等数据将被永久删除，且已购买的课程和会员权益将无法恢复。"
+    },
+    "technical": {
+      "q1": "视频播放不了怎么办？",
+      "a1": "请先检查您的网络连接是否正常。如果网络正常但仍无法播放，请尝试刷新页面或更换浏览器。如果问题持续存在，请联系客服并提供您的设备型号和浏览器版本信息。",
+      "q2": "支持哪些浏览器？",
+      "a2": "我们的平台支持所有主流现代浏览器，包括Chrome、Firefox、Safari、Edge等。为了获得最佳体验，建议使用最新版本的浏览器。",
+      "q3": "移动端可以使用吗？",
+      "a3": "是的，我们的网站完全支持移动设备访问。您可以在手机或平板电脑的浏览器中访问 https://www.kongfunow.com，享受与桌面端一致的学习体验。会员用户还可以下载视频到移动设备离线观看。"
     }
   }
 }

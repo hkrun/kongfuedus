@@ -6,6 +6,7 @@
     "my": "Mon",
     "courses": "Cours",
     "home": "Accueil",
+    "back": "Retour",
     "dashboard": "Tableau de bord",
     "profile": "Profil",
     "settings": "Paramètres",
@@ -27,21 +28,6 @@
     "myPage": "Ma page",
     "signOut": "Se déconnecter",
     "language": "Langue"
-  },
-  "auth": {
-    "login": "Connexion",
-    "register": "S'inscrire",
-    "forgotPassword": "Mot de passe oublié",
-    "resetPassword": "Réinitialiser le mot de passe",
-    "verifyEmail": "Vérifier l'email",
-    "email": "Email",
-    "password": "Mot de passe",
-    "confirmPassword": "Confirmer le mot de passe",
-    "name": "Nom",
-    "loginSuccess": "Connexion réussie",
-    "registerSuccess": "Inscription réussie",
-    "loginError": "Échec de la connexion",
-    "registerError": "Échec de l'inscription"
   },
   "course": {
     "title": "Titre du cours",
@@ -65,11 +51,14 @@
     "pageDescription": "Explorez notre collection complète de cours d'arts martiaux, organisés par discipline. Que vous soyez débutant ou pratiquant avancé, trouvez le cours parfait pour améliorer vos compétences.",
     "allCourses": "Tous les cours",
     "categories": {
+      "title": "Catégories de cours",
       "striking": "Arts de frappe",
       "taiji": "Tai Chi",
       "weapons": "Armes",
       "selfDefense": "Autodéfense",
-      "health": "Santé et bien-être"
+      "health": "Santé et bien-être",
+      "combat": "Combat",
+      "mixed": "Mixte"
     },
     "viewCourse": "Voir le cours",
     "enrollNow": "S'inscrire maintenant",
@@ -81,6 +70,15 @@
       "beginner": "Débutant",
       "intermediate": "Intermédiaire",
       "advanced": "Avancé"
+    },
+    "loadingCourses": "Chargement des cours...",
+    "loadMore": "Charger plus de cours",
+    "sort": {
+      "mostPopular": "Les plus populaires",
+      "newest": "Plus récents",
+      "priceLowToHigh": "Prix: Croissant",
+      "priceHighToLow": "Prix: Décroissant",
+      "highestRated": "Mieux notés"
     }
   },
   "payment": {
@@ -93,15 +91,15 @@
     "cvv": "CVV",
     "payNow": "Payer maintenant",
     "paymentSuccess": "Paiement réussi",
-    "paymentFailed": "Échec du paiement"
-  },
-  "subscription": {
-    "monthly": "Abonnement mensuel",
-    "yearly": "Abonnement annuel",
-    "cancel": "Annuler l'abonnement",
-    "active": "Actif",
-    "expired": "Expiré",
-    "renewal": "Renouvellement"
+    "paymentFailed": "Échec du paiement",
+    "trialSuccess": "🎉 Félicitations ! Vous avez activé avec succès un essai gratuit de 3 jours !",
+    "purchaseSuccess": "🎉 Félicitations ! Vous avez acheté avec succès ce cours !",
+    "paymentPreparationFailed": "Échec de la préparation du paiement",
+    "retry": "Réessayer",
+    "loadingPaymentInfo": "Chargement des informations de paiement...",
+    "preparing": "Préparation...",
+    "purchaseThisCourse": "Acheter ce cours",
+    "freeTrialButton": "Essai gratuit de 3 jours"
   },
   "language": {
     "chinese": "中文",
@@ -198,11 +196,191 @@
       "contactUs": "Nous contacter",
       "privacyPolicy": "Politique de confidentialité",
       "termsOfService": "Conditions d'utilisation",
-      "refundPolicy": "Politique de remboursement",
+      "refundPolicy": "Politique de paiement et de remboursement",
       "emailPlaceholder": "Votre adresse e-mail",
       "privacyNotice": "Nous respectons votre vie privée. Désabonnez-vous à tout moment.",
-      "copyright": "© 2023~2025 Maître Kong Fu. Tous droits réservés."
+      "copyright": "© 2023~2025 Maître Kong Fu. Tous droits réservés.",
+      "address": "123 Rue des Arts Martiaux, Tokyo, Japon",
+      "phone": "+81 123 456 7890",
+      "email": "zjhkrun@gmail.com"
     }
+  },
+  "contact": {
+    "title": "Contactez-nous",
+    "description": "Vous avez des questions ou des suggestions ? Veuillez remplir le formulaire ci-dessous et nous vous répondrons dès que possible.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Entrez votre nom",
+    "emailLabel": "E-mail",
+    "emailPlaceholder": "Entrez votre adresse e-mail",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Partagez vos questions ou suggestions...",
+    "submit": "Soumettre",
+    "submitting": "Envoi en cours...",
+    "cancel": "Annuler",
+    "successTitle": "Envoyé avec succès !",
+    "successMessage": "Merci pour votre retour. Nous vous contacterons bientôt.",
+    "errors": {
+      "nameRequired": "Veuillez entrer votre nom",
+      "emailRequired": "Veuillez entrer votre adresse e-mail",
+      "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+      "messageRequired": "Veuillez entrer votre message"
+    }
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "description": "Trouvez des réponses aux questions courantes sur Kong Fu Master",
+    "stillNeedHelp": "Besoin d'aide supplémentaire ? Contactez-nous :",
+    "categories": {
+      "courseAccess": "À propos de l'accès aux cours",
+      "membership": "À propos de l'adhésion",
+      "payment": "À propos du paiement et du remboursement",
+      "learning": "À propos des fonctionnalités d'apprentissage",
+      "account": "À propos de la gestion du compte",
+      "technical": "À propos du support technique"
+    },
+    "courseAccess": {
+      "q1": "Comment acheter un cours ?",
+      "a1": "Vous pouvez parcourir la page des cours, sélectionner un cours qui vous intéresse, cliquer sur le bouton 'Acheter ce cours' et finaliser l'achat via notre processus de paiement sécurisé. Après un paiement réussi, vous aurez immédiatement accès au cours.",
+      "q2": "Quelle est la différence entre l'adhésion et l'achat d'un cours unique ?",
+      "a2": "L'achat d'un cours unique ne donne accès qu'au cours spécifique que vous achetez, valable 1 an. L'adhésion mensuelle (39,99 $/mois) offre un accès illimité à tous les 100+ cours, ainsi que des avantages supplémentaires comme les téléchargements de vidéos, le contact direct avec les instructeurs, la participation aux Q&R en direct, etc.",
+      "q3": "Comment fonctionne l'essai gratuit de 3 jours ?",
+      "a3": "Les nouveaux utilisateurs peuvent activer un essai gratuit de 3 jours pour accéder gratuitement à tous les cours d'adhésion. Avant la fin de l'essai, vous pouvez annuler votre abonnement sans frais. Si vous n'annulez pas, il sera automatiquement converti en adhésion mensuelle et la facturation commencera.",
+      "q4": "Combien de temps après l'achat puis-je commencer à apprendre ?",
+      "a4": "L'accès au cours est activé immédiatement après un paiement réussi, et vous pouvez commencer à apprendre tout de suite. Vous pouvez trouver tous vos cours achetés sur la page 'Mes Cours'."
+    },
+    "membership": {
+      "q1": "Quels avantages comprend l'adhésion mensuelle ?",
+      "a1": "L'adhésion mensuelle (39,99 $/mois) comprend : un accès illimité à tous les 100+ cours, le téléchargement de vidéos pour une visualisation hors ligne, un contact direct avec les instructeurs via WhatsApp, la participation aux sessions Q&R en direct, l'accès au contenu exclusif des membres, etc.",
+      "q2": "À combien de cours les membres peuvent-ils accéder ?",
+      "a2": "Les membres ont un accès illimité à tous les cours de la plateforme. Actuellement, il y a 100+ cours d'arts martiaux professionnels couvrant le Tai Chi, le Shaolin, le Wing Chun, l'autodéfense, les arts martiaux pour enfants et d'autres catégories. Nous ajoutons continuellement de nouveaux cours.",
+      "q3": "Les membres peuvent-ils télécharger des vidéos ?",
+      "a3": "Oui, les membres mensuels peuvent télécharger des vidéos de cours sur leurs appareils locaux pour une visualisation hors ligne à tout moment et n'importe où, sans restrictions réseau. C'est très pratique pour les utilisateurs qui souhaitent apprendre dans des environnements sans accès Internet.",
+      "q4": "Comment annuler mon abonnement ?",
+      "a4": "Vous pouvez aller sur la page 'Mon' et cliquer sur le bouton 'Annuler l'abonnement' dans la section état de l'abonnement. Après l'annulation, vos avantages d'adhésion expireront à la fin du cycle de facturation actuel et ne seront pas résiliés immédiatement."
+    },
+    "payment": {
+      "q1": "Quelles méthodes de paiement sont prises en charge ?",
+      "a1": "Nous prenons en charge diverses méthodes de paiement sécurisées et pratiques, notamment : Visa, MasterCard et autres cartes de crédit internationales, ainsi qu'Alipay, WeChat Pay et autres plateformes de paiement tierces. Tous les paiements sont traités en toute sécurité via le cryptage Stripe.",
+      "q2": "Comment demander un remboursement ?",
+      "a2": "Veuillez vous connecter à votre compte, accéder à la page 'Mes Commandes', trouver la commande que vous souhaitez rembourser et cliquer sur le bouton 'Demander un remboursement'. Les achats de cours uniques peuvent être remboursés dans les 7 jours si le temps de visualisation ne dépasse pas 20 % ; les adhésions peuvent être entièrement remboursées dans les 3 jours si les avantages ne sont pas utilisés. Consultez notre politique de remboursement pour plus de détails.",
+      "q3": "Combien de temps faut-il pour qu'un remboursement arrive ?",
+      "a3": "Après l'approbation de votre demande de remboursement, nous rembourserons le montant sur votre compte de paiement d'origine dans les 5-7 jours ouvrables. Le délai d'arrivée spécifique dépend de votre institution de paiement et du traitement bancaire, généralement complété dans les 7-14 jours ouvrables.",
+      "q4": "Puis-je obtenir un remboursement pour les cours que j'ai déjà regardés ?",
+      "a4": "Si vous avez regardé plus de 20% du contenu du cours ou si plus de 7 jours se sont écoulés depuis l'achat, les remboursements ne sont pas pris en charge. Cependant, si le cours présente de graves problèmes de qualité ou diffère considérablement de la description, vous pouvez contacter le service client pour expliquer la situation, et nous effectuerons un examen spécial."
+    },
+    "learning": {
+      "q1": "Comment suivre mes progrès d'apprentissage ?",
+      "a1": "Le système enregistre automatiquement vos progrès d'apprentissage. Sur la page 'Mes Cours', vous pouvez voir le pourcentage d'achèvement, l'heure de la dernière visualisation et d'autres informations pour chaque cours. La page de détails du cours affiche également l'état d'achèvement de chaque chapitre.",
+      "q2": "Les vidéos prennent-elles en charge les sous-titres ?",
+      "a2": "Oui, nos vidéos de cours prennent en charge les sous-titres multilingues, notamment en chinois, anglais, japonais, coréen, allemand, français et arabe. Vous pouvez sélectionner votre langue de sous-titres préférée dans le lecteur vidéo.",
+      "q3": "Puis-je regarder hors ligne ?",
+      "a3": "Les membres mensuels peuvent télécharger des vidéos de cours sur des appareils locaux pour une visualisation hors ligne. Les acheteurs de cours uniques doivent regarder en ligne, mais nos vidéos prennent en charge le débit adaptatif, garantissant une lecture fluide même avec des connexions Internet plus lentes.",
+      "q4": "Quelle est la période de validité du cours ?",
+      "a4": "Les achats de cours uniques sont valables 1 an, avec une visualisation illimitée pendant la période de validité. Les membres mensuels peuvent accéder à tous les cours pendant la période d'abonnement. Après l'annulation de l'abonnement, l'accès sera perdu à la fin du cycle de facturation actuel."
+    },
+    "account": {
+      "q1": "Comment modifier mes informations personnelles ?",
+      "a1": "Après vous être connecté, accédez à la page 'Mon' et cliquez sur l'onglet 'Paramètres du compte' pour modifier les informations personnelles telles que votre nom. L'adresse e-mail sert d'identifiant de compte unique et ne peut pas être modifiée pour le moment.",
+      "q2": "Que faire si j'oublie mon mot de passe ?",
+      "a2": "Cliquez sur le lien 'Mot de passe oublié' sur la page de connexion et entrez votre e-mail enregistré. Nous vous enverrons un lien de réinitialisation de mot de passe à votre e-mail. Après avoir cliqué sur le lien, vous pouvez définir un nouveau mot de passe.",
+      "q3": "Comment supprimer mon compte ?",
+      "a3": "Pour supprimer votre compte, veuillez envoyer un e-mail à zjhkrun@gmail.com expliquant votre demande de suppression. Veuillez noter qu'après la suppression du compte, vos enregistrements d'apprentissage, enregistrements d'achat et autres données seront définitivement supprimés, et les cours achetés et les avantages d'adhésion ne pourront pas être récupérés."
+    },
+    "technical": {
+      "q1": "Que faire si la vidéo ne se lit pas ?",
+      "a1": "Veuillez d'abord vérifier si votre connexion Internet est normale. Si le réseau est correct mais que la vidéo ne se lit toujours pas, essayez de rafraîchir la page ou de changer de navigateur. Si le problème persiste, veuillez contacter le service client et fournir votre modèle d'appareil et les informations de version du navigateur.",
+      "q2": "Quels navigateurs sont pris en charge ?",
+      "a2": "Notre plateforme prend en charge tous les navigateurs modernes grand public, notamment Chrome, Firefox, Safari, Edge, etc. Pour une meilleure expérience, nous recommandons d'utiliser la dernière version de votre navigateur.",
+      "q3": "Puis-je l'utiliser sur des appareils mobiles ?",
+      "a3": "Oui, notre site web prend entièrement en charge l'accès aux appareils mobiles. Vous pouvez visiter https://www.kongfunow.com dans votre navigateur mobile ou tablette et profiter de la même expérience d'apprentissage que sur ordinateur. Les utilisateurs membres peuvent également télécharger des vidéos sur des appareils mobiles pour une visualisation hors ligne."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Bienvenue",
+      "subtitle": "Connectez-vous à votre compte pour continuer à apprendre",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "passwordLabel": "Mot de passe",
+      "passwordPlaceholder": "Entrez votre mot de passe",
+      "forgotPassword": "Mot de passe oublié ?",
+      "loginButton": "Se connecter",
+      "or": "ou",
+      "googleLogin": "Se connecter avec Google",
+      "noAccount": "Vous n'avez pas de compte ?",
+      "registerNow": "S'inscrire maintenant",
+      "errors": {
+        "emailRequired": "Veuillez entrer votre e-mail",
+        "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+        "passwordRequired": "Veuillez entrer votre mot de passe",
+        "invalidCredentials": "E-mail ou mot de passe invalide",
+        "loginFailed": "Échec de la connexion, veuillez réessayer plus tard",
+        "googleLoginFailed": "Échec de la connexion Google, veuillez réessayer plus tard"
+      }
+    },
+    "register": {
+      "nameLabel": "Nom",
+      "namePlaceholder": "Entrez votre nom",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "passwordLabel": "Mot de passe",
+      "passwordPlaceholder": "Entrez un mot de passe",
+      "passwordHelper": "Au moins 8 caractères avec majuscules, minuscules et chiffres",
+      "confirmPasswordLabel": "Confirmer le mot de passe",
+      "confirmPasswordPlaceholder": "Entrez à nouveau le mot de passe",
+      "registerButton": "S'inscrire"
+    },
+    "forgotPassword": {
+      "title": "Mot de passe oublié ?",
+      "subtitle": "Entrez votre adresse e-mail et nous vous enverrons un lien de réinitialisation",
+      "emailLabel": "E-mail",
+      "emailPlaceholder": "Entrez votre e-mail",
+      "sendButton": "Envoyer le lien de réinitialisation",
+      "successMessage": "Le lien de réinitialisation du mot de passe a été envoyé à votre e-mail. Veuillez vérifier et cliquer sur le lien pour réinitialiser votre mot de passe.",
+      "rememberPassword": "Vous vous souvenez de votre mot de passe ?",
+      "loginNow": "Se connecter maintenant",
+      "errors": {
+        "emailRequired": "Veuillez entrer votre e-mail",
+        "emailInvalid": "Veuillez entrer une adresse e-mail valide",
+        "sendFailed": "Échec de l'envoi de l'e-mail de réinitialisation, veuillez réessayer plus tard"
+      }
+    },
+    "resetPassword": {
+      "title": "Réinitialiser le mot de passe",
+      "subtitle": "Entrez votre nouveau mot de passe",
+      "newPasswordLabel": "Nouveau mot de passe",
+      "newPasswordPlaceholder": "Entrez un nouveau mot de passe",
+      "passwordHelper": "Au moins 8 caractères avec majuscules, minuscules et chiffres",
+      "confirmPasswordLabel": "Confirmer le nouveau mot de passe",
+      "confirmPasswordPlaceholder": "Entrez à nouveau le nouveau mot de passe",
+      "resetButton": "Réinitialiser le mot de passe",
+      "successMessage": "Mot de passe réinitialisé avec succès ! Redirection vers la page de connexion dans 3 secondes.",
+      "invalidLinkTitle": "Lien invalide",
+      "invalidLinkMessage": "Le lien de réinitialisation du mot de passe auquel vous avez accédé est invalide ou a expiré.",
+      "requestAgain": "Demander à nouveau",
+      "rememberPassword": "Vous vous souvenez de votre mot de passe ?",
+      "loginNow": "Se connecter maintenant",
+      "errors": {
+        "invalidLink": "Lien de réinitialisation invalide",
+        "passwordRequired": "Veuillez entrer un nouveau mot de passe",
+        "passwordTooShort": "Le mot de passe doit contenir au moins 8 caractères",
+        "passwordWeak": "Le mot de passe doit contenir des majuscules, des minuscules et des chiffres",
+        "confirmRequired": "Veuillez confirmer le nouveau mot de passe",
+        "passwordMismatch": "Les mots de passe ne correspondent pas",
+        "resetFailed": "Échec de la réinitialisation du mot de passe, veuillez réessayer plus tard"
+      }
+    }
+  },
+  "subscription": {
+    "status": "Statut de l'abonnement",
+    "noSubscription": "Vous n'avez pas encore activé d'abonnement",
+    "startTrialHint": "Cliquez sur \"Essai gratuit de 3 jours\" pour commencer",
+    "freeTrial": "Essai gratuit",
+    "trialEnds": "Fin de l'essai : ",
+    "trialAutoConvert": "Sera automatiquement converti en abonnement de 39 $/mois après l'essai",
+    "monthlyMember": "Membre mensuel",
+    "nextBilling": "Prochaine facturation : ",
+    "monthlyPrice": "39 $/mois"
   },
   "myPage": {
     "title": "Mon Compte",
@@ -223,25 +401,91 @@
     },
     "courses": {
       "purchasedCourses": "Cours achetés",
+      "myCourses": "Mes Cours",
       "recentVideos": "Vidéos récentes",
       "continueLearning": "Continuer l'apprentissage",
       "completed": "Terminé",
-      "inProgress": "En cours"
+      "inProgress": "En cours",
+      "noCoursesYet": "Aucun cours acheté pour le moment",
+      "browseCourses": "Parcourir les cours",
+      "subscriptionUser": "Utilisateur abonné",
+      "learningProgress": "Progrès d'apprentissage",
+      "lastWatched": "Dernière consultation",
+      "inProgressStatus": "En cours",
+      "notStarted": "Non commencé",
+      "expiresAt": "Expire",
+      "showingItems": "Affichage de {start} - {end} sur {total} éléments",
+      "previousPage": "Précédent",
+      "nextPage": "Suivant",
+      "viewAllCourses": "Voir tous les cours ({total})"
+    },
+    "recent": {
+      "recentWatched": "Récemment regardés",
+      "recentVideos": "Vidéos récemment regardées",
+      "totalVideos": "{total} vidéos",
+      "noVideosYet": "Aucune vidéo regardée pour le moment",
+      "startLearning": "Commencer à apprendre",
+      "justNow": "À l'instant",
+      "hoursAgo": "Il y a {hours} heures",
+      "yesterday": "Hier",
+      "watchProgress": "Progrès de visionnage",
+      "continueWatching": "Continuer à regarder",
+      "startWatching": "Commencer à regarder",
+      "viewAllVideos": "Voir toutes les vidéos ({total})"
     },
     "history": {
       "purchaseHistory": "Historique d'achat",
       "orderNumber": "Numéro de commande",
       "purchaseDate": "Date d'achat",
       "amount": "Montant",
-      "status": "Statut",
-      "viewDetails": "Voir les détails"
+      "viewDetails": "Voir les détails",
+      "noHistory": "Aucun historique d'achat",
+      "noHistoryDesc": "Vos enregistrements d'achat apparaîtront ici après avoir acheté des cours ou des abonnements",
+      "totalRecords": "{total} enregistrements",
+      "filter": {
+        "all": "Tous",
+        "course": "Cours",
+        "subscription": "Abonnements"
+      },
+      "status": {
+        "active": "Actif",
+        "canceled": "Annulé",
+        "expired": "Expiré",
+        "refunded": "Remboursé"
+      },
+      "expiringSoon": "Expire bientôt",
+      "expiresAt": "Expire le",
+      "coursePurchase": "Achat de cours",
+      "platformSubscription": "Abonnement à la plateforme",
+      "orderId": "ID de commande",
+      "transactionId": "ID de transaction"
     },
     "settings": {
       "accountSettings": "Paramètres du compte",
       "personalInfo": "Informations personnelles",
       "changePassword": "Changer le mot de passe",
       "notificationSettings": "Paramètres de notification",
-      "privacySettings": "Paramètres de confidentialité"
+      "privacySettings": "Paramètres de confidentialité",
+      "name": "Nom",
+      "namePlaceholder": "Entrez votre nom",
+      "email": "Adresse e-mail",
+      "emailCannotChange": "L'adresse e-mail ne peut pas être modifiée",
+      "currentPassword": "Mot de passe actuel",
+      "currentPasswordPlaceholder": "Entrez le mot de passe actuel",
+      "newPassword": "Nouveau mot de passe",
+      "newPasswordPlaceholder": "Entrez un nouveau mot de passe (au moins 6 caractères)",
+      "confirmPassword": "Confirmer le nouveau mot de passe",
+      "confirmPasswordPlaceholder": "Entrez à nouveau le nouveau mot de passe",
+      "saveChanges": "Enregistrer les modifications",
+      "saving": "Enregistrement...",
+      "changing": "Modification...",
+      "errors": {
+        "nameRequired": "Le nom ne peut pas être vide",
+        "currentPasswordRequired": "Veuillez entrer le mot de passe actuel",
+        "newPasswordRequired": "Veuillez entrer un nouveau mot de passe",
+        "passwordMinLength": "Le mot de passe doit contenir au moins 6 caractères",
+        "passwordMismatch": "Les mots de passe ne correspondent pas"
+      }
     }
   },
   "userStatusCard": {
@@ -356,7 +600,8 @@
       "answerQuestions": "Répondre à vos questions spécifiques",
       "progressGuidance": "Guidance du progrès d'entraînement",
       "purchaseToContact": "Acheter le cours pour contacter l'instructeur",
-      "loginToExperience": "Se connecter pour découvrir"
+      "loginToExperience": "Se connecter pour découvrir",
+      "description": "Avec une riche expérience d'enseignement et des compétences profondes en arts martiaux. Engagé à préserver et promouvoir la culture traditionnelle chinoise des arts martiaux, aidant les étudiants à maîtriser des compétences pratiques en arts martiaux."
     },
     "reviews": {
       "studentReviews": "Avis des étudiants",
@@ -412,7 +657,8 @@
       "kungfu": "Kung Fu",
       "martialArts": "Arts martiaux",
       "selfDefense": "Autodéfense",
-      "fitness": "Fitness"
+      "fitness": "Fitness",
+      "martialArtsPhilosophy": "Philosophie des arts martiaux"
     }
   }
 }

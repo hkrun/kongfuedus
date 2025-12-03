@@ -1,10 +1,13 @@
 "use client";
 
 import Link from "next/link";
+import { useLocale } from 'next-intl';
 
 export default function Logo() {
+  const locale = useLocale();
+  
   return (
-    <Link href="/" className="logo-container group">
+    <Link href={`/${locale}`} className="logo-container group">
       {/* 使用SVG图标，确保在所有情况下都保持正确大小 */}
       <div className="logo-icon mr-3">
         <svg 

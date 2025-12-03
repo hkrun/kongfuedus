@@ -13,7 +13,34 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const { courseId, userId, customerEmail } = await request.json();
+    const { courseId, userId, customerEmail, locale } = await request.json();
+    
+    // 映射语言代码到 Stripe 支持的语言（支持完整格式和简化格式）
+    const getStripeLocale = (locale: string): 'auto' | 'zh' | 'en' | 'ja' | 'ko' | 'de' | 'fr' => {
+      // 处理完整格式 (en-US, zh-CN, ja-JP, ko-KR, de-DE, fr-FR, ar-SA)
+      if (locale.startsWith('zh')) return 'zh';
+      if (locale.startsWith('en')) return 'en';
+      if (locale.startsWith('ja')) return 'ja';
+      if (locale.startsWith('ko')) return 'ko';
+      if (locale.startsWith('de')) return 'de';
+      if (locale.startsWith('fr')) return 'fr';
+      if (locale.startsWith('ar')) return 'auto'; // Stripe 不支持阿拉伯语，使用自动检测
+      
+      // 处理简化格式
+      const localeMap: { [key: string]: 'auto' | 'zh' | 'en' | 'ja' | 'ko' | 'de' | 'fr' } = {
+        'zh': 'zh',
+        'en': 'en',
+        'ja': 'ja',
+        'ko': 'ko',
+        'de': 'de',
+        'fr': 'fr',
+        'ar': 'auto',
+      };
+      
+      return localeMap[locale] || 'auto';
+    };
+    
+    const stripeLocale = getStripeLocale(locale || 'en');
     
     if (!courseId) {
       return NextResponse.json(
@@ -68,7 +95,7 @@ export async function POST(request: NextRequest) {
       automatic_tax: { enabled: true },
       client_reference_id: session.user.id,
       customer_email: session.user.email,
-      locale: 'zh',
+      locale: stripeLocale,
       custom_text: {
         submit: {
           message: '邮箱已自动填充并锁定，以确保支付与您的账户关联',

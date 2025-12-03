@@ -3,14 +3,19 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Header from "../../components/Header";
+import ContactModal from "../../components/ContactModal";
+import FAQModal from "../../components/FAQModal";
 import { getMultiLangContent, getLocaleFromPath, SupportedLocale } from "../../utils/i18n";
 
 export default function HomePage() {
   const t = useTranslations();
+  const locale = useLocale();
   const [currentLocale, setCurrentLocale] = useState<SupportedLocale>('zh');
   const [fullLocale, setFullLocale] = useState<string>('zh-CN'); // 完整的语言代码，如 zh-CN, en-US
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [isFAQModalOpen, setIsFAQModalOpen] = useState(false);
   
   // 添加自定义样式用于文本截断
   const textTruncateStyle = {
@@ -29,7 +34,7 @@ export default function HomePage() {
     // 获取当前语言（简化格式）
     const locale = getLocaleFromPath(window.location.pathname);
     setCurrentLocale(locale);
-    
+
     // 获取完整的语言代码（从URL路径中提取）
     const pathSegments = window.location.pathname.split('/').filter(Boolean);
     const fullLocaleFromPath = pathSegments[0] || 'zh-CN'; // 默认使用 zh-CN
@@ -39,7 +44,7 @@ export default function HomePage() {
     const mobileMenu = document.querySelector('.md\\:hidden:not(.hidden)');
     
     if (mobileMenuButton && mobileMenu) {
-      mobileMenuButton.addEventListener('click', function() {
+      mobileMenuButton.addEventListener('click', function () {
         mobileMenu.classList.toggle('hidden');
       });
     }
@@ -103,7 +108,7 @@ export default function HomePage() {
               {t('home.hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-                             <Link href="/courses" className="px-8 py-3 text-white font-semibold rounded-md hover:bg-orange-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1" style={{ backgroundColor: 'rgb(237 137 54 / var(--tw-bg-opacity, 1))' }}>
+              <Link href={`/${locale}/courses`} className="px-8 py-3 text-white font-semibold rounded-md hover:bg-orange-600 transition-all duration-300 text-center shadow-lg hover:shadow-xl transform hover:-translate-y-1" style={{ backgroundColor: 'rgb(237 137 54 / var(--tw-bg-opacity, 1))' }}>
                  {t('home.hero.exploreCourses')}
                </Link>
             </div>
@@ -156,7 +161,7 @@ export default function HomePage() {
                              <h2 className="font-bold text-[clamp(1.8rem,3vw,2.5rem)] mb-3" style={{ color: 'rgb(26 54 93 / var(--tw-text-opacity, 1))', fontFamily: 'Montserrat, sans-serif' }}>{t('home.courses.title')}</h2>
               <p className="text-gray-600 max-w-2xl">{t('home.courses.subtitle')}</p>
             </div>
-                         <Link href="/courses" className="hidden sm:flex items-center font-medium transition-all duration-300" style={{ color: 'rgb(237 137 54 / var(--tw-text-opacity, 1))' }} onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(26 54 93 / var(--tw-text-opacity, 1))'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(237 137 54 / var(--tw-text-opacity, 1))'}>
+            <Link href={`/${locale}/courses`} className="hidden sm:flex items-center font-medium transition-all duration-300" style={{ color: 'rgb(237 137 54 / var(--tw-text-opacity, 1))' }} onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(26 54 93 / var(--tw-text-opacity, 1))'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(237 137 54 / var(--tw-text-opacity, 1))'}>
                {t('home.courses.viewAll')} <i className="fa fa-arrow-right ml-2"></i>
              </Link>
           </div>
@@ -212,7 +217,7 @@ export default function HomePage() {
           </div>
           
                      <div className="mt-8 text-center sm:hidden">
-             <Link href="/courses" className="inline-flex items-center font-medium transition-all duration-300" style={{ color: 'rgb(237 137 54 / var(--tw-text-opacity, 1))' }} onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(26 54 93 / var(--tw-text-opacity, 1))'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(237 137 54 / var(--tw-text-opacity, 1))'}>
+            <Link href={`/${locale}/courses`} className="inline-flex items-center font-medium transition-all duration-300" style={{ color: 'rgb(237 137 54 / var(--tw-text-opacity, 1))' }} onMouseEnter={(e) => e.currentTarget.style.color = 'rgb(26 54 93 / var(--tw-text-opacity, 1))'} onMouseLeave={(e) => e.currentTarget.style.color = 'rgb(237 137 54 / var(--tw-text-opacity, 1))'}>
                {t('home.courses.viewAll')} <i className="fa fa-arrow-right ml-2"></i>
                 </Link>
            </div>
@@ -264,7 +269,7 @@ export default function HomePage() {
                 </li>
               </ul>
               
-                             <Link href="/courses" className="block w-full py-3 text-white text-center font-semibold rounded-md hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl" style={{ backgroundColor: 'rgb(237 137 54 / var(--tw-bg-opacity, 1))' }}>
+              <Link href={`/${locale}/courses`} className="block w-full py-3 text-white text-center font-semibold rounded-md hover:bg-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl" style={{ backgroundColor: 'rgb(237 137 54 / var(--tw-bg-opacity, 1))' }}>
                  {t('home.membership.freeTrial')}
                </Link>
               
@@ -422,10 +427,10 @@ export default function HomePage() {
                      <h2 className="font-bold text-[clamp(1.8rem,3vw,2.5rem)] text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>{t('home.cta.title')}</h2>
           <p className="text-white/90 max-w-2xl mx-auto text-lg mb-8">{t('home.cta.subtitle')}</p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-                         <Link href="/courses" className="px-8 py-3 bg-white font-semibold rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" style={{ color: 'rgb(237 137 54 / var(--tw-text-opacity, 1))' }}>
+            <Link href={`/${locale}/courses`} className="px-8 py-3 bg-white font-semibold rounded-md hover:bg-gray-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1" style={{ color: 'rgb(237 137 54 / var(--tw-text-opacity, 1))' }}>
                {t('home.cta.getStarted')}
              </Link>
-            <Link href="/courses" className="px-8 py-3 bg-transparent text-white font-semibold rounded-md border border-white/30 hover:bg-white/10 transition-all duration-300">
+            <Link href={`/${locale}/courses`} className="px-8 py-3 bg-transparent text-white font-semibold rounded-md border border-white/30 hover:bg-white/10 transition-all duration-300">
               {t('home.cta.browseAll')}
             </Link>
           </div>
@@ -461,22 +466,22 @@ export default function HomePage() {
           <div>
                              <h3 className="font-semibold text-lg mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>{t('home.footer.quickLinks')}</h3>
               <ul className="space-y-3">
-                <li><Link href="/courses" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.allCourses')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.instructors')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.membership')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.freeResources')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.blog')}</Link></li>
+                <li><Link href={`/${locale}/courses`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.allCourses')}</Link></li>
+                <li><Link href={`/${locale}/courses`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.instructors')}</Link></li>
+                <li><Link href={`/${locale}/my`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.membership')}</Link></li>
+                <li><Link href={`/${locale}/courses`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.freeResources')}</Link></li>
+                {/* <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.blog')}</Link></li> */}
             </ul>
           </div>
             
           <div>
                              <h3 className="font-semibold text-lg mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>{t('home.footer.support')}</h3>
               <ul className="space-y-3">
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.faqs')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.contactUs')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.privacyPolicy')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.termsOfService')}</Link></li>
-                <li><Link href="#" className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.refundPolicy')}</Link></li>
+                <li><button onClick={() => setIsFAQModalOpen(true)} className="text-gray-300 hover:text-orange-500 transition-all duration-300 text-left">{t('home.footer.faqs')}</button></li>
+                <li><button onClick={() => setIsContactModalOpen(true)} className="text-gray-300 hover:text-orange-500 transition-all duration-300 text-left">{t('home.footer.contactUs')}</button></li>
+                <li><Link href={`/${locale}/legal/privacy`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.privacyPolicy')}</Link></li>
+                <li><Link href={`/${locale}/legal/terms`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.termsOfService')}</Link></li>
+                <li><Link href={`/${locale}/legal/refund`} className="text-gray-300 hover:text-orange-500 transition-all duration-300">{t('home.footer.refundPolicy')}</Link></li>
             </ul>
           </div>
             
@@ -500,6 +505,12 @@ export default function HomePage() {
           </div>
         </div>
       </footer>
+
+      {/* 联系我们弹框 */}
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+      
+      {/* 常见问题弹框 */}
+      <FAQModal isOpen={isFAQModalOpen} onClose={() => setIsFAQModalOpen(false)} />
     </main>
   );
 }

@@ -2,11 +2,13 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 
 export default function ResetPasswordForm() {
+  const t = useTranslations();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -21,7 +23,7 @@ export default function ResetPasswordForm() {
     if (tokenParam) {
       setToken(tokenParam);
     } else {
-      setMessage("无效的重置链接");
+      setMessage(t('auth.resetPassword.errors.invalidLink'));
     }
   }, [searchParams]);
 
@@ -29,17 +31,17 @@ export default function ResetPasswordForm() {
     const newErrors: { [key: string]: string } = {};
 
     if (!password) {
-      newErrors.password = "请输入新密码";
+      newErrors.password = t('auth.resetPassword.errors.passwordRequired');
     } else if (password.length < 8) {
-      newErrors.password = "密码至少需要8个字符";
+      newErrors.password = t('auth.resetPassword.errors.passwordTooShort');
     } else if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/.test(password)) {
-      newErrors.password = "密码需要包含大小写字母和数字";
+      newErrors.password = t('auth.resetPassword.errors.passwordWeak');
     }
 
     if (!confirmPassword) {
-      newErrors.confirmPassword = "请确认新密码";
+      newErrors.confirmPassword = t('auth.resetPassword.errors.confirmRequired');
     } else if (password !== confirmPassword) {
-      newErrors.confirmPassword = "两次输入的密码不一致";
+      newErrors.confirmPassword = t('auth.resetPassword.errors.passwordMismatch');
     }
 
     setErrors(newErrors);
@@ -51,7 +53,7 @@ export default function ResetPasswordForm() {
     setMessage("");
 
     if (!token) {
-      setMessage("无效的重置链接");
+      setMessage(t('auth.resetPassword.errors.invalidLink'));
       return;
     }
 
@@ -76,7 +78,7 @@ export default function ResetPasswordForm() {
       const data = await response.json();
 
       if (response.ok) {
-        setMessage("密码重置成功！3秒后将跳转到登录页面。");
+        setMessage(t('auth.resetPassword.successMessage'));
         // 清空表单
         setPassword("");
         setConfirmPassword("");
@@ -85,10 +87,10 @@ export default function ResetPasswordForm() {
           router.push("/auth/login");
         }, 3000);
       } else {
-        setMessage(data.error || "密码重置失败，请稍后重试");
+        setMessage(data.error || t('auth.resetPassword.errors.resetFailed'));
       }
     } catch (error) {
-      setMessage("密码重置失败，请稍后重试");
+      setMessage(t('auth.resetPassword.errors.resetFailed'));
     } finally {
       setLoading(false);
     }
@@ -98,15 +100,15 @@ export default function ResetPasswordForm() {
     return (
       <div className="w-full max-w-md mx-auto">
         <div className="bg-white py-8 px-6 shadow-lg rounded-lg text-center">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">无效链接</h2>
+          <h2 className="text-2xl font-bold text-red-600 mb-4">{t('auth.resetPassword.invalidLinkTitle')}</h2>
           <p className="text-gray-600 mb-6">
-            您访问的密码重置链接无效或已过期。
+            {t('auth.resetPassword.invalidLinkMessage')}
           </p>
           <Link
             href="/auth/forgot-password"
             className="inline-block px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
           >
-            重新申请重置
+            {t('auth.resetPassword.requestAgain')}
           </Link>
         </div>
       </div>
@@ -117,37 +119,37 @@ export default function ResetPasswordForm() {
     <div className="w-full max-w-md mx-auto">
       <div className="bg-white py-8 px-6 shadow-lg rounded-lg">
         <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">重置密码</h2>
-          <p className="text-gray-600">请输入您的新密码</p>
+          <h2 className="text-3xl font-bold text-gray-900 mb-2">{t('auth.resetPassword.title')}</h2>
+          <p className="text-gray-600">{t('auth.resetPassword.subtitle')}</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-6">
           <Input
-            label="新密码"
+            label={t('auth.resetPassword.newPasswordLabel')}
             type="password"
             name="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            placeholder="请输入新密码"
+            placeholder={t('auth.resetPassword.newPasswordPlaceholder')}
             error={errors.password}
-            helperText="密码至少8位，包含大小写字母和数字"
+            helperText={t('auth.resetPassword.passwordHelper')}
             required
           />
 
           <Input
-            label="确认新密码"
+            label={t('auth.resetPassword.confirmPasswordLabel')}
             type="password"
             name="confirmPassword"
             value={confirmPassword}
             onChange={(e) => setConfirmPassword(e.target.value)}
-            placeholder="请再次输入新密码"
+            placeholder={t('auth.resetPassword.confirmPasswordPlaceholder')}
             error={errors.confirmPassword}
             required
           />
 
           {message && (
             <div className="text-center">
-              <p className={`text-sm ${message.includes("成功") ? "text-green-600" : "text-red-600"}`}>
+              <p className={`text-sm ${message.includes("成功") || message.includes("success") || message.includes("Successfully") ? "text-green-600" : "text-red-600"}`}>
                 {message}
               </p>
             </div>
@@ -159,18 +161,18 @@ export default function ResetPasswordForm() {
             loading={loading}
             disabled={loading}
           >
-            重置密码
+            {t('auth.resetPassword.resetButton')}
           </Button>
         </form>
 
         <div className="mt-6 text-center">
           <p className="text-sm text-gray-600">
-            记起密码了？{" "}
+            {t('auth.resetPassword.rememberPassword')}{" "}
             <Link
               href="/auth/login"
               className="font-medium text-orange-600 hover:text-orange-500 transition-colors"
             >
-              立即登录
+              {t('auth.resetPassword.loginNow')}
             </Link>
           </p>
         </div>

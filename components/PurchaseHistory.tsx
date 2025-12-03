@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useTranslations, useLocale } from 'next-intl';
 
 interface Purchase {
   id: string;
@@ -28,6 +29,8 @@ interface PurchaseHistoryResponse {
 }
 
 export default function PurchaseHistory() {
+  const t = useTranslations();
+  const locale = useLocale();
   const [data, setData] = useState<PurchaseHistoryResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,7 +59,16 @@ export default function PurchaseHistory() {
   };
 
   const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString('zh-CN', {
+    const localeMap: { [key: string]: string } = {
+      'zh': 'zh-CN',
+      'ja': 'ja-JP',
+      'ko': 'ko-KR',
+      'de': 'de-DE',
+      'fr': 'fr-FR',
+      'ar': 'ar-SA',
+      'en': 'en-US'
+    };
+    return new Date(dateString).toLocaleDateString(localeMap[locale] || 'en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric',
@@ -86,18 +98,10 @@ export default function PurchaseHistory() {
   };
 
   const getStatusText = (status: string) => {
-    switch (status) {
-      case 'active':
-        return '有效';
-      case 'canceled':
-        return '已取消';
-      case 'expired':
-        return '已过期';
-      case 'refunded':
-        return '已退款';
-      default:
-        return status;
-    }
+    const statusKey = `myPage.history.status.${status}`;
+    const translated = t(statusKey);
+    // 如果翻译键不存在，返回原始状态
+    return translated !== statusKey ? translated : status;
   };
 
   const filteredPurchases = data?.purchases.filter(purchase => {
@@ -127,12 +131,12 @@ export default function PurchaseHistory() {
   if (!data || data.purchases.length === 0) {
     return (
       <div className="bg-white rounded-lg shadow-md p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-6">购买记录</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-6">{t('myPage.history.purchaseHistory')}</h3>
         <div className="text-center py-12">
           <div className="text-gray-400 text-6xl mb-4">📋</div>
-          <p className="text-gray-500 mb-4">暂无购买记录</p>
+          <p className="text-gray-500 mb-4">{t('myPage.history.noHistory')}</p>
           <p className="text-sm text-gray-400">
-            您购买课程或订阅后，记录将显示在这里
+            {t('myPage.history.noHistoryDesc')}
           </p>
         </div>
       </div>
@@ -142,9 +146,9 @@ export default function PurchaseHistory() {
   return (
     <div className="bg-white rounded-lg shadow-md p-6">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-lg font-semibold text-gray-900">购买记录</h3>
+        <h3 className="text-lg font-semibold text-gray-900">{t('myPage.history.purchaseHistory')}</h3>
         <div className="text-sm text-gray-500">
-          共 {data.pagination.total} 条记录
+          {t('myPage.history.totalRecords', { total: data.pagination.total })}
         </div>
       </div>
 
@@ -152,9 +156,9 @@ export default function PurchaseHistory() {
       <div className="mb-6">
         <div className="flex space-x-4">
           {[
-            { value: 'all', label: '全部' },
-            { value: 'course', label: '课程' },
-            { value: 'subscription', label: '订阅' }
+            { value: 'all', label: t('myPage.history.filter.all') },
+            { value: 'course', label: t('myPage.history.filter.course') },
+            { value: 'subscription', label: t('myPage.history.filter.subscription') }
           ].map((option) => (
             <button
               key={option.value}
@@ -187,7 +191,7 @@ export default function PurchaseHistory() {
                   </span>
                   {purchase.type === 'subscription' && purchase.cancelAtPeriodEnd && (
                     <span className="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-orange-100 text-orange-800">
-                      即将到期
+                      {t('myPage.history.expiringSoon')}
                     </span>
                   )}
                 </div>
@@ -199,17 +203,17 @@ export default function PurchaseHistory() {
                 <div className="flex items-center space-x-6 text-sm text-gray-500">
                   <div className="flex items-center">
                     <span className="mr-1">📅</span>
-                    购买时间: {formatDate(purchase.purchaseDate)}
+                    {t('myPage.history.purchaseDate')}: {formatDate(purchase.purchaseDate)}
                   </div>
                   {purchase.expiresAt && (
                     <div className="flex items-center">
                       <span className="mr-1">⏰</span>
-                      到期时间: {formatDate(purchase.expiresAt)}
+                      {t('myPage.history.expiresAt')}: {formatDate(purchase.expiresAt)}
                     </div>
                   )}
                   <div className="flex items-center">
                     <span className="mr-1">💰</span>
-                    金额: {formatAmount(purchase.amount, purchase.currency)}
+                    {t('myPage.history.amount')}: {formatAmount(purchase.amount, purchase.currency)}
                   </div>
                 </div>
               </div>
@@ -219,7 +223,7 @@ export default function PurchaseHistory() {
                   {formatAmount(purchase.amount, purchase.currency)}
                 </div>
                 <div className="text-sm text-gray-500">
-                  {purchase.type === 'course' ? '课程购买' : '平台订阅'}
+                  {purchase.type === 'course' ? t('myPage.history.coursePurchase') : t('myPage.history.platformSubscription')}
                 </div>
               </div>
             </div>
@@ -227,8 +231,8 @@ export default function PurchaseHistory() {
             {/* 订单详情 */}
             <div className="mt-3 pt-3 border-t border-gray-100">
               <div className="flex items-center justify-between text-xs text-gray-500">
-                <span>订单ID: {purchase.stripeSessionId}</span>
-                <span>交易ID: {purchase.id}</span>
+                <span>{t('myPage.history.orderId')}: {purchase.stripeSessionId}</span>
+                <span>{t('myPage.history.transactionId')}: {purchase.id}</span>
               </div>
             </div>
           </div>
@@ -239,8 +243,11 @@ export default function PurchaseHistory() {
       {data.pagination.totalPages > 1 && (
         <div className="mt-6 flex items-center justify-between">
           <div className="text-sm text-gray-700">
-            显示第 {(currentPage - 1) * data.pagination.limit + 1} - {Math.min(currentPage * data.pagination.limit, data.pagination.total)} 条，
-            共 {data.pagination.total} 条
+            {t('myPage.courses.showingItems', {
+              start: (currentPage - 1) * data.pagination.limit + 1,
+              end: Math.min(currentPage * data.pagination.limit, data.pagination.total),
+              total: data.pagination.total
+            })}
           </div>
           <div className="flex space-x-2">
             <button
@@ -248,7 +255,7 @@ export default function PurchaseHistory() {
               disabled={currentPage === 1}
               className="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              上一页
+              {t('myPage.courses.previousPage')}
             </button>
             <span className="px-3 py-1 text-sm text-gray-700">
               {currentPage} / {data.pagination.totalPages}
@@ -258,7 +265,7 @@ export default function PurchaseHistory() {
               disabled={currentPage === data.pagination.totalPages}
               className="px-3 py-1 text-sm border border-gray-300 rounded-md hover:bg-gray-50 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              下一页
+              {t('myPage.courses.nextPage')}
             </button>
           </div>
         </div>

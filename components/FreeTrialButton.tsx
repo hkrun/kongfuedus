@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
+import { useTranslations } from 'next-intl';
 import PaymentModal from './PaymentModal';
 
 interface FreeTrialButtonProps {
@@ -20,6 +21,7 @@ export default function FreeTrialButton({
   price = "免费试用",
   onPaymentSuccess
 }: FreeTrialButtonProps) {
+  const t = useTranslations();
   const { data: session, status } = useSession();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
@@ -52,17 +54,17 @@ export default function FreeTrialButton({
         {status === 'loading' ? (
           <div className="flex items-center justify-center">
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-            加载中...
+            {t('common.loading')}
           </div>
         ) : !session?.user?.id || !session?.user?.email ? (
           <div className="flex items-center justify-center">
             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-            准备中...
+            {t('payment.preparing')}
           </div>
         ) : (
           <>
             <i className="fa fa-play-circle mr-2"></i>
-            3天免费试看
+            {t('payment.freeTrialButton')}
           </>
         )}
       </button>

@@ -6,6 +6,7 @@
     "my": "My",
     "courses": "Courses",
     "home": "Home",
+    "back": "Back",
     "dashboard": "Dashboard",
     "profile": "Profile",
     "settings": "Settings",
@@ -27,21 +28,6 @@
     "myPage": "My Page",
     "signOut": "Sign Out",
     "language": "Language"
-  },
-  "auth": {
-    "login": "Login",
-    "register": "Register",
-    "forgotPassword": "Forgot Password",
-    "resetPassword": "Reset Password",
-    "verifyEmail": "Verify Email",
-    "email": "Email",
-    "password": "Password",
-    "confirmPassword": "Confirm Password",
-    "name": "Name",
-    "loginSuccess": "Login successful",
-    "registerSuccess": "Registration successful",
-    "loginError": "Login failed",
-    "registerError": "Registration failed"
   },
   "course": {
     "title": "Course Title",
@@ -65,11 +51,14 @@
     "pageDescription": "Explore our comprehensive collection of martial arts courses, organized by discipline. Whether you're a beginner or advanced practitioner, find the perfect course to enhance your skills.",
     "allCourses": "All Courses",
     "categories": {
+      "title": "Course Categories",
       "striking": "Striking Arts",
       "taiji": "Tai Chi",
       "weapons": "Weapons",
       "selfDefense": "Self Defense",
-      "health": "Health & Wellness"
+      "health": "Health & Wellness",
+      "combat": "Combat",
+      "mixed": "Mixed"
     },
     "viewCourse": "View Course",
     "enrollNow": "Enroll Now",
@@ -81,6 +70,15 @@
       "beginner": "Beginner",
       "intermediate": "Intermediate",
       "advanced": "Advanced"
+    },
+    "loadingCourses": "Loading courses...",
+    "loadMore": "Load More Courses",
+    "sort": {
+      "mostPopular": "Most Popular",
+      "newest": "Newest",
+      "priceLowToHigh": "Price: Low to High",
+      "priceHighToLow": "Price: High to Low",
+      "highestRated": "Highest Rated"
     }
   },
   "courseDetail": {
@@ -167,7 +165,8 @@
       "answerQuestions": "Answer your specific questions",
       "progressGuidance": "Training progress guidance",
       "purchaseToContact": "Purchase Course to Contact Instructor",
-      "loginToExperience": "Login to Experience"
+      "loginToExperience": "Login to Experience",
+      "description": "With rich teaching experience and profound martial arts skills. Committed to inheriting and promoting traditional Chinese martial arts culture, helping students master practical martial arts skills."
     },
     "reviews": {
       "studentReviews": "Student Reviews",
@@ -223,7 +222,8 @@
       "kungfu": "Kung Fu",
       "martialArts": "Martial Arts",
       "selfDefense": "Self Defense",
-      "fitness": "Fitness"
+      "fitness": "Fitness",
+      "martialArtsPhilosophy": "Martial Arts Philosophy"
     }
   },
   "myPage": {
@@ -245,25 +245,91 @@
     },
     "courses": {
       "purchasedCourses": "Purchased Courses",
+      "myCourses": "My Courses",
       "recentVideos": "Recent Videos",
       "continueLearning": "Continue Learning",
       "completed": "Completed",
-      "inProgress": "In Progress"
+      "inProgress": "In Progress",
+      "noCoursesYet": "No courses purchased yet",
+      "browseCourses": "Browse Courses",
+      "subscriptionUser": "Subscription User",
+      "learningProgress": "Learning Progress",
+      "lastWatched": "Last Watched",
+      "inProgressStatus": "In Progress",
+      "notStarted": "Not Started",
+      "expiresAt": "Expires",
+      "showingItems": "Showing {start} - {end} of {total} items",
+      "previousPage": "Previous",
+      "nextPage": "Next",
+      "viewAllCourses": "View All Courses ({total})"
+    },
+    "recent": {
+      "recentWatched": "Recent Watched",
+      "recentVideos": "Recent Videos",
+      "totalVideos": "{total} videos",
+      "noVideosYet": "No videos watched yet",
+      "startLearning": "Start Learning",
+      "justNow": "Just now",
+      "hoursAgo": "{hours} hours ago",
+      "yesterday": "Yesterday",
+      "watchProgress": "Watch Progress",
+      "continueWatching": "Continue Watching",
+      "startWatching": "Start Watching",
+      "viewAllVideos": "View All Videos ({total})"
     },
     "history": {
       "purchaseHistory": "Purchase History",
       "orderNumber": "Order Number",
       "purchaseDate": "Purchase Date",
       "amount": "Amount",
-      "status": "Status",
-      "viewDetails": "View Details"
+      "viewDetails": "View Details",
+      "noHistory": "No purchase history",
+      "noHistoryDesc": "Your purchase records will appear here after you buy courses or subscriptions",
+      "totalRecords": "{total} records",
+      "filter": {
+        "all": "All",
+        "course": "Courses",
+        "subscription": "Subscriptions"
+      },
+      "status": {
+        "active": "Active",
+        "canceled": "Canceled",
+        "expired": "Expired",
+        "refunded": "Refunded"
+      },
+      "expiringSoon": "Expiring Soon",
+      "expiresAt": "Expires At",
+      "coursePurchase": "Course Purchase",
+      "platformSubscription": "Platform Subscription",
+      "orderId": "Order ID",
+      "transactionId": "Transaction ID"
     },
     "settings": {
       "accountSettings": "Account Settings",
       "personalInfo": "Personal Information",
       "changePassword": "Change Password",
       "notificationSettings": "Notification Settings",
-      "privacySettings": "Privacy Settings"
+      "privacySettings": "Privacy Settings",
+      "name": "Name",
+      "namePlaceholder": "Enter your name",
+      "email": "Email Address",
+      "emailCannotChange": "Email address cannot be changed",
+      "currentPassword": "Current Password",
+      "currentPasswordPlaceholder": "Enter current password",
+      "newPassword": "New Password",
+      "newPasswordPlaceholder": "Enter new password (at least 6 characters)",
+      "confirmPassword": "Confirm New Password",
+      "confirmPasswordPlaceholder": "Re-enter new password",
+      "saveChanges": "Save Changes",
+      "saving": "Saving...",
+      "changing": "Changing...",
+      "errors": {
+        "nameRequired": "Name cannot be empty",
+        "currentPasswordRequired": "Please enter current password",
+        "newPasswordRequired": "Please enter new password",
+        "passwordMinLength": "Password must be at least 6 characters",
+        "passwordMismatch": "Passwords do not match"
+      }
     }
   },
   "userStatusCard": {
@@ -304,15 +370,15 @@
     "cvv": "CVV",
     "payNow": "Pay Now",
     "paymentSuccess": "Payment successful",
-    "paymentFailed": "Payment failed"
-  },
-  "subscription": {
-    "monthly": "Monthly Subscription",
-    "yearly": "Yearly Subscription",
-    "cancel": "Cancel Subscription",
-    "active": "Active",
-    "expired": "Expired",
-    "renewal": "Renewal"
+    "paymentFailed": "Payment failed",
+    "trialSuccess": "🎉 Congratulations! You have successfully activated a 3-day free trial!",
+    "purchaseSuccess": "🎉 Congratulations! You have successfully purchased this course!",
+    "paymentPreparationFailed": "Payment Preparation Failed",
+    "retry": "Retry",
+    "loadingPaymentInfo": "Loading payment information...",
+    "preparing": "Preparing...",
+    "purchaseThisCourse": "Purchase This Course",
+    "freeTrialButton": "3-Day Free Trial"
   },
   "language": {
     "chinese": "中文",
@@ -409,10 +475,190 @@
       "contactUs": "Contact Us",
       "privacyPolicy": "Privacy Policy",
       "termsOfService": "Terms of Service",
-      "refundPolicy": "Refund Policy",
+      "refundPolicy": "Payment & Refund Policy",
       "emailPlaceholder": "Your email address",
       "privacyNotice": "We respect your privacy. Unsubscribe at any time.",
-      "copyright": "© 2023~2025 Kong Fu Master. All rights reserved."
+      "copyright": "© 2023~2025 Kong Fu Master. All rights reserved.",
+      "address": "123 Martial Arts Street, Tokyo, Japan",
+      "phone": "+81 123 456 7890",
+      "email": "zjhkrun@gmail.com"
     }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "description": "Have any questions or suggestions? Please fill out the form below and we will get back to you as soon as possible.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Enter your name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "Enter your email address",
+    "messageLabel": "Message",
+    "messagePlaceholder": "Tell us your questions or suggestions...",
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "cancel": "Cancel",
+    "successTitle": "Submitted Successfully!",
+    "successMessage": "Thank you for your feedback. We will contact you soon.",
+    "errors": {
+      "nameRequired": "Please enter your name",
+      "emailRequired": "Please enter your email address",
+      "emailInvalid": "Please enter a valid email address",
+      "messageRequired": "Please enter your message"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "description": "Find answers to common questions about Kong Fu Master",
+    "stillNeedHelp": "Still need help? Contact us:",
+    "categories": {
+      "courseAccess": "About Course Access",
+      "membership": "About Membership",
+      "payment": "About Payment & Refund",
+      "learning": "About Learning Features",
+      "account": "About Account Management",
+      "technical": "About Technical Support"
+    },
+    "courseAccess": {
+      "q1": "How do I purchase a course?",
+      "a1": "You can browse the courses page, select a course you're interested in, click the 'Purchase This Course' button, and complete the purchase through our secure payment process. After successful payment, you will immediately gain access to the course.",
+      "q2": "What's the difference between membership and single course purchase?",
+      "a2": "Single course purchase only grants access to the specific course you buy, valid for 1 year. Monthly membership ($39.99/month) provides unlimited access to all 100+ courses, plus additional benefits like video downloads, direct instructor contact, live Q&A participation, and more.",
+      "q3": "How does the 3-day free trial work?",
+      "a3": "New users can activate a 3-day free trial to access all membership courses for free. Before the trial ends, you can cancel your subscription without any charges. If you don't cancel, it will automatically convert to a monthly membership and billing will begin.",
+      "q4": "How soon can I start learning after purchase?",
+      "a4": "Course access is activated immediately after successful payment, and you can start learning right away. You can find all your purchased courses on the 'My Courses' page."
+    },
+    "membership": {
+      "q1": "What benefits does monthly membership include?",
+      "a1": "Monthly membership ($39.99/month) includes: unlimited access to all 100+ courses, download videos for offline viewing, direct contact with instructors via WhatsApp, participate in live Q&A sessions, access to member-exclusive content, and more.",
+      "q2": "How many courses can members access?",
+      "a2": "Members have unlimited access to all courses on the platform. Currently, there are 100+ professional martial arts courses covering Tai Chi, Shaolin, Wing Chun, self-defense, children's martial arts, and more categories. We continuously add new courses.",
+      "q3": "Can members download videos?",
+      "a3": "Yes, monthly members can download course videos to their local devices for offline viewing anytime, anywhere, without network restrictions. This is very convenient for users who want to learn in environments without internet access.",
+      "q4": "How do I cancel my membership subscription?",
+      "a4": "You can go to the 'My' page and click the 'Cancel Subscription' button in the subscription status section. After cancellation, your membership benefits will expire at the end of the current billing cycle and will not be terminated immediately."
+    },
+    "payment": {
+      "q1": "What payment methods are supported?",
+      "a1": "We support various secure and convenient payment methods, including: Visa, MasterCard and other international credit cards, as well as Alipay, WeChat Pay and other third-party payment platforms. All payments are processed securely through Stripe encryption.",
+      "q2": "How do I apply for a refund?",
+      "a2": "Please log in to your account, go to the 'My Orders' page, find the order you want to refund, and click the 'Apply for Refund' button. Single course purchases can be refunded within 7 days if viewing time does not exceed 20%; memberships can be fully refunded within 3 days if benefits are unused. See our refund policy for details.",
+      "q3": "How long does it take for a refund to arrive?",
+      "a3": "After your refund application is approved, we will refund the amount to your original payment account within 5-7 business days. The specific arrival time depends on your payment institution and bank's processing speed, usually completed within 7-14 business days.",
+      "q4": "Can I get a refund for courses I've already watched?",
+      "a4": "If you have watched more than 20% of the course content or purchased more than 7 days ago, refunds are not supported. However, if the course has serious quality issues or significantly differs from the description, you can contact customer service to explain the situation, and we will conduct a special review."
+    },
+    "learning": {
+      "q1": "How do I track my learning progress?",
+      "a1": "The system automatically records your learning progress. On the 'My Courses' page, you can see the completion percentage, last viewing time, and other information for each course. The course details page also displays the completion status of each chapter.",
+      "q2": "Do videos support subtitles?",
+      "a2": "Yes, our course videos support multi-language subtitles, including Chinese, English, Japanese, Korean, German, French, and Arabic. You can select your preferred subtitle language in the video player.",
+      "q3": "Can I watch offline?",
+      "a3": "Monthly members can download course videos to local devices for offline viewing. Single course purchase users need to watch online, but our videos support adaptive bitrate, ensuring smooth playback even with slower internet connections.",
+      "q4": "How long is the course validity period?",
+      "a4": "Single course purchases are valid for 1 year, with unlimited viewing during the validity period. Monthly members can access all courses during the subscription period. After canceling the subscription, access will be lost at the end of the current billing cycle."
+    },
+    "account": {
+      "q1": "How do I modify my personal information?",
+      "a1": "After logging in, go to the 'My' page and click the 'Account Settings' tab to modify personal information such as your name. Email address serves as the unique account identifier and cannot be modified at this time.",
+      "q2": "What if I forget my password?",
+      "a2": "Click the 'Forgot Password' link on the login page and enter your registered email. We will send a password reset link to your email. After clicking the link, you can set a new password.",
+      "q3": "How do I delete my account?",
+      "a3": "To delete your account, please send an email to zjhkrun@gmail.com explaining your deletion request. Please note that after account deletion, your learning records, purchase records, and other data will be permanently deleted, and purchased courses and membership benefits cannot be recovered."
+    },
+    "technical": {
+      "q1": "What should I do if the video won't play?",
+      "a1": "Please first check if your internet connection is normal. If the network is fine but the video still won't play, try refreshing the page or switching browsers. If the problem persists, please contact customer service and provide your device model and browser version information.",
+      "q2": "Which browsers are supported?",
+      "a2": "Our platform supports all mainstream modern browsers, including Chrome, Firefox, Safari, Edge, etc. For the best experience, we recommend using the latest version of your browser.",
+      "q3": "Can I use it on mobile devices?",
+      "a3": "Yes, our website fully supports mobile device access. You can visit https://www.kongfunow.com in your mobile or tablet browser and enjoy the same learning experience as on desktop. Member users can also download videos to mobile devices for offline viewing."
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Welcome Back",
+      "subtitle": "Log in to your account to continue learning",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter your email",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter your password",
+      "forgotPassword": "Forgot password?",
+      "loginButton": "Log In",
+      "or": "or",
+      "googleLogin": "Sign in with Google",
+      "noAccount": "Don't have an account?",
+      "registerNow": "Register now",
+      "errors": {
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Please enter a valid email address",
+        "passwordRequired": "Please enter your password",
+        "invalidCredentials": "Invalid email or password",
+        "loginFailed": "Login failed, please try again later",
+        "googleLoginFailed": "Google login failed, please try again later"
+      }
+    },
+    "register": {
+      "nameLabel": "Name",
+      "namePlaceholder": "Enter your name",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter your email",
+      "passwordLabel": "Password",
+      "passwordPlaceholder": "Enter password",
+      "passwordHelper": "At least 8 characters with uppercase, lowercase and numbers",
+      "confirmPasswordLabel": "Confirm Password",
+      "confirmPasswordPlaceholder": "Enter password again",
+      "registerButton": "Register"
+    },
+    "forgotPassword": {
+      "title": "Forgot Password?",
+      "subtitle": "Enter your email address and we'll send you a password reset link",
+      "emailLabel": "Email",
+      "emailPlaceholder": "Enter your email",
+      "sendButton": "Send Reset Link",
+      "successMessage": "Password reset link has been sent to your email. Please check and click the link to reset your password.",
+      "rememberPassword": "Remember your password?",
+      "loginNow": "Log in now",
+      "errors": {
+        "emailRequired": "Please enter your email",
+        "emailInvalid": "Please enter a valid email address",
+        "sendFailed": "Failed to send reset email, please try again later"
+      }
+    },
+    "resetPassword": {
+      "title": "Reset Password",
+      "subtitle": "Enter your new password",
+      "newPasswordLabel": "New Password",
+      "newPasswordPlaceholder": "Enter new password",
+      "passwordHelper": "At least 8 characters with uppercase, lowercase and numbers",
+      "confirmPasswordLabel": "Confirm New Password",
+      "confirmPasswordPlaceholder": "Enter new password again",
+      "resetButton": "Reset Password",
+      "successMessage": "Password reset successfully! Redirecting to login page in 3 seconds.",
+      "invalidLinkTitle": "Invalid Link",
+      "invalidLinkMessage": "The password reset link you accessed is invalid or has expired.",
+      "requestAgain": "Request Again",
+      "rememberPassword": "Remember your password?",
+      "loginNow": "Log in now",
+      "errors": {
+        "invalidLink": "Invalid reset link",
+        "passwordRequired": "Please enter new password",
+        "passwordTooShort": "Password must be at least 8 characters",
+        "passwordWeak": "Password must contain uppercase, lowercase and numbers",
+        "confirmRequired": "Please confirm new password",
+        "passwordMismatch": "Passwords do not match",
+        "resetFailed": "Password reset failed, please try again later"
+      }
+    }
+  },
+  "subscription": {
+    "status": "Subscription Status",
+    "noSubscription": "You haven't activated a subscription yet",
+    "startTrialHint": "Click \"3-Day Free Trial\" to start",
+    "freeTrial": "Free Trial",
+    "trialEnds": "Trial ends: ",
+    "trialAutoConvert": "Will automatically convert to $39/month subscription after trial",
+    "monthlyMember": "Monthly Member",
+    "nextBilling": "Next billing: ",
+    "monthlyPrice": "$39/month"
   }
 }

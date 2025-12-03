@@ -3,12 +3,14 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 import { signUp } from "@/lib/analytics";
 
 export default function RegisterForm() {
+  const t = useTranslations();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -152,46 +154,46 @@ export default function RegisterForm() {
           ) : (
             <>
               <Input
-                label="姓名"
+                label={t('auth.register.nameLabel')}
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                placeholder="请输入您的姓名"
+                placeholder={t('auth.register.namePlaceholder')}
                 error={errors.name}
                 required
               />
 
               <Input
-                label="邮箱地址"
+                label={t('auth.register.emailLabel')}
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="请输入您的邮箱"
+                placeholder={t('auth.register.emailPlaceholder')}
                 error={errors.email}
                 required
               />
 
               <Input
-                label="密码"
+                label={t('auth.register.passwordLabel')}
                 type="password"
                 name="password"
                 value={formData.password}
                 onChange={handleChange}
-                placeholder="请输入密码"
+                placeholder={t('auth.register.passwordPlaceholder')}
                 error={errors.password}
-                helperText="密码至少8位，包含大小写字母和数字"
+                helperText={t('auth.register.passwordHelper')}
                 required
               />
 
               <Input
-                label="确认密码"
+                label={t('auth.register.confirmPasswordLabel')}
                 type="password"
                 name="confirmPassword"
                 value={formData.confirmPassword}
                 onChange={handleChange}
-                placeholder="请再次输入密码"
+                placeholder={t('auth.register.confirmPasswordPlaceholder')}
                 error={errors.confirmPassword}
                 required
               />
@@ -210,7 +212,7 @@ export default function RegisterForm() {
                 loading={loading}
                 disabled={loading}
               >
-                注册
+                {t('auth.register.registerButton')}
               </Button>
             </>
           )}

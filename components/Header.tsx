@@ -19,7 +19,7 @@ export default function Header() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  
+
   // 检测是否为RTL语言（阿拉伯语）
   const isRTL = locale === 'ar-SA';
 
