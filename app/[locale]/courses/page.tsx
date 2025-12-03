@@ -280,16 +280,40 @@ export default function CoursesPage() {
               </div>
               <p className="text-gray-300 mb-6">{t('home.footer.brandDescription')}</p>
               <div className="flex space-x-4">
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <Link 
+                  href="https://www.facebook.com/kongfumaster" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300"
+                >
                   <i className="fa fa-facebook"></i>
                 </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <Link 
+                  href="https://twitter.com/kongfumaster" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300"
+                >
                   <i className="fa fa-twitter"></i>
                 </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <Link 
+                  href="https://www.instagram.com/kongfumaster" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300"
+                >
                   <i className="fa fa-instagram"></i>
                 </Link>
-                <Link href="#" className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300">
+                <Link 
+                  href="https://www.youtube.com/@kongfumaster" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-orange-500 transition-all duration-300"
+                >
                   <i className="fa fa-youtube-play"></i>
                 </Link>
               </div>

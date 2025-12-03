@@ -1,7 +1,8 @@
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { MDXRemote } from 'next-mdx-remote/rsc';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { locales } from '@/lib/i18n';
 import Header from '@/components/Header';
 import BackButton from '@/components/BackButton';
 
@@ -9,8 +10,16 @@ type Props = {
   params: Promise<{ locale: string }>;
 };
 
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
 export default async function PrivacyPage({ params }: Props) {
   const { locale } = await params;
+  
+  // 启用静态渲染
+  unstable_setRequestLocale(locale);
+  
   const t = await getTranslations();
   
   // 读取对应语言的MDX文件

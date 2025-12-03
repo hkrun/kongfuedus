@@ -448,18 +448,42 @@ export default function HomePage() {
               </div>
               <p className="text-gray-300 mb-6">{t('home.footer.brandDescription')}</p>
               <div className="flex space-x-4">
-                                 <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500">
-                   <i className="fa fa-facebook"></i>
-                 </Link>
-                                 <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500">
-                   <i className="fa fa-instagram"></i>
-                 </Link>
-                                 <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500">
-                   <i className="fa fa-youtube-play"></i>
-                 </Link>
-                                 <Link href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500">
-                   <i className="fa fa-twitter"></i>
-                 </Link>
+                <Link 
+                  href="https://www.facebook.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500"
+                >
+                  <i className="fa fa-facebook"></i>
+                </Link>
+                <Link 
+                  href="https://www.instagram.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Instagram"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500"
+                >
+                  <i className="fa fa-instagram"></i>
+                </Link>
+                <Link 
+                  href="https://www.youtube.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="YouTube"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500"
+                >
+                  <i className="fa fa-youtube-play"></i>
+                </Link>
+                <Link 
+                  href="https://twitter.com" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Twitter"
+                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center transition-all duration-300 hover:bg-orange-500"
+                >
+                  <i className="fa fa-twitter"></i>
+                </Link>
               </div>
           </div>
             
