@@ -41,7 +41,7 @@ export default function middleware(request: NextRequest) {
   // 将 pathname（不含 query）传给 layout，用于生成 canonical 与 hreflang
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
-  const modifiedRequest = new Request(request.url, { method: request.method, headers: requestHeaders });
+  const modifiedRequest = new NextRequest(request.url, { method: request.method, headers: requestHeaders });
   const response = intlMiddleware(modifiedRequest);
   
   // 确保不设置语言偏好 cookie，每次都重新检测

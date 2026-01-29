@@ -91,6 +91,46 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function buildCourseVideoObjectJsonLd(
+  baseUrl: string,
+  pathname: string,
+  locale: string,
+  course: { id: string; image: string; chapters?: Array<{ lessons?: Array<{ videoUrl?: string; title: unknown; description?: unknown }> }> }
+): string {
+  const contentKey = localeToContentKey[locale] || 'en';
+  const pageUrl = `${baseUrl}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
+  const thumbnailBase = baseUrl + (course.image?.startsWith('/') ? course.image : `/${course.image}`);
+  const videoObjects: Array<{
+    '@type': string;
+    name: string;
+    description?: string;
+    contentUrl: string;
+    embedUrl: string;
+    thumbnailUrl?: string;
+    uploadDate?: string;
+  }> = [];
+  const chapters = course.chapters || [];
+  for (const ch of chapters) {
+    const lessons = ch.lessons || [];
+    for (const lesson of lessons) {
+      if (!lesson.videoUrl) continue;
+      const name = getMultiLangString(lesson.title as { [key: string]: string } | string | undefined, contentKey) || `Lesson`;
+      const desc = getMultiLangString(lesson.description as { [key: string]: string } | string | undefined, contentKey);
+      videoObjects.push({
+        '@type': 'VideoObject',
+        name,
+        ...(desc ? { description: truncateDescription(desc, 200) } : {}),
+        contentUrl: lesson.videoUrl,
+        embedUrl: pageUrl,
+        thumbnailUrl: thumbnailBase,
+        uploadDate: '2024-06-01',
+      });
+    }
+  }
+  if (videoObjects.length === 0) return '';
+  return JSON.stringify({ '@context': 'https://schema.org', '@graph': videoObjects });
+}
+
 export default async function LocaleLayout({
   children,
   params
@@ -111,11 +151,29 @@ export default async function LocaleLayout({
   // 读取GA ID
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
+  const baseUrl = (process.env.NEXTAUTH_URL || process.env.APP_URL || 'https://www.kongfunow.com').replace(/\/$/, '');
+  const pathname = (await headers()).get('x-pathname') || `/${locale}`;
+  const segments = pathname.split('/').filter(Boolean);
+  let videoJsonLd = '';
+  if (segments.length >= 3 && segments[1] === 'courses') {
+    const courseId = segments[2];
+    const course = getCourseById(courseId);
+    if (course) {
+      videoJsonLd = buildCourseVideoObjectJsonLd(baseUrl, pathname, locale, course);
+    }
+  }
+
   return (
     <html lang={locale} dir={locale === 'ar-SA' ? 'rtl' : 'ltr'}>
       <head>
         <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700;800&display=swap" rel="stylesheet" />
+        {videoJsonLd ? (
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: videoJsonLd }}
+          />
+        ) : null}
       </head>
       <body>
         <NextIntlClientProvider messages={messages}>

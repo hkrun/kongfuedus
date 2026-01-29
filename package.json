@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@auth/prisma-adapter": "^2.10.0",
-    "@prisma/client": "^6.14.0",
+    "@prisma/client": "^6.19.0",
     "@stripe/react-stripe-js": "^3.9.2",
     "@stripe/stripe-js": "^7.9.0",
     "@videojs/themes": "^1.0.1",
@@ -22,30 +22,40 @@
     "clsx": "^2.1.1",
     "dotenv": "^17.2.1",
     "lucide-react": "^0.542.0",
-    "next": "14.2.5",
-    "next-auth": "^5.0.0-beta.29",
+    "next": "14.2.35",
+    "next-auth": "^5.0.0-beta.30",
     "next-intl": "^3.15.0",
     "next-mdx-remote": "^5.0.0",
     "next-themes": "^0.3.0",
-    "prisma": "^6.14.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "prisma": "^6.19.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
     "resend": "^6.0.1",
     "stripe": "^18.4.0",
     "tailwind-merge": "^3.3.1",
     "video.js": "^8.23.4"
   },
+  "overrides": {
+    "glob": ">=10.5.0",
+    "nth-check": ">=2.0.1",
+    "js-yaml": ">=4.1.1",
+    "@videojs/themes": {
+      "postcss-inline-svg": {
+        "postcss": "8.4.49"
+      }
+    }
+  },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.19",
     "@types/bcryptjs": "^2.4.6",
-    "@types/node": "^20.14.9",
-    "@types/react": "^18.3.3",
-    "autoprefixer": "^10.4.19",
+    "@types/node": "^22.15.0",
+    "@types/react": "^18.3.18",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.5",
-    "postcss": "^8.4.39",
-    "tailwindcss": "^3.4.9",
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17",
     "tsx": "^4.20.4",
-    "typescript": "^5.5.3"
+    "typescript": "^5.7.2"
   }
 }
