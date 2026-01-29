@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { signIn } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
@@ -11,6 +11,7 @@ import { signUp } from "@/lib/analytics";
 
 export default function RegisterForm() {
   const t = useTranslations();
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -263,7 +264,7 @@ export default function RegisterForm() {
           <p className="text-sm text-gray-600">
             已有账户？{" "}
             <Link
-              href="/auth/login"
+              href={`/${locale}/auth/login`}
               className="font-medium text-orange-600 hover:text-orange-500 transition-colors"
             >
               立即登录

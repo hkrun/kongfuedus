@@ -3,9 +3,11 @@
 import { useState, useEffect, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { useLocale } from "next-intl";
 import Button from "@/components/ui/Button";
 
 function VerifyEmailContent() {
+  const locale = useLocale();
   const [status, setStatus] = useState<"verifying" | "success" | "error">("verifying");
   const [message, setMessage] = useState("");
   const router = useRouter();
@@ -72,7 +74,7 @@ function VerifyEmailContent() {
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">验证成功！</h2>
             <p className="text-gray-600 mb-6">{message}</p>
-            <Link href="/auth/login">
+            <Link href={`/${locale}/auth/login`}>
               <Button className="w-full">立即登录</Button>
             </Link>
           </>
@@ -86,10 +88,10 @@ function VerifyEmailContent() {
             <h2 className="text-2xl font-bold text-gray-900 mb-2">验证失败</h2>
             <p className="text-gray-600 mb-6">{message}</p>
             <div className="space-y-3">
-              <Link href="/auth/register">
+              <Link href={`/${locale}/auth/register`}>
                 <Button variant="outline" className="w-full">重新注册</Button>
               </Link>
-              <Link href="/auth/login">
+              <Link href={`/${locale}/auth/login`}>
                 <Button className="w-full">返回登录</Button>
               </Link>
             </div>

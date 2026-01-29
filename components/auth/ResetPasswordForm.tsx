@@ -2,13 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 
 export default function ResetPasswordForm() {
   const t = useTranslations();
+  const locale = useLocale();
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -105,7 +106,7 @@ export default function ResetPasswordForm() {
             {t('auth.resetPassword.invalidLinkMessage')}
           </p>
           <Link
-            href="/auth/forgot-password"
+            href={`/${locale}/auth/forgot-password`}
             className="inline-block px-6 py-2 bg-orange-500 text-white rounded-md hover:bg-orange-600 transition-colors"
           >
             {t('auth.resetPassword.requestAgain')}
@@ -169,7 +170,7 @@ export default function ResetPasswordForm() {
           <p className="text-sm text-gray-600">
             {t('auth.resetPassword.rememberPassword')}{" "}
             <Link
-              href="/auth/login"
+              href={`/${locale}/auth/login`}
               className="font-medium text-orange-600 hover:text-orange-500 transition-colors"
             >
               {t('auth.resetPassword.loginNow')}

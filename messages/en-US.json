@@ -418,7 +418,7 @@
       "subtitle": "Choose our monthly membership for unlimited access to all courses",
       "monthlyMembership": "Monthly Membership",
       "price": "$39.99",
-      "perMonth": "/month",
+      "perMonth": "per month",
       "features": {
         "unlimitedAccess": "Unlimited access to all 100+ courses",
         "downloadVideos": "Download videos for offline viewing",

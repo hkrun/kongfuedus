@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { signIn, getSession } from "next-auth/react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
@@ -11,6 +11,7 @@ import { login } from "@/lib/analytics";
 
 export default function LoginForm() {
   const t = useTranslations();
+  const locale = useLocale();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
@@ -139,7 +140,7 @@ export default function LoginForm() {
 
           <div className="flex items-center justify-between">
             <Link
-              href="/auth/forgot-password"
+              href={`/${locale}/auth/forgot-password`}
               className="text-sm text-orange-600 hover:text-orange-500 transition-colors"
             >
               {t('auth.login.forgotPassword')}
@@ -201,7 +202,7 @@ export default function LoginForm() {
           <p className="text-sm text-gray-600">
             {t('auth.login.noAccount')}{" "}
             <Link
-              href="/auth/register"
+              href={`/${locale}/auth/register`}
               className="font-medium text-orange-600 hover:text-orange-500 transition-colors"
             >
               {t('auth.login.registerNow')}

@@ -243,7 +243,7 @@ export default function HomePage() {
               
               <div className="mb-6">
                 <span className="text-4xl font-bold">{t('home.membership.price')}</span>
-                <span className="text-gray-300">{t('home.membership.perMonth')}</span>
+                <span className="text-gray-300"> {t('home.membership.perMonth')}</span>
               </div>
               
               <ul className="space-y-4 mb-8">

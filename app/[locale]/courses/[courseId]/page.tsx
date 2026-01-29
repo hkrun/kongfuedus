@@ -4,7 +4,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { useState, useEffect, useRef, useMemo, useCallback } from "react";
 import { useSession } from "next-auth/react";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Header from "../../../../components/Header";
 import FreeTrialButton from "../../../../components/FreeTrialButton";
 import PurchaseButton from "../../../../components/PurchaseButton";
@@ -17,6 +17,7 @@ import { viewCourse } from "../../../../lib/analytics";
 
 export default function CourseDetailPage({ params }: { params: { courseId: string } }) {
   const t = useTranslations();
+  const locale = useLocale();
   // 渲染计数器，用于调试重复渲染问题
   const renderCount = useRef(0);
   renderCount.current += 1;
@@ -707,7 +708,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                         )
                       ) : (
                         <Link 
-                          href={`/auth/login?callbackUrl=${encodeURIComponent(`/courses/${params.courseId}`)}`}
+                          href={`/${locale}/auth/login?callbackUrl=${encodeURIComponent(`/${locale}/courses/${params.courseId}`)}`}
                           className="block w-full py-3 bg-[#ed8936] text-white text-center font-semibold rounded-md hover:bg-[#ed8936]/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                         >
                           {t('courseDetail.purchase.loginToExperience')}
@@ -1023,7 +1024,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                     </button>
                   ) : (
                     <Link 
-                      href={`/auth/login?callbackUrl=${encodeURIComponent(`/courses/${params.courseId}`)}`}
+                      href={`/${locale}/auth/login?callbackUrl=${encodeURIComponent(`/${locale}/courses/${params.courseId}`)}`}
                       className="block w-full py-3 bg-[#ed8936] text-white text-center font-semibold rounded-md hover:bg-[#ed8936]/90 transition-all duration-300 shadow-md hover:shadow-lg"
                     >
                       {t('courseDetail.instructor.loginToExperience')}
@@ -1071,7 +1072,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                     <div className="space-y-4">
                       <p className="text-gray-600 mb-4">{t('courseDetail.reviews.loginToView')}</p>
                       <Link 
-                        href={`/auth/login?callbackUrl=${encodeURIComponent(`/courses/${params.courseId}`)}`}
+                        href={`/${locale}/auth/login?callbackUrl=${encodeURIComponent(`/${locale}/courses/${params.courseId}`)}`}
                         className="px-6 py-2 bg-[#ed8936] text-white font-semibold rounded-md hover:bg-[#ed8936]/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                       >
                         {t('courseDetail.reviews.loginNow')}
@@ -1430,7 +1431,7 @@ export default function CourseDetailPage({ params }: { params: { courseId: strin
                       <div className="space-y-4 text-center">
                         <p className="text-gray-600 mb-4">{t('courseDetail.discussions.loginToParticipate')}</p>
                         <Link 
-                          href={`/auth/login?callbackUrl=${encodeURIComponent(`/courses/${params.courseId}`)}`}
+                          href={`/${locale}/auth/login?callbackUrl=${encodeURIComponent(`/${locale}/courses/${params.courseId}`)}`}
                           className="inline-block px-6 py-2 bg-[#ed8936] text-white font-semibold rounded-md hover:bg-[#ed8936]/90 transition-all duration-300 shadow-md hover:shadow-lg transform hover:-translate-y-1"
                         >
                           {t('courseDetail.reviews.loginNow')}

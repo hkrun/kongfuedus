@@ -1,13 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import { useTranslations } from "next-intl";
+import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Button from "@/components/ui/Button";
 import Input from "@/components/ui/Input";
 
 export default function ForgotPasswordForm() {
   const t = useTranslations();
+  const locale = useLocale();
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
@@ -96,7 +97,7 @@ export default function ForgotPasswordForm() {
           <p className="text-sm text-gray-600">
             {t('auth.forgotPassword.rememberPassword')}{" "}
             <Link
-              href="/auth/login"
+              href={`/${locale}/auth/login`}
               className="font-medium text-orange-600 hover:text-orange-500 transition-colors"
             >
               {t('auth.forgotPassword.loginNow')}
