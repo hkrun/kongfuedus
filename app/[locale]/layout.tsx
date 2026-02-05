@@ -50,14 +50,33 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
   const baseUrl = (process.env.NEXTAUTH_URL || process.env.APP_URL || 'https://www.kongfunow.com').replace(/\/$/, '');
+  const defaultLocale = 'en-US';
   const pathname = (await headers()).get('x-pathname') || `/${locale}`;
-  const canonical = `${baseUrl}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
+  
+  // 生成 canonical URL（默认语言不带前缀）
+  let canonical: string;
+  if (locale === defaultLocale) {
+    // 对于默认语言，移除语言前缀
+    const pathWithoutLocale = pathname.replace(/^\/en-US/, '') || '/';
+    canonical = `${baseUrl}${pathWithoutLocale}`;
+  } else {
+    canonical = `${baseUrl}${pathname.startsWith('/') ? pathname : `/${pathname}`}`;
+  }
+  
+  // 生成 hreflang 标签
   const pathWithoutLocale = pathname.replace(/^\/[^/]+/, '') || '/';
   const languages: Record<string, string> = {};
   for (const loc of locales) {
-    languages[loc] = `${baseUrl}/${loc}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+    if (loc === defaultLocale) {
+      // 默认语言不带前缀
+      languages[loc] = `${baseUrl}${pathWithoutLocale}`;
+    } else {
+      // 其他语言带前缀
+      languages[loc] = `${baseUrl}/${loc}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+    }
   }
-  languages['x-default'] = `${baseUrl}/en-US${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+  // x-default 使用默认语言（不带前缀）
+  languages['x-default'] = `${baseUrl}${pathWithoutLocale}`;
 
   const segments = pathname.split('/').filter(Boolean);
   const contentKey = localeToContentKey[locale] || 'en';

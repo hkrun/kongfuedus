@@ -5,14 +5,15 @@ const intlMiddleware = createMiddleware({
   // 支持的语言列表
   locales: ['en-US', 'zh-CN', 'de-DE', 'fr-FR', 'ja-JP', 'ko-KR', 'ar-SA'],
   
-  // 默认语言（当浏览器语言不支持时的回退语言）
+  // 默认语言
   defaultLocale: 'en-US',
   
-  // 始终在 URL 中显示语言前缀
-  localePrefix: 'always',
+  // 只在需要时显示语言前缀（默认语言不显示前缀，其他语言显示）
+  // 这样根路径 / 直接显示英文内容，无需重定向，SEO 友好
+  localePrefix: 'as-needed',
   
-  // 启用自动语言检测（基于 Accept-Language 头）
-  localeDetection: true
+  // 关闭自动语言检测，避免根据浏览器语言自动跳转
+  localeDetection: false
 });
 
 export default function middleware(request: NextRequest) {
@@ -29,27 +30,16 @@ export default function middleware(request: NextRequest) {
     locale => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   );
   
-  // 如果访问根路径或不带语言代码的路径，intl middleware 会：
-  // 1. 读取 Accept-Language 头
-  // 2. 匹配支持的语言
-  // 3. 重定向到对应的语言版本（如 /zh-CN/, /ja-JP/, /en-US/ 等）
-  // 4. 如果浏览器语言不支持，使用 defaultLocale (en-US)
-  
-  // 如果路径已经包含语言代码，直接使用该语言，不做检测
-  // 这样用户手动切换语言后不会被自动检测覆盖
+  // 使用 'as-needed' 模式：
+  // - 根路径 / 直接显示英文内容，无需重定向（SEO 友好）
+  // - /zh-CN/, /ja-JP/ 等路径显示对应语言内容
+  // - 用户可以通过页面上的语言切换器选择语言
 
   // 将 pathname（不含 query）传给 layout，用于生成 canonical 与 hreflang
   const requestHeaders = new Headers(request.headers);
   requestHeaders.set('x-pathname', pathname);
   const modifiedRequest = new NextRequest(request.url, { method: request.method, headers: requestHeaders });
   const response = intlMiddleware(modifiedRequest);
-  
-  // 确保不设置语言偏好 cookie，每次都重新检测
-  // （对于不带语言代码的请求）
-  if (!pathnameHasLocale && response) {
-    // 删除可能的语言偏好 cookie
-    response.cookies.delete('NEXT_LOCALE');
-  }
   
   return response;
 }

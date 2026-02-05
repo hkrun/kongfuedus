@@ -7,6 +7,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 import Logo from "./Logo";
 import { locales, localeNames, localeFlags } from '@/lib/i18n';
+import { useLocalizedPath } from '@/hooks/useLocalizedPath';
 
 export default function Header() {
   const { data: session, status } = useSession();
@@ -19,6 +20,7 @@ export default function Header() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
+  const localizedPath = useLocalizedPath();
 
   // 检测是否为RTL语言（阿拉伯语）
   const isRTL = locale === 'ar-SA';
@@ -66,30 +68,50 @@ export default function Header() {
 
   const handleAuthAction = () => {
     if (session) {
-      signOut({ callbackUrl: `/${locale}` });
+      signOut({ callbackUrl: localizedPath('/') });
     } else {
       // 记录当前页面URL，登录后返回
       const currentUrl = pathname + window.location.search;
-      const loginUrl = `/${locale}/auth/login?callbackUrl=${encodeURIComponent(currentUrl)}`;
+      const loginUrl = localizedPath('/auth/login') + `?callbackUrl=${encodeURIComponent(currentUrl)}`;
       router.push(loginUrl);
     }
   };
 
   const handleMyPage = () => {
     setShowDropdown(false);
-    router.push(`/${locale}/my`);
+    router.push(localizedPath('/my'));
   };
 
   const handleSignOut = () => {
     setShowDropdown(false);
-    signOut({ callbackUrl: `/${locale}` });
+    signOut({ callbackUrl: localizedPath('/') });
   };
 
   // 语言切换功能
   const handleLanguageChange = (newLocale: string) => {
     setShowLanguageDropdown(false);
-    // 替换当前路径中的语言部分
-    const newPath = pathname.replace(`/${locale}`, `/${newLocale}`);
+    const defaultLocale = 'en-US';
+    
+    // 移除当前语言前缀，获取纯路径
+    let pathWithoutLocale = pathname;
+    if (locale === defaultLocale) {
+      // 当前是默认语言（无前缀），路径本身就是纯路径
+      pathWithoutLocale = pathname;
+    } else {
+      // 当前是其他语言（有前缀），移除语言前缀
+      pathWithoutLocale = pathname.replace(`/${locale}`, '') || '/';
+    }
+    
+    // 根据新语言决定是否添加前缀
+    let newPath: string;
+    if (newLocale === defaultLocale) {
+      // 切换到默认语言，不添加前缀
+      newPath = pathWithoutLocale;
+    } else {
+      // 切换到其他语言，添加语言前缀
+      newPath = `/${newLocale}${pathWithoutLocale === '/' ? '' : pathWithoutLocale}`;
+    }
+    
     router.push(newPath);
   };
 

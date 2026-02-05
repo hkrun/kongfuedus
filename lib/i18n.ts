@@ -27,6 +27,21 @@ export const localeFlags: Record<Locale, string> = {
   'ar-SA': '🇸🇦'
 };
 
+// 路由 locale 到内容 key 的映射（用于服务端首屏渲染与 SEO）
+export const localeToContentKey: Record<string, string> = {
+  'en-US': 'en',
+  'zh-CN': 'zh',
+  'ja-JP': 'ja',
+  'ko-KR': 'ko',
+  'de-DE': 'de',
+  'fr-FR': 'fr',
+  'ar-SA': 'ar',
+};
+
+export function getContentKeyFromLocale(locale: string): string {
+  return localeToContentKey[locale] || 'en';
+}
+
 // 检查语言是否支持
 export function isValidLocale(locale: string): locale is Locale {
   return locales.includes(locale as Locale);
@@ -34,7 +49,24 @@ export function isValidLocale(locale: string): locale is Locale {
 
 // 获取默认语言
 export function getDefaultLocale(): Locale {
-  return 'zh-CN';
+  return 'en-US';
+}
+
+// 生成本地化路径（用于as-needed模式）
+// 默认语言（en-US）不需要前缀，其他语言需要前缀
+export function getLocalizedPath(path: string, locale: Locale): string {
+  const defaultLocale = 'en-US';
+  
+  // 确保路径以 / 开头
+  const cleanPath = path.startsWith('/') ? path : `/${path}`;
+  
+  if (locale === defaultLocale) {
+    // 默认语言不需要前缀
+    return cleanPath === '/' ? '' : cleanPath;
+  } else {
+    // 其他语言需要前缀
+    return `/${locale}${cleanPath === '/' ? '' : cleanPath}`;
+  }
 }
 
 // 语言检测配置
