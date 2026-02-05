@@ -1,7 +1,9 @@
 import createNextIntlPlugin from 'next-intl/plugin';
 import { createRequire } from 'module';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const require = createRequire(import.meta.url);
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
@@ -22,9 +24,12 @@ const nextConfig = {
     ],
   },
   webpack: (config) => {
+    const projectRoot = path.resolve(__dirname);
+    config.resolve.alias = config.resolve.alias || {};
+    config.resolve.alias['@'] = projectRoot;
+    config.resolve.alias['@/'] = projectRoot + path.sep;
     try {
       const pkgDir = path.dirname(require.resolve('next-mdx-remote/package.json'));
-      config.resolve.alias = config.resolve.alias || {};
       config.resolve.alias['next-mdx-remote/rsc'] = path.join(pkgDir, 'rsc.js');
     } catch (_) {
       // 若 next-mdx-remote 未安装则忽略
